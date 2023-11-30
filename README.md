@@ -10,6 +10,14 @@ To try these examples, you'll need a free [OpenAI](https://platform.openai.com/d
 
 Most examples are in Python, yet the concepts can be adapted to any programming language, so long as you can make REST API calls or target language SDK API calls.
 
+The examples in this cook are inspired (and some modified or copied) from these resources, including:
+
+ * [Open AI Cookbook](https://github.com/openai/openai-cookbook)
+ * [Prompt Engineering Guide] and [Prompt Engineering course](https://maven.com/dair-ai/prompt-engineering-llms?promoCode=MAVENMONDAY) by Elvis Saravia
+ * [Ray Documentation](https://docs.ray.io/en/latest/) and [Anyscale blogs](https://www.anyscale.com/blog)
+ * [Anyscale Endpoints Documentation](https://docs.endpoints.anyscale.com/)
+ * Various blog posts on medium.
+
 Have fun!
 
 Jules
