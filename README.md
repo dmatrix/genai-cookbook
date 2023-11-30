@@ -21,13 +21,13 @@ The examples in this cook are inspired (and some modified, expanded or copied) f
  * [Building Systems with the ChatGPT API](https://learn.deeplearning.ai/chatgpt-building-system/lesson/1/introduction)
  * Various blog posts on medium.
 
-### Environment files
+## Environment files
 Since you use use either OpenAI and Anyscale Endpoints, I provide two
 environment template files: **.env_anyscale_template** and **env_openai_template**. Add your keys and model name to either of the files and copy the file to **.env**. 
 
-**Note**: Don't share your environemt files publicly.
+**Note**: Don't share your environment files with API keys publicly.
 
-### Contributing
+## Contributing
 I welcome contributions. Let's make this a Generative AI developer community-driven resource. Your contributions can include addittions or expansions of these how-to guides.
 
 Check existing issues and pull requests before contributing to avoid duplication. If you have ideas or suggestions for examples or guides, share them on the issues page
