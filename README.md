@@ -13,7 +13,7 @@ Most examples are in Python, yet the concepts can be adapted to any programming 
 The examples in this cook are inspired (and some modified, expanded or copied) from these resources, including:
 
  * [Open AI Cookbook](https://github.com/openai/openai-cookbook)
- * [Prompt Engineering Guide] and [Prompt Engineering course](https://maven.com/dair-ai/prompt-engineering-llms?promoCode=MAVENMONDAY) by Elvis Saravia
+ * [Prompt Engineering Guide](https://www.promptingguide.ai/introduction) and [Prompt Engineering course](https://maven.com/dair-ai/prompt-engineering-llms?promoCode=MAVENMONDAY) by Elvis Saravia
  * [Ray Documentation](https://docs.ray.io/en/latest/) and [Anyscale blogs](https://www.anyscale.com/blog)
  * [Anyscale Endpoints Documentation](https://docs.endpoints.anyscale.com/)
  * [ChatGPT Prompt Engineering for Developers](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction)
@@ -23,7 +23,7 @@ The examples in this cook are inspired (and some modified, expanded or copied) f
 
 ### Environment files
 Since you use use either OpenAI and Anyscale Endpoints, I provide two
-environment template files: **.env_anyscale** and **.env_openai**. Add your keys and model name to either of the files and copy the file to **.env**. 
+environment template files: **.env_anyscale_template** and **env_openai_template**. Add your keys and model name to either of the files and copy the file to **.env**. 
 
 **Note**: Don't share your environemt files publicly.
 
