@@ -25,6 +25,8 @@ The examples in this cook are inspired (some modified, expanded or copied) from 
 Since you use use either OpenAI and Anyscale Endpoints, I provide two
 environment template files: **.env_anyscale_template** and **env_openai_template**. Add your keys and model name to either of the files and copy the file to **.env**. 
 
+You may require some Python libraries. Use `pip install -r requirements.txt` to install them.
+
 **Note**: Don't share your environment files with API keys publicly.
 
 ## Contributing
