@@ -23,9 +23,9 @@ The examples in this cook are inspired (some modified, expanded or copied) from 
 
 ## Environment files
 Since I use use either OpenAI or Anyscale Endpoints, I provide two
-environment template files: **.env_anyscale_template** and **env_openai_template**. Add your keys and model name to either of the files and copy the file to **.env** to the top-level directory. 
+environment template files: **env_anyscale_template** and **env_openai_template**. Add your keys and model name to either of the files and copy the file to **.env** to the top-level directory. To migrate any OpenAI code to Anyscale Endpoints, use this [simple guide](https://docs.endpoints.anyscale.com/guides/migrate-from-openai/). For the most part, the migration is seamless.
 
-Alos, you'll require some Python libraries. Use `pip install -r requirements.txt` to install them.
+Also, you'll require some Python libraries. Use `pip install -r requirements.txt` to install them.
 
 **Note**: Don't share your environment files with API keys publicly.
 
