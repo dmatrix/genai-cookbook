@@ -1,0 +1,3 @@
+export OPENAI_API_KEY="YOUR_KEY_HERE"
+export OPENAI_API_BASE=https://api.openai.com/v1
+export MODEL="gpt-4-1106-preview"
