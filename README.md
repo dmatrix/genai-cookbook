@@ -1,6 +1,6 @@
 # Genai-Cookbook
 
-<img src=images/cookbook.png>
+<img src=images/cookbook.png width="75%" height="45%">
 
 Welcome to a mixture of Gen AI cookbook **how-to** recepies for Gen AI applications. These simple guides span across get-started examples on LLM prompting strategies, building simple chatbots, retrieval generation augmentation (RAGs), LLM-based applications on ChatGPT or Anyscale Endpoings, etc. 
 
@@ -30,7 +30,7 @@ environment template files: **.env_anyscale_template** and **env_openai_template
 ## Contributing
 I welcome contributions. Let's make this a Generative AI developer community-driven resource. Your contributions can include addittions or expansions of these how-to guides.
 
-Check existing issues and pull requests before contributing to avoid duplication. If you have ideas or suggestions for examples or guides, share them on the issues page
+Check existing [issues](https://github.com/dmatrix/genai-cookbook/issues) and [pull requests](https://github.com/dmatrix/genai-cookbook/pulls) before contributing to avoid duplication. If you have ideas or suggestions for examples or guides, share them on the issues page
 
 
 Have fun!
