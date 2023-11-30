@@ -2,7 +2,7 @@
 
 <img src=images/cookbook.png>
 
-Welcome to a mixture of Gen AI cookbook **how-to** recipes for Gen AI applications. These simple guides span across get-started examples on LLM prompting strategies, building simple chatbots, retrieval generation augmentation (RAGs), LLM-based applications on ChatGPT or Anyscale Endpoings, etc. 
+Welcome to a mixture of Gen AI cookbook **how-to** recipes for Gen AI applications. These simple guides span across get-started examples on LLM prompting strategies, building simple chatbots, retrieval generation augmentation (RAGs), LLM-based applications on ChatGPT or Anyscale Endpoints, etc. 
 
 You'll find examples code and/or guides for common tasks using the OpenAI API and [Ray framework](https://www.ray.io/). 
 
@@ -22,19 +22,19 @@ The examples in this cook are inspired (some modified, expanded or copied) from 
  * Various blog posts on medium.
 
 ## Environment files
-Since you use use either OpenAI and Anyscale Endpoints, I provide two
-environment template files: **.env_anyscale_template** and **env_openai_template**. Add your keys and model name to either of the files and copy the file to **.env**. 
+Since I use use either OpenAI or Anyscale Endpoints, I provide two
+environment template files: **.env_anyscale_template** and **env_openai_template**. Add your keys and model name to either of the files and copy the file to **.env** to the top-level directory. 
 
-You may require some Python libraries. Use `pip install -r requirements.txt` to install them.
+Alos, you'll require some Python libraries. Use `pip install -r requirements.txt` to install them.
 
 **Note**: Don't share your environment files with API keys publicly.
 
 ## Contributing
 I welcome contributions. Let's make this a Generative AI developer community-driven resource. Your contributions can include additions or expansions of these how-to guides.
 
-Check existing [issues](https://github.com/dmatrix/genai-cookbook/issues) and [pull requests](https://github.com/dmatrix/genai-cookbook/pulls) before contributing to avoid duplication. If you have ideas or suggestions for examples or guides, share them on the issues page
+Check existing [issues](https://github.com/dmatrix/genai-cookbook/issues) and [pull requests](https://github.com/dmatrix/genai-cookbook/pulls) before contributing to avoid duplication. If you have suggestions for examples or guides, share them on the issues page.
 
 
-Have fun!
+Have GenAI fun! 🥳️
 
 Jules
