@@ -2,7 +2,7 @@
 
 <img src=images/cookbook.png>
 
-Welcome to a mixture of Gen AI cookbook **how-to** recepies for Gen AI applications. These simple guides span across get-started examples on LLM prompting strategies, building simple chatbots, retrieval generation augmentation (RAGs), LLM-based applications on ChatGPT or Anyscale Endpoings, etc. 
+Welcome to a mixture of Gen AI cookbook **how-to** recipes for Gen AI applications. These simple guides span across get-started examples on LLM prompting strategies, building simple chatbots, retrieval generation augmentation (RAGs), LLM-based applications on ChatGPT or Anyscale Endpoings, etc. 
 
 You'll find examples code and/or guides for common tasks using the OpenAI API and [Ray framework](https://www.ray.io/). 
 
