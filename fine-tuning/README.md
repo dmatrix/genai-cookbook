@@ -35,5 +35,23 @@ Models trained for zero-shot speech recognition can accurately transcribe spoken
 These examples highlight the remarkable capacity of models to generalize and adapt to diverse tasks or data distributions without relying on explicit prompts or examples during training. 
 
 Note: Except for image classification and speech recognition, which require
-GPT-4 or multi-model LLMs, all notebooks in `llm-prompts` are examples of zero-shot learning. To extend those examples, We have added 
-two xadditional how-to guides for NER and Dialogue generation: [zero_shot_prompting](./1_zero_shot_prompting.ipynb)
+GPT-4 or multi-model LLMs, all notebooks in `llm-prompts` are examples of zero-shot learning. To extend those examples, We have added two xadditional how-to guides for NER and Dialogue generation: [zero_shot_prompting](./1_zero_shot_prompting.ipynb)
+
+## Few-shot prompting
+
+Few-shot learning is a machine learning paradigm where a model is trained to perform a task with very few examples or prompts. Unlike traditional machine learning that often requires large amounts of labeled data, few-shot learning enables models to generalize and adapt to new tasks with minimal examples. This is particularly useful in scenarios where obtaining extensive labeled datasets is challenging or impractical.
+
+### When to Use Few-shot Learning:
+
+There are few examples where few-shot learning is applicable. 
+
+#### Rapid Adaptation:
+
+When you need a model to quickly adapt to new tasks or domains with minimal training data, few-shot learning allows for rapid learning and deployment.
+
+
+#### Limited Labeled Data:
+
+Few-shot learning is beneficial when you have a limited amount of labeled data for a specific task, making it challenging to train a traditional model effectively.
+
+Let's explore couple of examples of few-short prompt learning in our our notebook: [2_few_shot_prompting](./2_few_shot_prompting.ipynb)
