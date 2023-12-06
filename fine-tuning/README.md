@@ -36,4 +36,4 @@ These examples highlight the remarkable capacity of models to generalize and ada
 
 Note: Except for image classification and speech recognition, which require
 GPT-4 or multi-model LLMs, all notebooks in `llm-prompts` are examples of zero-shot learning. To extend those examples, We have added 
-two added two additional how-to guides for NER and Dialogue generation: [zero_shot_prompting](./1_zero_shot_prompting.ipynb)
+two xadditional how-to guides for NER and Dialogue generation: [zero_shot_prompting](./1_zero_shot_prompting.ipynb)
