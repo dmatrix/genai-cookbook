@@ -1,8 +1,6 @@
 ## Zero-shot prompting
 
-Zero-prompt learning is a challenging yet fascinating area where models are trained to perform tasks without explicit learning examples in the input prompt. Here are some notable examples:
-
-GPT-3 and Llama Language Model:
+Zero-prompt learning is a challenging yet fascinating area where models are trained to perform tasks without explicit learning examples in the input prompt. Here are some notable examples that can be used with GPT-3 and Llama Language Models.
 
 GPT-3, Llama 2, and Claude are powerful language models. The have demonstrated zero-shot learning. That is, without specific learning prompts or examples, it can generate coherent and contextually relevant responses, showcasing its ability to understand and respond to diverse queries.
 
@@ -36,6 +34,6 @@ Models trained for zero-shot speech recognition can accurately transcribe spoken
 
 These examples highlight the remarkable capacity of models to generalize and adapt to diverse tasks or data distributions without relying on explicit prompts or examples during training. 
 
-Note: Except image classification and speech recognition, all notebooks
-in `llm-prompts` are examples of zero-shot learning. We have added 
-two added two additional examples, NER and Dialogue generation: [zero_shot_prompting](./1_zero_shot_prompting.ipynb)
+Note: Except for image classification and speech recognition, which require
+GPT-4 or multi-model LLMs, all notebooks in `llm-prompts` are examples of zero-shot learning. To extend those examples, We have added 
+two added two additional how-to guides for NER and Dialogue generation: [zero_shot_prompting](./1_zero_shot_prompting.ipynb)
