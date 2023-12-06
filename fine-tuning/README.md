@@ -41,10 +41,7 @@ GPT-4 or multi-model LLMs, all notebooks in `llm-prompts` are examples of zero-s
 
 Few-shot learning is a machine learning paradigm where a model is trained to perform a task with very few examples or prompts. Unlike traditional machine learning that often requires large amounts of labeled data, few-shot learning enables models to generalize and adapt to new tasks with minimal examples. This is particularly useful in scenarios where obtaining extensive labeled datasets is challenging or impractical.
 
-You can think of few-shot prompting and learning as an early stage of fine-tuning for
-very smal specific data type or format that the model can learn and standardize, with
-the few-shot examples prompts being part of its pre-trainin phase. Hence, we have
-include both zero-shot and few-show prompting as part of this section on fine-tuning.
+Few-shot prompting is akin to an early fine-tuning stage for training models on specific, small datasets or formats. It involves incorporating limited examples as part of the prompt context, encompassing both zero-shot and few-shot prompting in this fine-tuning section.
 
 ### When to Use Few-shot Learning:
 
