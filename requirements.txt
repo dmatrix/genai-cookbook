@@ -3,3 +3,8 @@ openai
 langchain
 gradio
 dotenv
+scipy
+tenacity
+tiktoken
+termcolor 
+requests
