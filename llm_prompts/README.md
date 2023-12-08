@@ -67,7 +67,7 @@ When you need a model to quickly adapt to new tasks or domains with minimal trai
 
 Few-shot learning is beneficial when you have a limited amount of labeled data for a specific task, making it challenging to train a traditional model effectively.
 
-Let's explore couple of examples of few-short prompt learning in our our notebook: [how_to_few_shot_prompting](./3_how_to_few_shot_prompt.ipynb)
+Let's explore couple of examples of few-short prompt learning in our our notebook: [how_to_use_few_shot_prompt](./5_how_to_use_few_shot_prompt.ipynb)
 
 Whether you're a novice or seasoned developer, this how-to guide equips you with practical tools to leverage prompt engineering across diverse generative applications. 
     
