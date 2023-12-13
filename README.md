@@ -1,6 +1,6 @@
 # Genai-Cookbook
 
-<img src=images/cookbook.png>
+<img src=images/gen_ai_cookbook_img_1.png>
 
 Welcome to a mixture of Gen AI cookbook **how-to** recipes for Gen AI applications. These simple guides span across get-started examples on LLM prompting strategies, building simple chatbots, retrieval generation augmentation (RAGs), LLM-based applications on ChatGPT or Anyscale Endpoints, etc. 
 
