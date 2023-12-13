@@ -1,4 +1,4 @@
-# Genai-Cookbook
+# GenAI Cookbook
 
 <img src=images/gen_ai_cookbook_img_1.png>
 
