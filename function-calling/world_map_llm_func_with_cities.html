@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Ray Meetup Locations</title>
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h3>Locations of Ray Meetups</h3>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var locations = [
+                {lat: 37.7749, lng: -122.4194, city: 'San Francisco'},
+                {lat: 40.7128, lng: -74.0060, city: 'New York'},
+                {lat: 51.5074, lng: -0.1278, city: 'London'}
+            ];
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 2,
+                center: {lat:45 , lng: 0}
+            });
+
+            var markers = locations.map(function(location) {
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+                var infowindow = new google.maps.InfoWindow({
+                    content: location.city
+                });
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                });
+                return marker;
+            });
+            
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+</html>
