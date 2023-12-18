@@ -12,7 +12,8 @@ All examples are in Python, yet the concepts can be adapted to any programming l
 
 The examples in this cook are inspired (some modified, expanded or copied) from these resources, including:
 
- * [Open AI Cookbook](https://github.com/openai/openai-cookbook)
+ * [OpenAI Cookbook](https://github.com/openai/openai-cookbook)
+ * [OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
  * [Prompt Engineering Guide](https://www.promptingguide.ai/introduction) and [Prompt Engineering course](https://maven.com/dair-ai/prompt-engineering-llms?promoCode=MAVENMONDAY) by Elvis Saravia
  * [Ray Documentation](https://docs.ray.io/en/latest/) and [Anyscale blogs](https://www.anyscale.com/blog)
  * [Anyscale Endpoints Documentation](https://docs.endpoints.anyscale.com/)
