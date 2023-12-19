@@ -8,3 +8,4 @@ tenacity
 tiktoken
 termcolor 
 requests
+cohere
