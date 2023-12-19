@@ -2,7 +2,7 @@ ray[default]
 openai
 langchain
 gradio
-dotenv
+python-dotenv
 scipy
 tenacity
 tiktoken
