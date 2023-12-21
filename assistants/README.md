@@ -14,8 +14,8 @@ image inspired by[ source](https://www.youtube.com/watch?v=yzNG3NnF0YE)
 
 In the notebooks in this secion, we will explore how you can use Assistants APIs for:
  * Retrievals
- * Code Interpreters
  * Functions 
+ * Code Interpreters
 
 
 ### WIP 🚧
