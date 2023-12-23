@@ -27,7 +27,7 @@ def loop_until_completed(clnt: object, thrd: object, run_obj: object) -> None:
     """
     Poll the Assistant runtime until the run is completed or failed
     """
-    while run_obj.status not in ["completed", "failed"]:
+    while run_obj.status not in ["completed", "failed", "requires_action"]:
         run_obj = clnt.beta.threads.runs.retrieve(
             thread_id = thrd.id,
             run_id = run_obj.id)
