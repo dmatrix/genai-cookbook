@@ -1,11 +1,31 @@
 import os
 import math
 import random
+import warnings
+
+import openai
+from openai import OpenAI
+
+from dotenv import load_dotenv, find_dotenv
+from typing import List, Any
 
 import ray
 from typing import List, Dict
 
 NUM_OF_CORES = None
+
+warnings.filterwarnings('ignore')
+_ = load_dotenv(find_dotenv()) # read local .env file
+
+openai.api_base = os.getenv("ANYSCALE_API_BASE", os.getenv("OPENAI_API_BASE"))
+openai.api_key = os.getenv("ANYSCALE_API_KEY", os.getenv("OPENAI_API_KEY"))
+weather_api_key = os.getenv("WEATHER_API_KEY")
+MODEL = os.getenv("MODEL")
+print(f"Using MODEL={MODEL}; base={openai.api_base}")
+
+client = OpenAI(
+    api_key = openai.api_key,
+    base_url = openai.api_base)
 
 def get_num_of_cores():
     """
@@ -58,8 +78,70 @@ def calculate_pi(results: List[int], sample_size:int) -> float:
 def add_prime_numbers(p_numbers: Dict[str, List[int]]) -> int:
     return sum(p_numbers["prime_numbers"])
 
+def create_dalle_image(params,
+                    model:str="dall-e-3" ,
+                    quality:str="standard") -> str:
+    """"
+    Generates an image from the OpenAI DALL-E model."""
+    image_description = params["query"]
+    response = client.images.generate(model=model,
+                                      prompt=image_description,
+                                      size="1024x1024",
+                                      quality=quality,
+                                      n=1)
+    
+    return response.data[0].url
+
+def get_weather_data(params:Dict[Any, Any]=None,
+                    api_base:str="http://api.weatherstack.com/current") -> Dict[str, str]:
+    
+    """
+    Retrieves weather data from the OpenWeatherMap API.
+    """
+    import requests
+    url = f"{api_base}"
+    response = requests.get(url, params=params)
+    return response.json()
+
+
 if __name__ == "__main__":
-    # Run the sampling task locally
-    sample_size = 10_000_000
-    pi = run_disributed(sample_size)
-    print(f"Estimated value of π is: {pi:5f}")
+    # warnings.filterwarnings('ignore')
+    # _ = load_dotenv(find_dotenv()) # read local .env file
+
+    # openai.api_base = os.getenv("ANYSCALE_API_BASE", os.getenv("OPENAI_API_BASE"))
+    # openai.api_key = os.getenv("ANYSCALE_API_KEY", os.getenv("OPENAI_API_KEY"))
+    # weather_api_key = os.getenv("WEATHER_API_KEY")
+    # MODEL = os.getenv("MODEL")
+    # print(f"Using MODEL={MODEL}; base={openai.api_base}")
+
+    # client = OpenAI(
+    # api_key = openai.api_key,
+    # base_url = openai.api_base)
+
+    # # Run the sampling task locally
+    # sample_size = 10_000_000
+    # pi = run_disributed(sample_size)
+    # print(f"Estimated value of π is: {pi:5f}")
+
+    # Generate an image from the DALL-E model
+    # image_description = """A young attractive couple of mixed african and east-indian 
+    # racial heritage, both of them wearing a matching light fabric summer scarve, sitting 
+    # at an outside cafe table having a cup of coffee together with the San Francisco Golden 
+    # Gate Bridge in the background while the sun is setting in the west. The sunset lights 
+    # up the sky with a beautiful orange glow, partly reflecting on the body of water under the bridge.
+    # To the right of the couple on the wall is a hanging sign with the name of the Caffe Golden Gate."""
+
+    # params = {"query": image_description}
+    # image_url = create_dalle_image(params, quality="hd", model="dall-e-3")
+    # print(f"Image URL: {image_url}")
+
+    # Get weather data from the OpenWeatherMap API
+    params = {"access_key": weather_api_key,
+              "query": "San Francisco",
+              "units": "f"}
+    print(params)
+    weather_data = get_weather_data(params)
+    print(f"Weather data for City: {params['query']}")
+    print(f"Temperature            : {weather_data['current']['temperature']}")
+    print(f"Weather description    : {weather_data['current']['weather_descriptions']}")
+    
