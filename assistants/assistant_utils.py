@@ -14,14 +14,17 @@ def upload_files(clnt: object, files: List[str]) -> None:
             file_objs.append(f_obj)
     return file_objs
 
-def print_thread_messages(clnt: object, thrd: object) -> None:
+def print_thread_messages(clnt: object, thrd: object, content_value: bool=True) -> None:
     """
     Prints OpenAI thread messages to the console.
     """
     messages = clnt.beta.threads.messages.list(
         thread_id = thrd.id)
     for msg in messages:
-        pprint(msg.role + ":" + msg.content[0].text.value)
+        if content_value:
+            pprint(msg.role + ":" + msg.content[0].text.value)
+        else: 
+            pprint(msg)
 
 def loop_until_completed(clnt: object, thrd: object, run_obj: object) -> None:
     """
@@ -45,6 +48,8 @@ def create_assistant_run(clnt: object, asst: object, thrd: object,
     instructions= message
 )
     return run
+
+
 
 
 
