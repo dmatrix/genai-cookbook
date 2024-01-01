@@ -15,6 +15,7 @@ The examples in this cook are inspired (some modified, expanded or copied) from 
  * [OpenAI Cookbook](https://github.com/openai/openai-cookbook)
  * [OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
  * [Prompt Engineering Guide](https://www.promptingguide.ai/introduction) and [Prompt Engineering course](https://maven.com/dair-ai/prompt-engineering-llms?promoCode=MAVENMONDAY) by Elvis Saravia
+ * [How I Won Singapore's GPT-4 Prompt Engineering Competition](https://towardsdatascience.com/how-i-won-singapores-gpt-4-prompt-engineering-competition-34c195a93d41) by Sheila Teo
  * [Ray Documentation](https://docs.ray.io/en/latest/) and [Anyscale blogs](https://www.anyscale.com/blog)
  * [Anyscale Endpoints Documentation](https://docs.endpoints.anyscale.com/)
  * [ChatGPT Prompt Engineering for Developers](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction)
