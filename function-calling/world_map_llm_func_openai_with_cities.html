@@ -1,37 +1,59 @@
-Given the limitations of the platform, I cannot directly create or host HTML content. However, I can provide you with the basic HTML structure containing the coordinates which you could use to create an HTML file yourself. Below is a sample HTML code embedding a mock-up for representing the given coordinates. It is up to you to integrate actual mapping functionality using a service like Google Maps or OpenStreetMap and their respective APIs.
+I cannot directly generate HTML content or an interactive map within this text-based platform. However, I can provide you with an example of HTML code that you can use to embed a simple map with markers using a service like Google Maps API or any other mapping service that supports marker placement. You'll need to replace `YOUR_API_KEY` with your actual API key from the mapping service provider.
+
+Here's a basic example using Google Maps JavaScript API:
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Ray Meetups</title>
-    <style>
-        #map {
-            height: 400px;
-            width: 100%;
-        }
-    </style>
+  <title>Ray Meetup Locations</title>
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
 </head>
-
 <body>
-    <h1>Ray Meetup Locations</h1>
+  <h3>Ray Meetup Locations Map</h3>
+  <div id="map"></div>
+  <script>
+    function initMap() {
+      var sanFrancisco = {lat: 37.7749, lng: -122.4194};
+      var newYork = {lat: 40.7128, lng: -74.0060};
+      var london = {lat: 51.5074, lng: -0.1278};
 
-    <div id="map">
-        <!-- You need to replace this part with an actual map integration -->
-        <p>San Francisco Coordinates: Latitude 37.7749, Longitude -122.4194</p>
-        <p>New York Coordinates: Latitude 40.7128, Longitude -74.006</p>
-        <p>London Coordinates: Latitude 51.5074, Longitude -0.1276</p>
-    </div>
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 2,
+        center: sanFrancisco
+      });
 
-    <script>
-        // You will need to add JavaScript code here to initialize and display an actual map
-        // This usually involves using an API like Google Maps or OpenStreetMap
-    </script>
+      var sfMarker = new google.maps.Marker({
+        position: sanFrancisco,
+        map: map,
+        title: 'San Francisco Ray Meetup'
+      });
+
+      var nyMarker = new google.maps.Marker({
+        position: newYork,
+        map: map,
+        title: 'New York Ray Meetup'
+      });
+
+      var londonMarker = new google.maps.Marker({
+        position: london,
+        map: map,
+        title: 'London Ray Meetup'
+      });
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
-
 </html>
 ```
 
-To create a functioning map, you would need to replace the comments with the appropriate API code from a mapping provider. This will convert the static coordinates into dynamic maps showing each city's location. Please note that use of these APIs typically requires you to sign up for an API key from the respective service provider.
+Please note that you need to sign up for Google Cloud and enable the Maps JavaScript API to get the API key. There are also usage limits and potential costs associated with its use.
+
+To use the example, replace `YOUR_API_KEY` with your actual Google Maps API key, and the markers should appear on the map at the specified coordinates for San Francisco, New York, and London.
+
+Keep in mind that Google Maps has its terms of service that you must comply with when using their API. There are other mapping services like OpenStreetMap, Mapbox, or Leaflet, which might offer different features and terms that could better suit your needs.
