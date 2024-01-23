@@ -13,9 +13,9 @@ to the Threads.
 image inspired by[ source](https://www.youtube.com/watch?v=yzNG3NnF0YE)
 
 In the notebooks in this secion, we will explore how you can use Assistants APIs for:
- * Retrievals
- * Functions 
- * Code Interpreters
+ * Retrievals (mini RAGs)
+ * Functions calling
+ * Parallel function calling with external tools
+ * Code Interpreters for generating Python code
+ * Custom code calling by assistants
 
-
-### WIP 🚧
