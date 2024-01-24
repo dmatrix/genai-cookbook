@@ -1,5 +1,9 @@
 # GenAI Cookbook
 
+<a href="https://github.com/dmatrix/genai-cookbook"><img src="https://img.shields.io/github/stars/dmatrix/genai-cookbook?logo=
+GenAI" alt="github-stars"></a>
+<a href="https://twitter.com/2twitme"><img src="https://img.shields.io/twitter/follow/2twitme?label=Follow" alt="twitter"></a>
+
 <img src=images/gen_ai_cookbook_img_1.png>
 
 Welcome to a mixture of Gen AI cookbook **how-to** recipes for Gen AI applications. These simple guides span across get-started examples on LLM prompting strategies, building simple chatbots, retrieval generation augmentation (RAGs), LLM-based applications on ChatGPT or Anyscale Endpoints, etc. 
