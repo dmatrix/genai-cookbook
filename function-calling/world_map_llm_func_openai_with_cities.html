@@ -1,59 +1,93 @@
-I cannot directly generate HTML content or an interactive map within this text-based platform. However, I can provide you with an example of HTML code that you can use to embed a simple map with markers using a service like Google Maps API or any other mapping service that supports marker placement. You'll need to replace `YOUR_API_KEY` with your actual API key from the mapping service provider.
-
-Here's a basic example using Google Maps JavaScript API:
+Below is a sample HTML template incorporating Google Maps to place markers on the provided locations for a Ray meetup in San Francisco, New York, and London. To use Google Maps in your HTML, you'll need an API key from the Google Cloud Platform.
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ray Meetup Locations</title>
-  <style>
-    #map {
-      height: 400px;
-      width: 100%;
-    }
-  </style>
+    <title>Ray Meetup Locations</title>
+    <style>
+        /* Set the size of the map */
+        #map {
+            height: 80%;
+            width: 100%;
+        }
+        /* Style the page */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-  <h3>Ray Meetup Locations Map</h3>
-  <div id="map"></div>
-  <script>
-    function initMap() {
-      var sanFrancisco = {lat: 37.7749, lng: -122.4194};
-      var newYork = {lat: 40.7128, lng: -74.0060};
-      var london = {lat: 51.5074, lng: -0.1278};
+    <h1>Ray Meetup Coordinates</h1>
+    <div id="map"></div>
+    <script>
+        // Function to initialize and add the map
+        function initMap() {
+            // Map options
+            var options = {
+                zoom: 2,
+                center: { lat: 40.7128, lng: -74.006 } // Centering the map roughly between the locations
+            };
+            // New map
+            var map = new google.maps.Map(document.getElementById('map'), options);
 
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 2,
-        center: sanFrancisco
-      });
+            // Add markers to the map
+            var markers = [
+                {
+                    coords: {lat: 37.7749, lng: -122.4194},
+                    content: '<h3>Ray Meetup - San Francisco</h3>'
+                },
+                {
+                    coords: {lat: 40.7128, lng: -74.006},
+                    content: '<h3>Ray Meetup - New York</h3>'
+                },
+                {
+                    coords: {lat: 51.5074, lng: -0.1276},
+                    content: '<h3>Ray Meetup - London</h3>'
+                },
+            ];
 
-      var sfMarker = new google.maps.Marker({
-        position: sanFrancisco,
-        map: map,
-        title: 'San Francisco Ray Meetup'
-      });
+            // Loop through markers
+            for(var i = 0; i < markers.length; i++){
+                addMarker(markers[i]);
+            }
 
-      var nyMarker = new google.maps.Marker({
-        position: newYork,
-        map: map,
-        title: 'New York Ray Meetup'
-      });
+            // Add Marker function
+            function addMarker(props) {
+                var marker = new google.maps.Marker({
+                    position: props.coords,
+                    map: map,
+                });
 
-      var londonMarker = new google.maps.Marker({
-        position: london,
-        map: map,
-        title: 'London Ray Meetup'
-      });
-    }
-  </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+                // Check for custom icon
+                if(props.iconImage){
+                    // Set icon image
+                    marker.setIcon(props.iconImage);
+                }
+
+                // Check for content
+                if(props.content){
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: props.content
+                    });
+
+                    marker.addListener('click', function() {
+                        infoWindow.open(map, marker);
+                    });
+                }
+            }
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+        //Replace 'YOUR_API_KEY' with your actual Google Maps API key
+    </script>
 </body>
 </html>
 ```
 
-Please note that you need to sign up for Google Cloud and enable the Maps JavaScript API to get the API key. There are also usage limits and potential costs associated with its use.
+Please make sure to replace `'YOUR_API_KEY'` with your actual Google Maps API key in the script tag source URL. Without a valid API key, the map will not display correctly.
 
-To use the example, replace `YOUR_API_KEY` with your actual Google Maps API key, and the markers should appear on the map at the specified coordinates for San Francisco, New York, and London.
-
-Keep in mind that Google Maps has its terms of service that you must comply with when using their API. There are other mapping services like OpenStreetMap, Mapbox, or Leaflet, which might offer different features and terms that could better suit your needs.
+This HTML document creates a map with zoom settings that should show all three cities on a global scale. Each city has a marker with a popup window containing the name of the city and the event hosted there.

@@ -139,7 +139,6 @@ if __name__ == "__main__":
     params = {"access_key": weather_api_key,
               "query": "San Francisco",
               "units": "f"}
-    print(params)
     weather_data = get_weather_data(params)
     print(f"Weather data for City: {params['query']}")
     print(f"Temperature            : {weather_data['current']['temperature']}")
