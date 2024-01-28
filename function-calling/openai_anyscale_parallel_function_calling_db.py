@@ -8,6 +8,19 @@ such as a database: SQLite, MySQL, PostgreSQL, etc.
 
 This is a modified version of the script from the OpenAI API cookbook:
 Partly based on the example here: https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models
+
+Note: to use this script, you will need to install the following packages:
+- python-dotenv
+- tenacity
+- termcolor
+- openai
+- sqlite3
+
+You will also need to set up an account with Anyscale and OpenAI.
+
+This script has been tested with with OpenAI gpt-4-turbo-preview model
+(hosted on OpenAI) and mistralai/Mixtral-8x7B-Instruct-v0.1 (hosted on Anyscale Endpoints).
+
 """
 
 import os
