@@ -66,7 +66,9 @@ def run_conversation(client: object, model: str) -> object:
         model=model,
         messages=messages,
         tools=tools,
-        tool_choice="auto",  # auto is default, but we'll be explicit
+        # tool_choice="auto",  # auto is default, but we'll be explicit
+        tool_choice={"type": "function", 
+                     "function": {"name": "get_current_weather"}}
     )
     response_message = response.choices[0].message
     tool_calls = response_message.tool_calls
