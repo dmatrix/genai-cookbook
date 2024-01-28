@@ -137,18 +137,18 @@ if __name__ == "__main__":
 
     print("----" * 10)
 
-    # Step 5: Send more queries as messages to the model
+    # Step 4: Send more queries as messages to the model
     messages = []
     messages.append({"role": "user", 
                      "content": """List all customer name, city, the product they bought, and price they paid 
                      and who live in Port Leefort, Lake Phillipview, East Deanburgh, and East Shelleyside."""})
     
-    # Step 6: Send the messages and function call info to the model
+    # Step 5: Send the messages and function call info to the model
     chat_response = chat_completion_request(client, messages, tools,
                                             tool_choice={"type": "function", 
                                                           "function": {"name": "query_customer_database"}},
                                             model=MODEL)
-    # Step 7: Get the message returned by the model
+    # Step 6: Get the message returned by the model
     assistant_message = chat_response.choices[0].message
     assistant_message.content = str(assistant_message.tool_calls[0].function)
     messages.append({"role": assistant_message.role, "content": assistant_message.content})
