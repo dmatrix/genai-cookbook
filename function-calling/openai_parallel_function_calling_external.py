@@ -1,3 +1,10 @@
+"""
+This script demonstrates how to use the OpenAI API to call a function that interacts with an external API,
+such as the OpenWeatherMap API. Note to use this script, you will need to set up an account with OpenWeatherMap.
+
+Partly based (and modified) on the example here: https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models
+"""
+
 import openai
 from openai import OpenAI
 import json
@@ -31,6 +38,12 @@ def get_current_weather(location, unit="f") -> Dict[str, str]:
     params["query"] = location
     params["units"] = unit
     response = requests.get(url, params=params).json()
+    # Extract the relevant data from the response
+    if response.get("error"):
+        weather_data = json.dumps({
+            "error": response["error"]["info"]
+        })
+        raise Exception(weather_data)
     weather_data = json.dumps({
         "location": response["location"]["name"],
         "temperature": f"{response['current']['temperature']} {unit}",
@@ -40,7 +53,7 @@ def get_current_weather(location, unit="f") -> Dict[str, str]:
     return weather_data
     
 def run_conversation(client: object, model: str) -> object:
-    # Step 1: send the conversation and available functions to the model
+    # Step 1: send the messages and available functions to the model
     messages = [{"role": "user", "content": "What's the weather like in three cities: San Francisco, Tokyo, and Paris?"}]
     tools = [
         {
@@ -62,6 +75,7 @@ def run_conversation(client: object, model: str) -> object:
             },
         }
     ]
+    # Step 2: send the messages and function call info to the model
     response = client.chat.completions.create(
         model=model,
         messages=messages,
@@ -70,22 +84,24 @@ def run_conversation(client: object, model: str) -> object:
         tool_choice={"type": "function", 
                      "function": {"name": "get_current_weather"}}
     )
+    # Get the message and tool calls returned by the model
     response_message = response.choices[0].message
     tool_calls = response_message.tool_calls
 
     # Step 2: check if the model wanted to call a function
     if tool_calls:
+        
         # Step 3: call the function
         # Note: the JSON response may not always be valid; be sure to handle errors
-        available_functions = {
+        available_functions_table = {
             "get_current_weather": get_current_weather,
         }  # only one function in this example, but you can have multiple
         messages.append(response_message)  # extend conversation with assistant's reply
 
-        # Step 4: send the info for each function call and function response to the model
+        # Step 4: Iterate and send the info for each function call and function response to the model
         for tool_call in tool_calls:
             function_name = tool_call.function.name
-            function_to_call = available_functions[function_name]
+            function_to_call = available_functions_table[function_name]
             function_args = json.loads(tool_call.function.arguments)
             function_response = function_to_call(
                 location=function_args.get("location"),
@@ -99,11 +115,15 @@ def run_conversation(client: object, model: str) -> object:
                     "content": function_response,
                 }
             )  # extend conversation with function response
+        # Step 5: send the function response messages and function call info to the model
         second_response = client.chat.completions.create(
             model=model,
             messages=messages,
         )  # get a new response from the model where it can see the function response
+           # and send a new formated message for the user
         return second_response
+    else:
+        return response
     
 if __name__ == "__main__":
     _ = load_dotenv(find_dotenv()) # read local .env file
