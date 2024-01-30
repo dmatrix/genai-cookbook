@@ -46,7 +46,7 @@ def chat_completion_request(clnt:object, messages:object,
             tools=tools,
             tool_choice=tool_choice,
         )
-        return response.choices[0].message.content
+        return response
     except Exception as e:
         print("Unable to generate ChatCompletion response")
         print(f"Exception: {e}")
