@@ -13,15 +13,19 @@ Vision-to-text models are like intelligent computers that look at pictures and d
 
 Zero-prompt learning is a challenging yet fascinating area where models are trained to perform tasks without explicit learning examples in the input prompt. Here are some notable examples that can be used with GPT-3 and Llama Language Models.
 
+
 GPT-3, Llama 2, and Claude are powerful language models. The have demonstrated zero-shot learning. That is, without specific learning prompts or examples, it can generate coherent and contextually relevant responses, showcasing its ability to understand and respond to diverse queries.
+[how_to_use_zero_shot](4_how_to_use_zero_shot_prompt.ipynb)
 
 ### Image Classification:
 
 In zero-shot image classification, a model can classify images into categories it has never seen during training. This is achieved without providing explicit examples of those new categories, showcasing the model's ability to generalize.
+[how_to_recognize_and_classify_images](3_how_to_use_vision_model.ipynb)
 
 ### Text Summarization:
 
 Models trained for zero-prompt text summarization can generate concise and meaningful summaries without receiving explicit instructions. The model learns to distill key information from the input text.
+
 
 ### Anomaly Detection:
 
@@ -45,8 +49,7 @@ Models trained for zero-shot speech recognition can accurately transcribe spoken
 
 These examples highlight the remarkable capacity of models to generalize and adapt to diverse tasks or data distributions without relying on explicit prompts or examples during training. 
 
-Note: Except for image classification and speech recognition, which require
-GPT-4 or multi-model LLMs, all notebooks in `llm-prompts` are examples of zero-shot learning. To extend those examples, We have added additional how-to guides for NER and Dialogue generation.
+Note: Except for image classification and speech recognition, which require GPT-4 or multi-model LLMs, all notebooks in `llm-prompts` are examples of zero-shot learning. To extend those examples, I have added additional how-to guides for NER and Dialogue generation.
 
 ## Few-shot prompting
 
@@ -70,5 +73,22 @@ Few-shot learning is beneficial when you have a limited amount of labeled data f
 Let's explore couple of examples of few-short prompt learning in our our notebook: [how_to_use_few_shot_prompt](./5_how_to_use_few_shot_prompt.ipynb)
 
 Whether you're a novice or seasoned developer, this how-to guide equips you with practical tools to leverage prompt engineering across diverse generative applications. 
+
+| Notebook Description| Open with Colab |
+|--------------------|-----------------|
+| Basic prompting    | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](1_how_to_use_basic_prompt.ipynb) |
+| Prompt for basic NLP tasks | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](2_how_to_conduct_common_nlp_llm_tasks.ipynb) |
+| Use vision model for classification and text generation | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](./3_how_to_use_vision_model.ipynb) |
+| Use zero-shot learning prompts | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](./4_how_to_use_zero_shot_prompt.ipynb) |
+| Use few-shot learning prompts | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](./5_how_to_use_few_shot_prompt.ipynb) |
+| Use chain of thought prompts | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](./6_how_to_use_chain_of_thought_prompt.ipynb) |
+| Use ReAct prompt techniques | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](./7_how_to_use_react_prompt.ipynb) |
+| Use Code Llama for code generation | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](./8_how_to_use_code_llama_prompt.ipynb) |
+
+
+
+
+
+
     
  Let's dive in! 😁
