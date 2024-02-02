@@ -74,21 +74,16 @@ Let's explore couple of examples of few-short prompt learning in our our noteboo
 
 Whether you're a novice or seasoned developer, this how-to guide equips you with practical tools to leverage prompt engineering across diverse generative applications. 
 
+
 | Notebook Description| Open with Colab |
 |--------------------|-----------------|
-| Basic prompting    | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](1_how_to_use_basic_prompt.ipynb) |
-| Prompt for basic NLP tasks | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](2_how_to_conduct_common_nlp_llm_tasks.ipynb) |
-| Use vision model for classification and text generation | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](./3_how_to_use_vision_model.ipynb) |
-| Use zero-shot learning prompts | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](./4_how_to_use_zero_shot_prompt.ipynb) |
-| Use few-shot learning prompts | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](./5_how_to_use_few_shot_prompt.ipynb) |
-| Use chain of thought prompts | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](./6_how_to_use_chain_of_thought_prompt.ipynb) |
-| Use ReAct prompt techniques | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](./7_how_to_use_react_prompt.ipynb) |
-| Use Code Llama for code generation | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](./8_how_to_use_code_llama_prompt.ipynb) |
+| Basic prompting    | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/1_how_to_use_basic_prompt.ipynb) |
+| Prompt for basic NLP tasks | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/2_how_to_conduct_common_nlp_llm_tasks.ipynb) |
+| Use vision model for classification and text generation | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/3_how_to_use_vision_model.ipynb) |
+| Use zero-shot learning prompts | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/4_how_to_use_zero_shot_prompt.ipynb) |
+| Use few-shot learning prompts | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/5_how_to_use_few_shot_prompt.ipynb) |
+| Use chain of thought prompts | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/6_how_to_use_chain_of_thought_prompt.ipynb) |
+| Use ReAct prompt techniques | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/7_how_to_use_react_prompt.ipynb) |
+| Use Code Llama for code generation | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/8_how_to_use_code_llama_prompt.ipynb) |
 
-
-
-
-
-
-    
- Let's dive in! 😁
+Let's dive & swim 🐬 in 
