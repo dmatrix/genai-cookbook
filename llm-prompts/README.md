@@ -74,6 +74,10 @@ Let's explore couple of examples of few-short prompt learning in our our noteboo
 
 Whether you're a novice or seasoned developer, this how-to guide equips you with practical tools to leverage prompt engineering across diverse generative applications. 
 
+**Note**: To run and open these notebooks in your Google Colab, you
+will need the .env files as well as all the required packages installed
+in your Google Colab environment.
+
 
 | Notebook Description| Open with Colab |
 |--------------------|-----------------|
