@@ -28,3 +28,20 @@ the final response to the user
 * Using parallel function calling functionality using compatile OpenAI APIs
 
 Explore the vast possibilities of function calling with OpenAI and Anyscale Endpoints
+
+
+| Notebook Description| Open with Colab |
+|--------------------|-----------------|
+| How to generate function arguments for OpenAI | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/function-calling/1_how_to_generate_openai_func_arguments.ipynb) |
+| How to generate function arguments for Anyscale Enpoints| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/2_how_to_generate_anyscale_endpoints_func_arguments.ipynb) |
+| Parallel function calling for OpenAI and Anyscale Endpoints| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/function-calling/3_how_to_use_openai_anyscale_parallel_function_calling_db.ipynb)|
+
+Other Python applications showcasing the same as the notebooks above:
+
+
+
+| Python file  Description| View it on Github |
+|-------------------------|-------------------|
+| Open AI and Anyscale Endpoints parallel function calling an external SQLite| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/function-calling/openai_anyscale_parallel_function_calling_db.py) |
+| Open AI and Anyscale Endpoints parallel function calling an external Weather API |[Python App](https://github.com/dmatrix/genai-cookbook/blob/main/function-calling/openai_parallel_function_calling_external.py) |
+
