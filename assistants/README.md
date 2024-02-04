@@ -18,4 +18,14 @@ In the notebooks in this secion, we will explore how you can use Assistants APIs
  * Parallel function calling with external tools
  * Code Interpreters for generating Python code
  * Custom code calling by assistants
+ * Using extern webservices such as Google Search, etc
 
+ | Notebook Description| Open with Colab |
+|--------------------|-----------------|
+| How to use OpenAI assistant tool retreiver - part_1| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/assistants/1_how_to_use_assistant_tool_retriever_part_1.ipynb) |
+| How to use OpenAI assistant tool retriever - part_2| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/assistants/2_how_to_use_assistant_tool_retriever_part_2.ipynb) |
+| How to use OpenAI assistant tool retreiver part_3| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/assistants/3_how_to_use_assistant_tool_retriever_part_3.ipynb)|
+| How to use OpenAI assistant tool calling web services | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/assistants/4_how_to_use_parallel_function_calling.ipynb) |
+| How to use OpenAI Assistant code interpreter| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/assistants/5_how_to_use_code_interpreter.ipynb)|
+| How to use OpenAI Assistant for custom code function calling| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/assistants/6_how_to_use_function_calling_tool.ipynb) |
+| How to use Open AI Assistant for custom Google searches|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/assistants/7_how_to_use_function_calling_tool_google_search.ipynb)| 
