@@ -1,4 +1,5 @@
 import sqlite3
+import sys
 
 class SQLiteDBSingleton:
     _instance = None
@@ -85,6 +86,11 @@ class SQLiteDBSingleton:
         return database_schema_string
 
 if __name__ == "__main__":
+
+    print(SQLiteDBSingleton()
+          .create("customers.db")
+          .execute("SELECT name FROM sqlite_master WHERE type='table';"))
+    sys.exit(1)
     # Usage example
     db_singleton = SQLiteDBSingleton()
     db_connection = db_singleton.create('customers.db')  # Creates the connection
