@@ -30,7 +30,8 @@ from typing import List
 import openai
 from openai import OpenAI
 from tenacity import retry, stop_after_attempt, wait_random_exponential
-from customer_db_utils import  execute_function_call, get_database_schema, connect_db
+from customer_db_utils import  execute_function_call
+from sqlite_conn_cls import SQLiteDBSingleton
 from termcolor import colored  
 
 @retry(wait=wait_random_exponential(multiplier=1, max=40), stop=stop_after_attempt(3))
@@ -93,8 +94,9 @@ if __name__ == "__main__":
     )
 
     # Step 0: define the database schema
-    conn = connect_db("customers.db")
-    database_schema_string = get_database_schema(conn)
+    db_singlton = SQLiteDBSingleton()
+    conn = db_singlton.create("customers.db")
+    database_schema_string = db_singlton.get_database_schema()
 
     # Step 1: define the function to call for the model
     tools = [

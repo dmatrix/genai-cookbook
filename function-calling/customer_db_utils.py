@@ -1,12 +1,22 @@
 import sqlite3
 import json
+import warnings
+import sys
 from sqlite_conn_cls import SQLiteDBSingleton
 
+def deprecated(func):
+    def wrapper(*args, **kwargs):
+        warnings.warn(f"Function {func.__name__} is deprecated. Use SQLiteDBSingleton class instead", DeprecationWarning)
+        return func(*args, **kwargs)
+    return wrapper
+
 # Connect to the SQLite database
+@deprecated
 def connect_db(db_name) -> sqlite3.Connection:
     conn = sqlite3.connect(db_name)
     return conn
 
+@deprecated
 def get_table_names(conn:sqlite3.Connection) -> list[str]:
     """Return a list of table names."""
     table_names = []
@@ -15,6 +25,7 @@ def get_table_names(conn:sqlite3.Connection) -> list[str]:
         table_names.append(table[0])
     return table_names
 
+@deprecated
 def get_all_city_names(conn:sqlite3.Connection) -> list[str]:
     """Return a list of all city names."""
     city_names = []
@@ -23,6 +34,7 @@ def get_all_city_names(conn:sqlite3.Connection) -> list[str]:
         city_names.append(city[0])
     return city_names
 
+@deprecated
 def get_column_names(conn:sqlite3.Connection, table_name:str) -> list[str]:
     """Return a list of column names."""
     column_names = []
@@ -31,6 +43,7 @@ def get_column_names(conn:sqlite3.Connection, table_name:str) -> list[str]:
         column_names.append(col[1])
     return column_names
 
+@deprecated
 def get_database_info(conn:sqlite3.Connection) -> list[dict[str, list[str]]]:
     """Return a list of dicts containing the table name and columns for each table in the database."""
     table_dicts = []
@@ -47,20 +60,7 @@ def query_customer_database(conn:sqlite3.Connection, query:str) -> list[tuple]:
         results = f"query failed with error: {e}"
     return results
 
-
-def execute_function_call(conn:sqlite3.Connection, message:object) -> list[tuple]:
-    """
-    Execute a function call and return the results.
-    Note: this function is only meant to be used with the compatible
-    OpenAI API."""
-    if message.tool_calls[0].function.name == "query_customer_database":
-        query = json.loads(message.tool_calls[0].function.arguments)["query"]
-        results = query_customer_database(conn, query)
-    else:
-        results = f"Error: function {message.tool_calls[0].function.name} does not exist"
-    return results
-
-
+@deprecated
 def get_database_schema(conn:sqlite3.Connection) -> str:
     database_schema_dict = get_database_info(conn)
     database_schema_string = "\n".join(
@@ -71,11 +71,34 @@ def get_database_schema(conn:sqlite3.Connection) -> str:
     )
     return database_schema_string
 
+def execute_function_call(conn:sqlite3.Connection, message:object) -> list[tuple]:
+    """
+    Execute a function call and return the results.
+
+    Args:
+        conn (sqlite3.Connection): The SQLite database connection.
+        message (object): The message object containing the function call details.
+
+    Returns:
+        list[tuple]: The results of the function call.
+
+    Note: this function is only meant to be used with the compatible OpenAI API.
+    """
+    if message.tool_calls[0].function.name == "query_customer_database":
+        query = json.loads(message.tool_calls[0].function.arguments)["query"]
+        results = conn.execute(query)
+    else:
+        results = f"Error: function {message.tool_calls[0].function.name} does not exist"
+    return results
+
+
 if __name__ == "__main__":
 
+    
     # Use the Singleton class to access the database
     db_singleton = SQLiteDBSingleton()
     conn = db_singleton.create('customers.db')
+
     print(db_singleton.get_database_info())
     print("---" * 10)
     print(db_singleton.get_column_names( "customer_data"))
