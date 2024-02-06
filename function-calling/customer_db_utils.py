@@ -1,5 +1,6 @@
 import sqlite3
 import json
+from sqlite_conn_cls import SQLiteDBSingleton
 
 # Connect to the SQLite database
 def connect_db(db_name) -> sqlite3.Connection:
@@ -29,7 +30,6 @@ def get_column_names(conn:sqlite3.Connection, table_name:str) -> list[str]:
     for col in columns:
         column_names.append(col[1])
     return column_names
-
 
 def get_database_info(conn:sqlite3.Connection) -> list[dict[str, list[str]]]:
     """Return a list of dicts containing the table name and columns for each table in the database."""
@@ -72,14 +72,17 @@ def get_database_schema(conn:sqlite3.Connection) -> str:
     return database_schema_string
 
 if __name__ == "__main__":
-    conn = connect_db("customers.db")
-    print(get_database_info(conn))
+
+    # Use the Singleton class to access the database
+    db_singleton = SQLiteDBSingleton()
+    conn = db_singleton.create('customers.db')
+    print(db_singleton.get_database_info())
     print("---" * 10)
-    print(get_column_names(conn, "customer_data"))
+    print(db_singleton.get_column_names( "customer_data"))
     print("---" * 10)
-    print(get_table_names(conn))
+    print(db_singleton.get_table_names())
     print("---" * 10)
-    print(get_database_schema(conn))
+    print(db_singleton.get_database_schema())
     print("---" * 10)
-    print(get_all_city_names(conn))
-    conn.close()
+    print(db_singleton.get_all_city_names())
+    db_singleton.close()
