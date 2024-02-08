@@ -2,12 +2,18 @@
 
 <img src="./images/prompt_req_resp.png" height="35%" width="%65">
 
-Welcome to this section on prompt engineering, tailored for anyone seeking practical insights into prompt engineering to use LLMs. We kick off with the basics of simple prompting, guiding you on crafting effective prompts: a fundamental skill for various generative tasks. Journey with me into text generation and completion, exploring tips for text summarization and extracting key information seamlessly: [how_to_use_basic_prompt](./1_how_to_use_basic_prompt.ipynb)
+Welcome to this section on prompt engineering, tailored for anyone seeking practical insights into prompt engineering to use LLMs. We kick off with the basics of simple prompting, guiding you on crafting effective prompts: a fundamental skill for various generative tasks. Journey with me into text generation and completion, exploring tips for text summarization and extracting key information seamlessly:
+
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/1_how_to_use_basic_prompt.ipynb) 
+
     
-Learn techniques for text classification and sentiment analysis, honing your ability to guide language models accurately. The exploration extends to text categorization, text transformation, and translation, where you'll witness language models reshaping and interpreting content. Then take a deep dive into how to ask LLM to approach simple and complex reasoning tasks, empowering you to guide models through logical challenges, and then cap it off with code generation: [how_to_conduct_llm_tasks](./2_how_to_conduct_llm_tasks.ipynb)
+Learn techniques for text classification and sentiment analysis, honing your ability to guide language models accurately. The exploration extends to text categorization, text transformation, and translation, where you'll witness language models reshaping and interpreting content. Then take a deep dive into how to ask LLM to approach simple and complex reasoning tasks, empowering you to guide models through logical challenges, and then cap it off with code generation: 
+
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/2_how_to_conduct_common_nlp_llm_tasks.ipynb) 
 
 Vision-to-text models are like intelligent computers that look at pictures and describe them using words, forming a bridge between visual understanding and language processing. These models are valuable for tasks such as creating captions, assisting individuals with visual impairments, and enhancing computers' ability to comprehend and articulate the content of images. As they continue to advance, vision-to-text models contribute to a more nuanced and interactive relationship between computers and the visual world. We explore that vision capability in this notebook:
-[how_to_use_vision_model](./3_how_to_use_vision_model.ipynb)
+
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/3_how_to_use_vision_model.ipynb)
 
 ## Zero-shot prompting
 
@@ -15,12 +21,17 @@ Zero-prompt learning is a challenging yet fascinating area where models are trai
 
 
 GPT-3, Llama 2, and Claude are powerful language models. The have demonstrated zero-shot learning. That is, without specific learning prompts or examples, it can generate coherent and contextually relevant responses, showcasing its ability to understand and respond to diverse queries.
-[how_to_use_zero_shot](4_how_to_use_zero_shot_prompt.ipynb)
 
-### Image Classification:
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/4_how_to_use_zero_shot_prompt.ipynb) 
+
+## Image Classification:
 
 In zero-shot image classification, a model can classify images into categories it has never seen during training. This is achieved without providing explicit examples of those new categories, showcasing the model's ability to generalize.
-[how_to_recognize_and_classify_images](3_how_to_use_vision_model.ipynb)
+
+
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/3_how_to_use_vision_model.ipynb)
+
+## Natural Language Processing (NLP)
 
 ### Text Summarization:
 
@@ -42,6 +53,12 @@ Models trained with zero-prompt learning for NER can identify and categorize nam
 ### Dialogue Generation:
 
 Zero-shot dialogue generation models can engage in conversations and respond appropriately to user input without being given explicit dialogues as training examples.
+
+| Notebook Description| Open with Colab |
+|---------------------|-----------------|
+|Natural language Processing(NLP)|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/2_how_to_conduct_common_nlp_llm_tasks.ipynb) |
+|Zero shot learning  | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/4_how_to_use_zero_shot_prompt.ipynb)|
+
 
 ### Speech Recognition:
 
@@ -70,7 +87,9 @@ When you need a model to quickly adapt to new tasks or domains with minimal trai
 
 Few-shot learning is beneficial when you have a limited amount of labeled data for a specific task, making it challenging to train a traditional model effectively.
 
-Let's explore couple of examples of few-short prompt learning in our our notebook: [how_to_use_few_shot_prompt](./5_how_to_use_few_shot_prompt.ipynb)
+Let's explore couple of examples of few-short prompt learning in our our notebook: 
+
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/5_how_to_use_few_shot_prompt.ipynb) 
 
 Whether you're a novice or seasoned developer, this how-to guide equips you with practical tools to leverage prompt engineering across diverse generative applications. 
 
@@ -78,7 +97,26 @@ Whether you're a novice or seasoned developer, this how-to guide equips you with
 will need the .env files as well as all the required packages installed
 in your Google Colab environment.
 
+## Chain of Thought Reasoning
 
+Chain of thought prompting for LLMs involves providing a sequence of reasoning steps in the prompt to guide the model toward a solution. This technique helps the model to process complex problems by breaking them down into intermediate steps, much like a human would. By mimicking human-like reasoning, chain of thought prompting improves the model's ability to handle tasks that require logic and deduction.
+
+Wei et al. (2022) introduced chain-of-thought (CoT) prompting, which uses steps to help solve complex problems. By adding few-shot prompts, it works even better for tasks that need careful thinking before answering, giving the model time to "think." This can simply be achieved as prompting or instructing the LLM to "Let's think through this step by step. Solve each step and explain how to arrive at your answer." These instructions eliminate the need to explicitly provide "few-shot" examples. This combination helps in tackling more difficult tasks effectively.
+
+Let's look at a few of those examples in this notebook:
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/6_how_to_use_chain_of_thought_prompt.ipynb)
+
+## ReAct Prompting
+
+First introduced in a paper by Yao et al., 2022, ReAct is a reasoning and acting paradigm that guides LLM to respond in a structured manager to complex queries. Reasoning and actions are interleaved and progressive, in the manner of chain of thought, so that LLM progresses from one result to another, using the previous answer.
+
+Results suggest that ReAct outperforms other leading methods in language and decision-making tasks, enhances human understanding and trust in large language models (LLMs). It and best when combined with chain-of-thought (CoT) steps as individual tasks with results being used for the next step, utilizing both internal knowledge and external information during reasoning.
+
+Let's first use a few-shot examples to indicate how an LLM should progress with its reasoning and acting to solve a complex query, requiring intermideiate results to progress to its final outcome.
+
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/7_how_to_use_react_prompt.ipynb)
+
+## Table of contents for the notebooks in this directory.
 | Notebook Description| Open with Colab |
 |--------------------|-----------------|
 | Basic prompting    | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/1_how_to_use_basic_prompt.ipynb) |
