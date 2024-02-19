@@ -27,7 +27,7 @@ def get_weather_data(params:Dict[Any, Any]=None,
     return response.json()
 
 # Use Weather API to get the current weather for each location
-def get_current_weather(location, unit="f") -> Dict[str, str]:
+def get_current_weather(location, units="f") -> Dict[str, str]:
     """Get the current weather in a given location"""
     import requests
 
@@ -36,7 +36,7 @@ def get_current_weather(location, unit="f") -> Dict[str, str]:
     params = {}
     params["access_key"] = weather_api_key
     params["query"] = location
-    params["units"] = unit
+    params["units"] = units
     response = requests.get(url, params=params).json()
     # Extract the relevant data from the response
     if response.get("error"):
@@ -46,7 +46,7 @@ def get_current_weather(location, unit="f") -> Dict[str, str]:
         raise Exception(weather_data)
     weather_data = json.dumps({
         "location": response["location"]["name"],
-        "temperature": f"{response['current']['temperature']} {unit}",
+        "temperature": f"{response['current']['temperature']} {units}",
         "weather": response["current"]["weather_descriptions"][0]
     })
     print(weather_data)
@@ -68,9 +68,9 @@ def run_conversation(client: object, model: str) -> object:
                             "type": "string",
                             "description": "The city and state, e.g. San Francisco, CA",
                         },
-                        "unit": {"type": "string", "enum": ["c", "f"]},
+                        "units": {"type": "string", "enum": ["m", "f"]},
                     },
-                    "required": ["location"],
+                    "required": ["location", ":units"],
                 },
             },
         }
@@ -87,7 +87,7 @@ def run_conversation(client: object, model: str) -> object:
     # Get the message and tool calls returned by the model
     response_message = response.choices[0].message
     tool_calls = response_message.tool_calls
-
+    print(f"tool_calls: {tool_calls}")
     # Step 2: check if the model wanted to call a function
     if tool_calls:
         
@@ -105,8 +105,9 @@ def run_conversation(client: object, model: str) -> object:
             function_args = json.loads(tool_call.function.arguments)
             function_response = function_to_call(
                 location=function_args.get("location"),
-                unit=function_args.get("unit"),
+                units=function_args.get("units", "f")
             )
+            print(f"function_response: {function_response}")
             messages.append(
                 {
                     "tool_call_id": tool_call.id,
