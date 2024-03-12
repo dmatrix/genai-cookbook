@@ -9,7 +9,7 @@ Welcome to a mixture of Gen AI cookbook **how-to** recipes for Gen AI applicatio
 
 You'll find examples code and/or guides for common tasks using the OpenAI API, Anyscale Endpoints and [Ray framework](https://www.ray.io/). 
 
-To try these examples, you'll need a free [OpenAI](https://platform.openai.com/docs/introduction) account and an associated API key or an [Anyscale Endpoint](https://www.anyscale.com/get-started) account and an associated key. 
+To try these examples, you'll need a free [OpenAI](https://platform.openai.com/docs/introduction) account and an associated API key, [Anthropic](https://docs.anthropic.com/claude/docs/intro-to-claude), or  an [Anyscale Endpoint](https://www.anyscale.com/get-started) account and an associated key. 
 
 All examples are in Python, yet the concepts can be adapted to any programming language, so long as you can make REST API calls in the target language or use target language's SDK.
 
@@ -21,6 +21,7 @@ The examples in this cook are inspired (some modified, expanded or copied) from 
  * [How I Won Singapore's GPT-4 Prompt Engineering Competition](https://towardsdatascience.com/how-i-won-singapores-gpt-4-prompt-engineering-competition-34c195a93d41) by Sheila Teo
  * [Ray Documentation](https://docs.ray.io/en/latest/) and [Anyscale blogs](https://www.anyscale.com/blog)
  * [Anyscale Endpoints Documentation](https://docs.endpoints.anyscale.com/)
+ * [Anthropic Developer and User Guide](https://docs.anthropic.com/claude/docs/intro-to-claude)
  * [ChatGPT Prompt Engineering for Developers](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction)
  * [LangChain for LLM Application Development](https://learn.deeplearning.ai/langchain/lesson/1/introduction)
  * [Building Systems with the ChatGPT API](https://learn.deeplearning.ai/chatgpt-building-system/lesson/1/introduction)
