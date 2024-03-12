@@ -127,5 +127,6 @@ Let's first use a few-shot examples to indicate how an LLM should progress with 
 | Use chain of thought prompts | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/6_how_to_use_chain_of_thought_prompt.ipynb) |
 | Use ReAct prompt techniques | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/7_how_to_use_react_prompt.ipynb) |
 | Use Code Llama for code generation | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/8_how_to_use_code_llama_prompt.ipynb) |
+| Use Anthropic Claude 3 for basic prompts|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/9_how_to_use_basic_anthropic.ipynb) | 
 
 Let's dive & swim 🐬 in 
