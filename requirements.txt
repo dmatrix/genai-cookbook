@@ -1,5 +1,6 @@
 ray[default]
 openai
+anthropic
 langchain
 gradio
 python-dotenv
