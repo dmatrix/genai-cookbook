@@ -9,7 +9,7 @@ Welcome to a mixture of Gen AI cookbook **how-to** recipes for Gen AI applicatio
 
 You'll find examples code and/or guides for common tasks using the OpenAI API, Anyscale Endpoints and [Ray framework](https://www.ray.io/). 
 
-To try these examples, you'll need a free [OpenAI](https://platform.openai.com/docs/introduction) account and an associated API key, [Anthropic](https://docs.anthropic.com/claude/docs/intro-to-claude), or  an [Anyscale Endpoint](https://www.anyscale.com/get-started) account and an associated key. 
+To try these examples, you'll need an [OpenAI](https://platform.openai.com/docs/introduction) account and an associated API key, [Anthropic](https://docs.anthropic.com/claude/docs/intro-to-claude), or an [Anyscale Endpoint](https://www.anyscale.com/get-started) account and an associated key. 
 
 All examples are in Python, yet the concepts can be adapted to any programming language, so long as you can make REST API calls in the target language or use target language's SDK.
 
@@ -28,8 +28,8 @@ The examples in this cook are inspired (some modified, expanded or copied) from 
  * Various blog posts on medium.
 
 ## Environment files
-Since I use use either OpenAI or Anyscale Endpoints, I provide two
-environment template files: *env_anyscale_template* and *env_openai_template*. Add your keys and model name to either of the files and copy the file to **.env** to the top-level directory. To migrate any OpenAI code to Anyscale Endpoints, use this [simple guide](https://docs.endpoints.anyscale.com/guides/migrate-from-openai/). For the most part, the migration is seamless.
+Since I use use either OpenAI, Anthropic, or Anyscale Endpoints, I provide three
+environment template files: *env_anyscale_template*, *env_anthropic_template*, and *env_openai_template*. Add your keys and model name to either of the files and copy the file to **.env** to the top-level directory. To migrate any OpenAI code to Anyscale Endpoints, use this [simple guide](https://docs.endpoints.anyscale.com/guides/migrate-from-openai/). For the most part, the migration is seamless.
 
 Also, you'll require some Python libraries. Use `pip install -r requirements.txt` to install them.
 
