@@ -1,6 +1,6 @@
 ## The fundamentals of Prompt Engineering.
 
-<img src="./images/prompt_req_resp.png" height="35%" width="%65">
+<img src="./images/llm_prompt_req_resp.png" height="35%" width="%65">
 
 Welcome to this section on prompt engineering, tailored for anyone seeking practical insights into prompt engineering to use LLMs. We kick off with the basics of simple prompting, guiding you on crafting effective prompts: a fundamental skill for various generative tasks. Journey with me into text generation and completion, exploring tips for text summarization and extracting key information seamlessly:
 
