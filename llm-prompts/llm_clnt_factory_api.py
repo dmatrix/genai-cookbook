@@ -17,7 +17,7 @@ class ClientFactory:
 
 def _get_chat_response(clnt: object, model: str, system_content: str, user_content:str) -> str:
     if isinstance(clnt, Anthropic):
-        chat_response = clnt.chat.create(
+        chat_response = clnt.messages.create(
                 model=model,
                 system = system_content,
                 messages=[{"role": "user", "content": user_content}],

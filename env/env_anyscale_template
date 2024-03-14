@@ -1,3 +1,4 @@
+export LLM_SERVICE_PROVIDER="anyscale"
 export ANYSCALE_API_KEY=""
 export ANYSCALE_API_BASE=https://console.endpoints.anyscale.com/m/v1
 export MODEL="mistralai/Mixtral-8x7B-Instruct-v0.1"
