@@ -10,3 +10,6 @@ tiktoken
 termcolor 
 requests
 cohere
+pineclone-client
+transformers
+datasets
