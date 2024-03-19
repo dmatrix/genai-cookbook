@@ -1,3 +1,13 @@
+"""
+This is a simple Semantic Search applicaiton using Pinecone vector database 
+to store embeddings. Pinecode offers a free starter-index as a community edition. 
+Actually, it's not that bad, as it allows you to index 100K vector embeddings.
+
+Only a single index is allowed in the community edition. 
+The code below demonstrates how to create an index, upsert embeddings.
+It also demonstrates how to run a semantic search on the index.
+
+"""
 import os
 from pinecone import Pinecone, PodSpec
 from datasets import load_dataset
@@ -6,11 +16,14 @@ from dotenv import load_dotenv, find_dotenv
 from tqdm.auto import tqdm
 
 def extract_and_print_matches(results):
+    '''
+    Extract and print the matches from the results'''
     for result in results['matches']:
         print(f"Score  : {round(result['score'], 2)}")
         print(f"Matches: {result['metadata']['text']}")
         print('-' * 50)
-    
+
+# Main function
 if __name__ == "__main__":
     
     # Load the dataset, only the first 50k samples
@@ -26,7 +39,7 @@ if __name__ == "__main__":
     print(f'Number of reviews: {len(reviews)}')
 
     # Load the sentence transformer model
-    model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
+    model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
     # Try encoding a sample review
     embeddings = model.encode(reviews[0:1])
@@ -63,7 +76,7 @@ if __name__ == "__main__":
             dimension=embeddings.shape[1],
             spec=PodSpec(environment="gcp-starter")
     )
-    # Connect to the index
+    # Connect or get a handle to the index
     pindex = pc.Index(index_name)
 
     # Insert the embeddings into the index
