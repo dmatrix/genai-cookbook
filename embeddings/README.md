@@ -87,8 +87,13 @@ account on Pinecone and API key.
 
 ### References and Resources
 [1] https://aylien.com/blog/overview-word-embeddings-history-word2vec-cbow-glove
+
 [2]https://stackoverflow.blog/2023/11/09/an-intuitive-introduction-to-text-embeddings/
+
 [3] https://www.pinecone.io/learn/vector-embeddings-for-developers/
+
 [4] https://en.wikipedia.org/wiki/Cosine_similarity
+
 [5] https://www.learndatasci.com/glossary/cosine-similarity/
+
 [6] https://docs.pinecone.io/page/examples
