@@ -56,9 +56,9 @@ Vector embeddings are generated using machine learning, first, by creating a mod
 used to generate a vector embedding for your data as its input and vector
 embedding as its output.
 
-The acutal process of training an embeddinbg model is beyond the scope of this discussion. For your edification, plenty of literature describe, at length and mathemetical foundations, how the models are trained, how the training or corpus ofdata employed and converted into pairs of vector embeddings, and neural network architecture employed.
+The acutal process of training an embeddinbg model is beyond the scope of this discussion. For your edification, plenty of literature describe, at length and mathemetical foundations, how the models are trained, how the training data is employed and converted into pairs of vector embeddings, and neural network architecture used for training the model.
 
-Suffice it to say, some of these models are publicly available for you to use. That is, convert your data a vector embeddings and vice versa.
+Suffice it to say, some of these pretrained models are publicly available for you to use. That is, convert your data a vector embeddings and vice versa.
 
  * [word2vec](https://codeblockhub.com/python/word2vec-models-python/)
  * [GloVe](https://codeblockhub.com/python/glove-models-python/)
@@ -70,9 +70,9 @@ Suffice it to say, some of these models are publicly available for you to use. T
 
 ## How vector embeddings are used today
 
-It's no secret that embeddings' use has come into prominence due to deep learning and transformers, emergence of large language models (LLMs), and, more recently, generative AI applications,where embeddings' usage is vital and imperative to represent and condense the world of knowledge fed to it via the corpus of training data.
+It's no secret that embeddings have become popular because of deep learning and large language models. More recently, they've become essential in generative AI applications. They are at the core of how data are representated in these technologies.
 
-Today, embeddings use cases extends to: 
+Today, its use cases extends to: 
 *  **semantic searches**: search engines go beyond just keyword or pattern matching; they go beyond text and include other data types--images, audio and video--allowing to search across multiple data formats for semantic similarities.
  * **Recommendation systems**: capture embeddings of articles, products, images, and recommend matching items selected by the user.
  * **Anomaly detection**: create an embedding of a target entity that does not match any entities seen before, indicating the target item as an anomaly.
@@ -80,8 +80,9 @@ Today, embeddings use cases extends to:
  * **Content moderation**: detect similarity of a social post to known examples of abuse stored as embeddings in an indexed vector database.
  * **Spam filtering or classification**: classify an email as an examples of spam mail.
  * **Conversational agent**: match existing embeddings in an indexed vector database that are semantically close to the user’s message or queries.
+ * **Retrieval Augmentation Generation**: provide augmented proprietary data, combined with LLMs, for your generative AI, with more factual accuracy and less hallucination.
 
- All in all, vector embeddings are immensely poweful and useful, and their applications are prevalent in many generative AI applications. For example, Pinecone tabulates some of the examples use cases.[6]
+ All in all, vector embeddings are immensely poweful and useful, and their applications are at the core of numerous generative AI applications. For example, Pinecone tabulates some of the examples use cases.[6]
 
 For a quick, getting started version of how to use vector embeddings for
 semantic search, peruse below both notebook and Python application. 
@@ -92,11 +93,16 @@ semantic search, peruse below both notebook and Python application.
 
 | Notebook Description| Open with Colab |
 |--------------------|-----------------|
-| Pinecone Semantic Search | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/embeddings/1_pinecone_semantic_search_example.ipynb) |
+| Pinecone Semantic Search Example | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/embeddings/1_pinecone_semantic_search_example.ipynb) |
 
 | Python file  Description| View it on Github |
 |-------------------------|-------------------|
-| Pinecone Semantic Search| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/embeddings/pinecone_semantic_search_example.py) |
+| Pinecone Semantic Search Example | [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/embeddings/pinecone_semantic_search_example.py) |
+
+## Summary
+To sum up, vector embeddings are numerical representations of data that capture semantic meaning. They are created using machine learning models and can be used for various applications such as semantic searches, recommendation systems, anomaly detection, image search, content moderation, spam filtering, conversational agents, and retrieval augmentation generation. Vector embeddings are powerful tools in generative AI applications. 
+
+To get a flavor and intution of how to use with embeddings with a vector database such as Pinecone, have a go at the examples above.
 
 
 ## References and Resources
