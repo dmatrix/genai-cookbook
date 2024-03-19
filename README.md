@@ -7,9 +7,9 @@
 
 Welcome to a mixture of Gen AI cookbook **how-to** recipes for Gen AI applications. These simple guides span across get-started examples on LLM prompting strategies, building simple chatbots, retrieval generation augmentation (RAGs), LLM-based applications on OpenAI, Anthropic, or Anyscale Endpoints, etc. 
 
-You'll find examples code and/or guides for common tasks using the OpenAI API, Anthropic, Anyscale Endpoints and [Ray framework](https://www.ray.io/). 
+You'll find examples code and/or guides for common tasks using the OpenAI API, Anthropic, Pinecone, Anyscale Endpoints and [Ray framework](https://www.ray.io/). 
 
-To try these examples, you'll need an [OpenAI](https://platform.openai.com/docs/introduction) account and an associated API key, [Anthropic](https://docs.anthropic.com/claude/docs/intro-to-claude), or an [Anyscale Endpoint](https://www.anyscale.com/get-started) account and an associated key. 
+To try these examples, you'll need an [OpenAI](https://platform.openai.com/docs/introduction) account and an associated API key, [Anthropic](https://docs.anthropic.com/claude/docs/intro-to-claude), [Pinecone](https://www.pinecone.io/pricing/), or an [Anyscale Endpoint](https://www.anyscale.com/get-started) account and an associated key. 
 
 All examples are in Python, yet the concepts can be adapted to any programming language, so long as you can make REST API calls in the target language or use target language's SDK.
 
