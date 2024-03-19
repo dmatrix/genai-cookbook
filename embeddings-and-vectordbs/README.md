@@ -56,7 +56,7 @@ Vector embeddings are generated using machine learning, first, by creating a mod
 used to generate a vector embedding for your data as its input and vector
 embedding as its output.
 
-The acutal process of training an embeddinbg model is beyond the scope of this discussion. For your edification, plenty of literature describe, at length and mathemetical foundations, how the models are trained, how the training data employed and converted into pairs of vector embeddings, and neural network architecture employed.
+The acutal process of training an embeddinbg model is beyond the scope of this discussion. For your edification, plenty of literature describe, at length and mathemetical foundations, how the models are trained, how the training or corpus ofdata employed and converted into pairs of vector embeddings, and neural network architecture employed.
 
 Suffice it to say, some of these models are publicly available for you to use. That is, convert your data a vector embeddings and vice versa.
 
@@ -70,9 +70,9 @@ Suffice it to say, some of these models are publicly available for you to use. T
 
 ## How vector embeddings are used today
 
-It's no secret that embeddings' use has come into prominence due to deep learning, large language models, and, more recently, generative AI applications. 
+It's no secret that embeddings' use has come into prominence due to deep learning and transformers, emergence of large language models (LLMs), and, more recently, generative AI applications,where embeddings' usage is vital and imperative to represent and condense the world of knowledge fed to it via the corpus of training data.
 
-Today, its use cases extends to: 
+Today, embeddings use cases extends to: 
 *  **semantic searches**: search engines go beyond just keyword or pattern matching; they go beyond text and include other data types--images, audio and video--allowing to search across multiple data formats for semantic similarities.
  * **Recommendation systems**: capture embeddings of articles, products, images, and recommend matching items selected by the user.
  * **Anomaly detection**: create an embedding of a target entity that does not match any entities seen before, indicating the target item as an anomaly.
