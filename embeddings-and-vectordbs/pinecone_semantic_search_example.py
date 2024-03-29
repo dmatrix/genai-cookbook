@@ -9,6 +9,7 @@ It also demonstrates how to run a semantic search on the index.
 
 """
 import os
+import sys
 from pinecone import Pinecone, PodSpec
 from datasets import load_dataset
 from sentence_transformers import SentenceTransformer
@@ -76,6 +77,8 @@ if __name__ == "__main__":
             dimension=embeddings.shape[1],
             spec=PodSpec(environment="gcp-starter")
     )
+    print(f"embedding shape: {embeddings.shape}")
+    
     # Connect or get a handle to the index
     pindex = pc.Index(index_name)
 
