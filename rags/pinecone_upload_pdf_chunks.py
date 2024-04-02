@@ -1,4 +1,4 @@
-from rag_utils import read_pdf_chunks
+from rag_utils import read_pdf_chunks, extract_matches
 from sentence_transformers import SentenceTransformer
 from pinecone import Pinecone, PodSpec
 from dotenv import load_dotenv, find_dotenv
@@ -87,3 +87,19 @@ if __name__ == '__main__':
     # Check the index stats
     print(pindex.describe_index_stats())
     print(f"Creating start-index done!")
+
+    # Send a query to the index to fetch the top 3 similar documents
+    query = "What are the key takeaways for AI in 2023?"
+    print(f"Query: {query}")    
+    query_embedding = model.encode(query).tolist()
+    results = pindex.query(vector=query_embedding, top_k=3,
+                           include_values=False, 
+                           include_metadata=True)
+    print('-' * 50)
+    print(f"Top 3 results for the query:")
+    for result in results['matches']:
+        print(f"Score  : {round(result['score'], 2)}")
+        print(f"Matches: {result['metadata']['text']}")
+        print('-' * 50)
+
+    

@@ -1,7 +1,16 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-def extract_and_print_matches(results):
+def extract_matches(results):
+    """
+    Extract the matches from the results
+    """ 
+    matches = []
+    for result in results['matches']:
+        matches.append(result['metadata']['text'])
+    return matches
+
+def print_matches(results):
     """
     Extract and print the matches from the results
     """
