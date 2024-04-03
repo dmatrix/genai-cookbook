@@ -17,7 +17,6 @@ def print_matches(results):
     for result in results['matches']:
         print(f"Score  : {round(result['score'], 2)}")
         print(f"Matches: {result['metadata']['text']}")
-        print('-' * 50)
 
 def read_pdf_chunks(file_path, chunk_size, chunk_overlap=0):
         """
