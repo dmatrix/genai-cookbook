@@ -42,14 +42,13 @@ if __name__ == "__main__":
 
      # Start a semantic search
     print("Running a semantic search...")
-    query = "What are the key takeaways for AI in 2023?"
+    query = "What are the key takeaways for AI in 2023 from the HAI_AI Index?"
     print(f"Query: {query}")
     query_embedding = model.encode(query).tolist()
     results = pindex.query(vector=query_embedding, top_k=TOP_K,
                            include_values=False, 
                            include_metadata=True)
 
-    print('-' * 50)
     print(f"Top {TOP_K} results for the query:")
     print_matches(results)
     print('-' * 50)
@@ -57,32 +56,34 @@ if __name__ == "__main__":
     # Extract the context from the results for our LLM query
     context = "".join(extract_matches(results))
 
-    # Construct our next query for the LLM model
+    # Construct our query plus the matches returned
+    # from the vector db for the LLM model to finalize
+    # the response
     anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
     MODEL = os.getenv("MODEL")
-    print('-' * 50)
     print(f"Using MODEL={MODEL}; base={'Anthropic'}")
 
     # create an Anthropic client instance using our
-    # factor method 
+    # client factory method 
     client_factory = ClientFactory()
     client_type = "anthropic"
     client_factory.register_client(client_type, Anthropic)
     client_kwargs = {"api_key": anthropic_api_key}
+
     # create the client
     client = client_factory.create_client(client_type, **client_kwargs)
 
-    # create system and user prompt
+    # create system and user prompt for the LLM model
     system_content = """You are master of all knowledge, and a helpful sage.
-                    You must summarize content given to you by drawing from your vast
-                    knowledge about history, literature, science, social science, philosophy, religion, economics, 
-                    sports, etc. Do not make up any responses. Only provide information that is true and verifiable.
-                  """
+                        You must summarize content given to you by drawing from your vast
+                        knowledge about history, literature, science, social science, philosophy, religion, economics, 
+                        sports, etc. Do not make up any responses. Only provide information that is true and verifiable
+                        and use the given context to provide the response.
+                     """
     
-    user_content = f"""What are the key takeaways for AI in 2023?,
-                        given the {context}. Only provide information that is true and verifiable and use
-                        the given context to provide the answer.
-                        Summary: 
+    user_content = f"""What are the key takeaways for AI in 2023 from the HAI_AI Index Report_2023?,
+                        given the {context}. Only provide information that is true and verifiable
+                        and use the given context to provide the response.
                      """
     
     # get the response
