@@ -8,13 +8,13 @@ from  llm_clnt_factory_api import ClientFactory, get_commpletion
 contents = [
             "Why did the chicken cross the road?",
             "Write a haiku about the ocean",
-            "What is the meaning of life?",
+            "How can I make a good impression on a first date?",
             ]
 
 ROLE = 'user'
 clnt = ollama.Client()
 
-# create an Anthropic client instance using our
+# create an ollam client instance using our
 # client factory method 
 client_factory = ClientFactory()
 client_type = "ollam"
@@ -30,6 +30,4 @@ for content in contents:
                                "mistral", "user", content)
     print(f"\n{BOLD_BEGIN}Prompt:{BOLD_END} {content}")
     print(f"\n{BOLD_BEGIN}Answer:{BOLD_END} {response}")
-    print(f"User: {content}")
-    print(f"Ollama: {response}")
     print("-------------------")
