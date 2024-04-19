@@ -1,5 +1,6 @@
 from openai import OpenAI
 from anthropic import Anthropic
+import ollama
 
 class ClientFactory:
     def __init__(self):
@@ -33,6 +34,12 @@ def _get_chat_response(clnt: object, model: str, system_content: str, user_conte
                 temperature = 0.8)
         response = chat_response.choices[0].message.content
         return response
+    elif isinstance(clnt, ollama.Client):
+        chat_response = clnt.chat(model=model,
+                messages=[{"role": "user", 
+                           "content": user_content}])
+        response = chat_response['message']['content']
+        return response
     else:
         raise ValueError(f"Client '{clnt}' not registered or not supported.")
     
@@ -41,11 +48,11 @@ def get_commpletion(clnt: object, model: str, system_content: str, user_content:
 
 # Test ClientFactory
 if __name__ == "__main__":
+
+    # Test OpenAI client
     client_factory = ClientFactory()
     client_factory.register_client('openai', OpenAI)
-    client_factory.register_client('anthropic', Anthropic)
     client_type = 'openai'
-
     client_kwargs = {"api_key": 
                         "sk-1234567890abcdef1234567890abcdef",
                     "base_url": 
@@ -53,33 +60,23 @@ if __name__ == "__main__":
 
     client = client_factory.create_client(client_type, **client_kwargs)
     print(client)
-
     print("--------------------------")
-    client_type = 'anthropic'
-    client_kwargs = {"api_key": 
-                        "sk-1234567890abcdef1234567890abcdef",}
-                    
-    client = client_factory.create_client(client_type, **client_kwargs)
-    print(client)
 
-    client_factory = ClientFactory()
-    client_factory.register_client('openai', OpenAI)
+    # Test Anthropic client
     client_factory.register_client('anthropic', Anthropic)
-    client_type = 'openai'
-    
-    client_kwargs = {"api_key": 
-                        "sk-1234567890abcdef1234567890abcdef",
-                    "base_url": "https://api.openai.com",}
-    
-    client = client_factory.create_client(client_type, **client_kwargs)
-    print(client)
-    
-    print("--------------------------")
     client_type = 'anthropic'
     client_kwargs = {"api_key": 
                         "sk-1234567890abcdef1234567890abcdef",}
                     
     client = client_factory.create_client(client_type, **client_kwargs)
+    print(client)
+    print("--------------------------")
+
+    # Test Ollama client
+    client_factory.register_client('ollama', ollama.Client)
+    client_type = 'ollama'
+    client_kwargs = {}
+    client = client_factory.create_client(client_type, **client_kwargs) 
     print(client)
     
 
