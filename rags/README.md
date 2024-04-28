@@ -206,12 +206,22 @@ Figure 6. Summary of RAG paradigms
 
 ### References and Resources
 
-[1, 14, 21](https://newsletter.nocode.ai/p/)guide-retrieval-augmented-generation
-[2,5-7-9,12,15,18-19, 21, 23, 24, 27](https://arxiv.org/pdf/2312.10997.pdf)
-[3,16-17, 22, 25](https://arxiv.org/pdf/2404.10981.pdf)
-[4](https://www.economist.com/technology-quarterly/2024-03-30)
-10. https://towardsdatascience.com/enhancing-rag-pipelines-in-haystack-45f14e2bc9f5
-11. https://arxiv.org/abs/2308.11761
-13. https://hyperight.com/7-practical-applications-of-rag-models-and-their-impact-on-society/
-20. https://www.anyscale.com/blog/fine-tuning-is-for-form-not-facts
-26. https://arxiv.org/pdf/2404.13781
+1. [A Guide to Retrieval Augmented Generation](https://newsletter.nocode.ai/p/guide-retrieval-augmented-generation) [1, 14, 21]
+
+2. [Retrieval-Augmented Generation for Large
+Language Models: A Survey](https://arxiv.org/pdf/2312.10997.pdf) [2,5-7-9,12,15,18-19, 21, 23, 24, 27]
+
+3. [A Survey on Retrieval-Augmented Text Generation for Large Language
+Models](https://arxiv.org/pdf/2404.10981.pdf) [[3,16-17, 22, 25]]
+
+4. [Health and AI: The Economist](https://www.economist.com/technology-quarterly/2024-03-30) [4]
+
+5. [Enhancing RAG Pipelines in Haystack: Introducing DiversityRanker and LostInTheMiddleRanker](https://towardsdatascience.com/enhancing-rag-pipelines-in-haystack-45f14e2bc9f5) [10]
+
+6. [KnowledGPT: Enhancing Large Language Models with Retrieval and Storage Access on Knowledge Bases](https://arxiv.org/abs/2308.11761) [11]
+
+7. [7 Practical Applications of RAG Models and their Impact on Society](https://hyperight.com/7-practical-applications-of-rag-models-and-their-impact-on-society/) [13]
+
+8. [Fine tuning is for form, not facts](https://www.anyscale.com/blog/fine-tuning-is-for-form-not-facts) [20]
+
+9. [Evaluating Retrieval Quality in Retrieval-Augmented Generation](https://arxiv.org/pdf/2404.13781) [26]
