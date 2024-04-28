@@ -190,7 +190,8 @@ To declare that work in RAGs is done and dusted is dishonest. A field rapidly ev
 4. [Naive RAG with LlamaIndex, Elasticsearch and Mistral](https://www.elastic.co/search-labs/blog/rag-with-llamaIndex-and-elasticsearch)
 5. [Advanced RAG Techniques](https://www.pinecone.io/learn/advanced-rag-techniques/)
 6. [Creating High Quality RAG Applications with Databricks](https://www.databricks.com/blog/building-high-quality-rag-applications-databricks)
-7. [Building Real-Time Financial News RAG Chatbot with Gemini and Qdrant](https://medium.com/@akriti.upadhyay/building-real-time-financial-news-rag-chatbot-with-gemini-and-qdrant-64c0a3fbe45b)
+7. [Building RAG-based LLM Applications for Production](https://www.anyscale.com/blog/a-comprehensive-guide-for-building-rag-based-llm-applications-part-1)
+8. [Building Real-Time Financial News RAG Chatbot with Gemini and Qdrant](https://medium.com/@akriti.upadhyay/building-real-time-financial-news-rag-chatbot-with-gemini-and-qdrant-64c0a3fbe45b)
 
 ### Summary
 
