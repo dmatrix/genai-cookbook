@@ -1,5 +1,10 @@
 import dspy
 
+QUESTIONS = ["What is dark matter in the universe?",
+            "Why did the dinosaurs go extinct?",
+            "why did the chicken cross the road?"
+]
+
 SENTIMENTS = [
         "This movie is a true cinematic gem, blending an engaging plot with superb performances and stunning visuals. A masterpiece that leaves a lasting impression.",
          "Regrettably, the film failed to live up to expectations, with a convoluted storyline, lackluster acting, and uninspiring cinematography. A disappointment overall.",
@@ -42,6 +47,13 @@ SUMMARY = """
          formulate open questions, aiming to delineate pathways for future  research on 
          hallucinations in LLMs 
     """
+
+class QuestionAnswer(dspy.Signature):
+    """Answer questions based on the input question."""
+
+    question = dspy.InputField()
+    answer = dspy.OutputField()
+
 class ClassifyEmotion(dspy.Signature):
     """Classify emotion among sadness, joy, love, anger, fear, surprise."""
 
@@ -60,6 +72,12 @@ if __name__ == "__main__":
     # Setup Ollama environment
     ollama_mistral = dspy.OllamaLocal(model='mistral')
     dspy.settings.configure(lm=ollama_mistral)
+
+    for question in QUESTIONS:
+        answer = dspy.Predict(QuestionAnswer)
+        print(f"Question: {question}")
+        print(answer(question=question))
+        print("-------------------")
 
     for sentence in SENTIMENTS:
         classify = dspy.Predict(ClassifyEmotion)
