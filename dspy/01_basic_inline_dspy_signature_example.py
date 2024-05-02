@@ -1,5 +1,10 @@
 import dspy
 
+QUESTION = ["What is dark matter in the universe?",
+            "Why did the dinosaurs go extinct?",
+            "why did the chicken cross the road?"
+]
+
 SENTIMENTS = ["Movie was great!", 
               "Movie was terrible!",
               "Movie was okay!"]
@@ -23,6 +28,13 @@ if __name__ == "__main__":
     # Setup Ollama environment
     ollama_mistral = dspy.OllamaLocal(model='mistral')
     dspy.settings.configure(lm=ollama_mistral)
+
+    # Use inline signatgure for question answering
+    for question in QUESTION:
+        answer = dspy.Predict('question -> answer')
+        print(f"Question: {question}")
+        print(f"Answer: {answer(question=question).answer}")
+        print("-------------------")
 
     # Use line signatures for classification
     for sentiment in SENTIMENTS:
