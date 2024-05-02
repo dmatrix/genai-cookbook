@@ -1,4 +1,5 @@
 import dspy
+from dspy_utils import QuestionAnswer, ClassifyEmotion, SummarizeText
 
 QUESTIONS = ["What is dark matter in the universe?",
             "Why did the dinosaurs go extinct?",
@@ -25,51 +26,38 @@ SENTIMENTS = [
 ]
 
 SUMMARY = """
-         The emergence of large language models (LLMs) has marked a significant 
-         breakthrough in natural language processing (NLP), leading to remarkable 
-         advancements in text understanding and generation. 
-         
-         Nevertheless, alongside these strides, LLMs exhibit a critical tendency 
-         to produce hallucinations, resulting in content that is inconsistent with 
-         real-world facts or user inputs. This phenomenon poses substantial challenges 
-         to their practical deployment and raises concerns over the reliability of LLMs 
-         in real-world scenarios, which attracts increasing attention to detect and 
-         mitigate these hallucinations. In this survey, we aim to provide a thorough and 
-         in-depth  overview of recent advances in the field of LLM hallucinations. 
-         
-         We begin with an innovative taxonomy of LLM hallucinations, then delve into the 
-         factors contributing to hallucinations. Subsequently, we present a comprehensive
-         overview of hallucination detection methods and benchmarks. 
-         Additionally, representative approaches designed to mitigate hallucinations 
-         are introduced accordingly. 
-         
-         Finally, we analyze the challenges that highlight the current limitations and 
-         formulate open questions, aiming to delineate pathways for future  research on 
-         hallucinations in LLMs 
-    """
+    DSPy is a framework for algorithmically optimizing LM prompts and weights, 
+    especially when LMs are used one or more times within a pipeline. To use 
+    LMs to build a complex system without DSPy, you generally have 
+    to: (1) break the problem down into steps, (2) prompt your 
+    LM well until each step works well in isolation, (3) tweak 
+    the steps to work well together, (4) generate synthetic 
+    examples to tune each step, and (5) use these examples to finetune 
+    smaller LMs to cut costs. Currently, this is hard and messy: every 
+    time you change your pipeline, your LM, or your data, all prompts 
+    (or finetuning steps) may need to change.
 
-class QuestionAnswer(dspy.Signature):
-    """Answer questions based on the input question."""
+    To make this more systematic and much more powerful, DSPy does two things. 
+    First, it separates the flow of your program (modules) from the 
+    parameters (LM prompts and weights) of each step. 
+    Second, DSPy introduces new optimizers, which are LM-driven 
+    algorithms that can tune the prompts and/or the weights of 
+    your LM calls, given a metric you want to maximize.
 
-    question = dspy.InputField()
-    answer = dspy.OutputField()
-
-class ClassifyEmotion(dspy.Signature):
-    """Classify emotion among sadness, joy, love, anger, fear, surprise."""
-
-    sentence = dspy.InputField()
-    sentiment = dspy.OutputField()
-
-class SummarizeText(dspy.Signature):
-    """Summarize a given text into a concise summary, in no less
-    than ten sentence simple and compound sentences."""
-
-    text = dspy.InputField()
-    summary = dspy.OutputField()
+    DSPy can routinely teach powerful models like GPT-3.5 or GPT-4 and 
+    local models like T5-base or Llama2-13b to be much more reliable at 
+    tasks, i.e. having higher quality and/or avoiding specific failure patterns. 
+    DSPy optimizers will "compile" the same program into different instructions, 
+    few-shot prompts, and/or weight updates (finetunes) for each LM. 
+    This is a new paradigm in which LMs and their prompts fade into the background 
+    as optimizable pieces of a larger system that can learn from data. tldr; 
+    less prompting, higher scores, and a more systematic approach to solving hard 
+    tasks with LMs.
+"""
 
 if __name__ == "__main__":
 
-    # Setup Ollama environment
+    # Setup Ollama environment on the local machine
     ollama_mistral = dspy.OllamaLocal(model='mistral')
     dspy.settings.configure(lm=ollama_mistral)
 
