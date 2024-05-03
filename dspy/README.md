@@ -25,6 +25,20 @@ In summary, DSPy enables less prompting, higher scores, and a more systematic ap
 
 _The above text is generated using DSPy module and OLlama LLM runing locally on a laptop to summarize a long excerpt from the DSPy documentation. Check the module source [here](./03_dspy_nlp_tasks.py)_
 
+### Some Python Code Examples
+
+The Python code exampples illustrate how to program LLM with in-line DSPy signatures and Class Signatures modules. Also, how to implement common NLP tasks using DSPy modules, programming the LLM, rather than prompting the LLM.
+
+All examples use OLlama Mistral, running locally on the laptop, and experimental DSPy [dspy.OLlama](https://dspy-docs.vercel.app/docs/building-blocks/language_models#local-lms) client integration APIs. Have a peek 👀 on GitHub!
+
+ **Note** that some of these tasks have been converted from [LLM Prompts notebook](https://github.com/dmatrix/genai-cookbook/blob/main/llm-prompts/2_how_to_conduct_common_nlp_llm_tasks.ipynb) using [CO-STAR framework](https://towardsdatascience.com/how-i-won-singapores-gpt-4-prompt-engineering-competition-34c195a93d41) prompt techniques.
+
+| Python file  Description| View it on Github |
+|-------------------------|-------------------|
+| Basic inline DSPy signatures for LLM tasks| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/01_basic_inline_dspy_signature_example.py) |
+| Basic Class Signature modules for LLM Tasks |[Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/02_basic_class_dspy_signature_example.py)|
+|Common NLP Tasks with DSPy Modules| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/03_dspy_nlp_tasks.py)|
+
 ### DSPy Documentation
  [Programing--not Prompting--LLMs](https://dspy-docs.vercel.app/)
  [Get started with DSPy](https://dspy-docs.vercel.app/docs/intro)
