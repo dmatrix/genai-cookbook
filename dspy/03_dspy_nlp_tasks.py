@@ -1,5 +1,5 @@
 import dspy
-from dspy_utils import TextCompletion, SummarizeText
+from dspy_utils import TextCompletion, SummarizeText, SummarizeTextAndExtractKeyTheme, TranslateText, TextTransformationAndCorrection
 
 BOLD_BEGIN = "\033[1m"
 BOLD_END = "\033[0m"
@@ -39,6 +39,34 @@ SUMMARY = """
     less prompting, higher scores, and a more systematic approach to solving hard 
     tasks with LMs.
 """
+SUMMARY_THEME = """
+    Isaac Newton sat under a tree when an apple fell, an event that, 
+    according to popular legend, led to his contemplation of the forces
+    of gravity. Although this story is often regarded as apocryphal or at 
+    least exaggerated, it serves as a powerful symbol of Newton's insight 
+    into the universal law that governs celestial and earthly bodies alike. 
+    His formulation of the law of universal gravitation was revolutionary, 
+    as it provided a mathematical explanation for both the motion of planets 
+    and the phenomena observed on Earth. Newton's work in physics, captured 
+    in his seminal work Philosophiæ Naturalis Principia Mathematica, laid the 
+    groundwork for classical mechanics. His influence extended beyond his own 
+    time, shaping the course of scientific inquiry for centuries to come.
+"""
+
+LANGUAGE_TEXT = """
+    Welcome to New York for the United Nations General Council Meeting. 
+    Today is a special day for us to celeberate all our achievments since 
+    this global institute's formation.But more importantly, 
+    we want to address how we can mitigate global conflict with 
+    conversation and promote deterence, detente, and discussion.
+    """
+
+PIRATE_SPEAK = """
+        Arrr matey! I be knowin' nuthin' 'bout them fancy words and grammatical rules. 
+        Me and me heartie, we be chattin', and he don't be agreein' with me. 
+        We ain't never gonna figure it out, I reckon. His scallywag of a dog 
+        don't be listenin' well, always runnin' around and not comin' when ye call.
+"""
 
 if __name__ == "__main__":
 
@@ -62,3 +90,32 @@ if __name__ == "__main__":
     print("Summary:")
     print(summarize(text=SUMMARY))
     print("-------------------")
+
+    # NLP Task 3: Text Summarization and Key Theme Extraction
+    # Use class signatures for summarization and key theme extraction
+    summarize_theme = dspy.Predict(SummarizeTextAndExtractKeyTheme)
+    print("Summary:")
+    response = summarize_theme(text=SUMMARY_THEME)
+    print(response.summary)
+    print("Key Themes:")
+    response.key_themes = response.key_themes.split("\n")
+    print(response.key_themes)
+    print("Takeaways:")
+    print(response.takeaways)
+    print("-------------------")
+
+    # NLP Task 4: Text Translation and Transliteration
+    # Use class signatures for text translation
+    translate = dspy.Predict(TranslateText)
+    response = translate(text=LANGUAGE_TEXT, language='fr')
+    print(f"{BOLD_BEGIN}Translated Text:{BOLD_END}")
+    print(response.translated_text)
+    print("-------------------")
+
+    # NLP Task 5: Text Transformation and Correction
+    # Use class signatures for text transformation and correction
+    transform = dspy.Predict(TextTransformationAndCorrection)
+    response = transform(text=PIRATE_SPEAK)
+    print(f"{BOLD_BEGIN}Corrected Text:{BOLD_END}")
+    print(response.corrected_text)
+
