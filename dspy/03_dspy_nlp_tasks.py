@@ -1,5 +1,8 @@
 import dspy
-from dspy_utils import TextCompletion, SummarizeText, SummarizeTextAndExtractKeyTheme, TranslateText, TextTransformationAndCorrection
+import argparse
+from dspy_utils import TextCompletion, SummarizeText, \
+    SummarizeTextAndExtractKeyTheme, TranslateText, \
+    TextTransformationAndCorrection, TextCorrection, GenerateJSON
 
 BOLD_BEGIN = "\033[1m"
 BOLD_END = "\033[0m"
@@ -68,54 +71,106 @@ PIRATE_SPEAK = """
         don't be listenin' well, always runnin' around and not comin' when ye call.
 """
 
+INCORRECT_TEXT = """
+    Yesterday, we was at the park, and them kids was playing. She don't like the way how they acted, but I don't got no problem with it. We seen a movie last night, and it was good, but my sister, she don't seen it yet. Them books on the shelf, they ain't interesting to me.
+"""
+
 if __name__ == "__main__":
+
+    # Create argument parser
+    parser = argparse.ArgumentParser(description="Parse command line arguments.")
+
+    # Add task argument
+    parser.add_argument(
+     "--task",
+        choices=[1, 2, 3, 4, 5, 6, 7],
+        type=int,
+        nargs="+",
+        default=[1, 2, 3, 4, 5, 6, 7],
+        help="Specify tasks to execute (default: all tasks).",
+    )
+    # Parse command line arguments
+    args = parser.parse_args()
 
     # Setup OLlama environment on the local machine
     ollama_mistral = dspy.OllamaLocal(model='mistral',
-                                      max_tokens=1000)
+                                      max_tokens=2500)
     dspy.settings.configure(lm=ollama_mistral)
 
-    # NLP Task 1: Text Generation and Completion
-    # Use class signatures for text completion
-    for prompt in PROMPTS:
-        complete = dspy.Predict(TextCompletion)
-        response = complete(in_text=prompt)
-        print(f"{BOLD_BEGIN}Prompt: {prompt}{BOLD_END}")
-        print(f"{BOLD_BEGIN}Completion: {response.out_text}{BOLD_END}")
+    if 1 in args.task:
+        # NLP Task 1: Text Generation and Completion
+        # Use class signatures for text completion
+        print("NLP Task 1: Text Generation and Completion")
+        for prompt in PROMPTS:
+            complete = dspy.Predict(TextCompletion)
+            response = complete(in_text=prompt)
+            print(f"{BOLD_BEGIN}Prompt: {prompt}{BOLD_END}")
+            print(f"{BOLD_BEGIN}Completion: {response.out_text}{BOLD_END}")
+            print("-------------------")
+
+    if 2 in args.task:
+        # NLP Task 2: Text Summarization
+        # Use class signatures for summarization
+        print("NLP Task 2: Text Summarization")
+        summarize = dspy.Predict(SummarizeText)
+        print("Summary:")
+        print(summarize(text=SUMMARY))
+        print("-------------------")
+    
+    if 3 in args.task:
+        # NLP Task 3: Text Summarization and Key Theme Extraction
+        # Use class signatures for summarization and key theme extraction
+        print("NLP Task 3: Text Summarization and Key Theme Extraction")
+        summarize_theme = dspy.Predict(SummarizeTextAndExtractKeyTheme)
+        print("Summary:")
+        response = summarize_theme(text=SUMMARY_THEME)
+        print(response.summary)
+        print("Key Themes:")
+        response.key_themes = response.key_themes.split("\n")
+        print(response.key_themes)
+        print("Takeaways:")
+        print(response.takeaways)
         print("-------------------")
 
-    # NLP Task 2: Text Summarization
-    # Use class signatures for summarization
-    summarize = dspy.Predict(SummarizeText)
-    print("Summary:")
-    print(summarize(text=SUMMARY))
-    print("-------------------")
+    if 4 in args.task:
+        # NLP Task 4: Text Translation and Transliteration
+        # Use class signatures for text translation
+        print("NLP Task 4: Text Translation and Transliteration")
+        translate = dspy.Predict(TranslateText)
+        response = translate(text=LANGUAGE_TEXT, language='fr')
+        print(f"{BOLD_BEGIN}Translated Text:{BOLD_END}")
+        print(response.translated_text)
+        print("-------------------")
 
-    # NLP Task 3: Text Summarization and Key Theme Extraction
-    # Use class signatures for summarization and key theme extraction
-    summarize_theme = dspy.Predict(SummarizeTextAndExtractKeyTheme)
-    print("Summary:")
-    response = summarize_theme(text=SUMMARY_THEME)
-    print(response.summary)
-    print("Key Themes:")
-    response.key_themes = response.key_themes.split("\n")
-    print(response.key_themes)
-    print("Takeaways:")
-    print(response.takeaways)
-    print("-------------------")
+    if 5 in args.task:
+        # NLP Task 5: Text Transformation and Correction
+        # Use class signatures for text transformation and correction
+        print("NLP Task 5: Text Transformation and Correction")
+        transform = dspy.Predict(TextTransformationAndCorrection)
+        response = transform(text=PIRATE_SPEAK)
+        print(f"{BOLD_BEGIN}Corrected Text:{BOLD_END}")
+        print(response.corrected_text)
 
-    # NLP Task 4: Text Translation and Transliteration
-    # Use class signatures for text translation
-    translate = dspy.Predict(TranslateText)
-    response = translate(text=LANGUAGE_TEXT, language='fr')
-    print(f"{BOLD_BEGIN}Translated Text:{BOLD_END}")
-    print(response.translated_text)
-    print("-------------------")
+    if 6 in args.task:
 
-    # NLP Task 5: Text Transformation and Correction
-    # Use class signatures for text transformation and correction
-    transform = dspy.Predict(TextTransformationAndCorrection)
-    response = transform(text=PIRATE_SPEAK)
-    print(f"{BOLD_BEGIN}Corrected Text:{BOLD_END}")
-    print(response.corrected_text)
+        # NLP Task 6: Text Correction for Grammatical Errors
+        # Use class signatures for text correction
+        print("NLP Task 6: Text Correction for Grammatical Errors")
+        correct = dspy.Predict(TextCorrection)
+        response = correct(text=INCORRECT_TEXT)
+        print(f"{BOLD_BEGIN}Incorrect Text:{BOLD_END}")
+        print(INCORRECT_TEXT)
+        print(f"{BOLD_BEGIN}Corrected Text:{BOLD_END}")
+        print(response.corrected_text)
+        print("-------------------")
+
+    if 7 in args.task:
+        # NLP Task 7: Generate JSON Output
+        # Use class signatures for JSON output generation
+        print("NLP Task 7: Generate JSON Output")
+        generate_json = dspy.Predict(GenerateJSON)
+        response = generate_json()
+        print(f"{BOLD_BEGIN}Generated JSON Output:{BOLD_END}")
+        print(response.json_text)
+        print("-------------------")
 

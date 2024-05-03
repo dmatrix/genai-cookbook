@@ -59,3 +59,21 @@ class TextTransformationAndCorrection(dspy.Signature):
 
     text = dspy.InputField()
     corrected_text = dspy.OutputField()
+
+class TextCorrection(dspy.Signature):
+    """Correct the given text for any grammatical errors. 
+    Provide the corrected text as the output.
+    """
+
+    text = dspy.InputField()
+    corrected_text = dspy.OutputField()
+
+class GenerateJSON(dspy.Signature):
+    """Generate five distinct products on training shoes. 
+       Generate products and format them all in a single JSON object.
+       For each product, the JSON object should 
+       contain items: Brand, Description, Size, Gender (Male, Female or Unisex), 
+       Price, and Review (three customer reviews.
+    """
+
+    json_text = dspy.OutputField(desc='key-value pairs')
