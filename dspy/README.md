@@ -23,15 +23,17 @@ In summary, DSPy enables less prompting, higher scores, and a more systematic ap
 9. The approach is more systematic and addresses the challenges of using LMs in complex systems.
 10. DSPy enables a new way to train and utilize Language Models effectively
 
-_The above text is generated using DSPy module and OLlama LLM runing locally on a laptop to summarize a long excerpt from the DSPy documentation. Check the module source [here](./03_dspy_nlp_tasks.py)_
+_The above text is generated using DSPy module and OLlama LLM running locally on a laptop to summarize a long excerpt from the DSPy documentation. Check the module source [here](./03_dspy_nlp_tasks.py)_
 
 ### Some Python Code Examples
 
-The Python code exampples illustrate how to program LLM with in-line DSPy signatures and Class Signatures modules. Also, how to implement common NLP tasks using DSPy modules, programming the LLM, rather than prompting the LLM.
+The Python code examples illustrate programming the LLM with in-line DSPy signatures and Class Signatures modules, not prompting required, except for `desc` in the documentation string in short and precise wording the task at hand.
+
+It also demonstrates to conduct common NLP tasks using DSPy modules, rather than prompting the LLM.
 
 All examples use OLlama Mistral, running locally on the laptop, and experimental DSPy [dspy.OLlama](https://dspy-docs.vercel.app/docs/building-blocks/language_models#local-lms) client integration APIs. Have a peek 👀 on GitHub!
 
- **Note** that some of these tasks have been converted from [LLM Prompts notebook](https://github.com/dmatrix/genai-cookbook/blob/main/llm-prompts/2_how_to_conduct_common_nlp_llm_tasks.ipynb) using [CO-STAR framework](https://towardsdatascience.com/how-i-won-singapores-gpt-4-prompt-engineering-competition-34c195a93d41) prompt techniques.
+ **Note** that some of these NLP tasks have been converted from [LLM Prompts notebook](https://github.com/dmatrix/genai-cookbook/blob/main/llm-prompts/2_how_to_conduct_common_nlp_llm_tasks.ipynb) using [CO-STAR framework](https://towardsdatascience.com/how-i-won-singapores-gpt-4-prompt-engineering-competition-34c195a93d41) prompt techniques, illustring how you can effect the same results declaratively, meaning expression _what_ not _how_ to do the task.
 
 | Python file  Description| View it on Github |
 |-------------------------|-------------------|
@@ -40,11 +42,11 @@ All examples use OLlama Mistral, running locally on the laptop, and experimental
 |Common NLP Tasks with DSPy Modules| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/03_dspy_nlp_tasks.py)|
 
 ### DSPy Documentation
- [Programing--not Prompting--LLMs](https://dspy-docs.vercel.app/)
- [Get started with DSPy](https://dspy-docs.vercel.app/docs/intro)
- [Tutorials and Examples](https://dspy-docs.vercel.app/docs/category/tutorials)
- [API Reference](https://dspy-docs.vercel.app/api/intro)
- [DSPy GitHub](https://github.com/stanfordnlp/dspy)
+ 1. [Programing--not Prompting--LLMs](https://dspy-docs.vercel.app/)
+ 2. [Get started with DSPy](https://dspy-docs.vercel.app/docs/intro)
+ 3. [Tutorials and Examples](https://dspy-docs.vercel.app/docs/category/tutorials)
+ 4. [API Reference](https://dspy-docs.vercel.app/api/intro)
+ 5. [DSPy GitHub](https://github.com/stanfordnlp/dspy)
 
  ### References and Sources
 
