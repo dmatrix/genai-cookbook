@@ -1,5 +1,7 @@
 ## DSPy - Programing language for LLMs
 
+<img src="images/dspy_img.png">
+
 ### Quick overview: what and why use DSPy
 DSPy is a framework for optimizing Language Model (LM) prompts and weights in complex systems, especially when using LMs multiple times within a pipeline. 
 
@@ -25,7 +27,7 @@ In summary, DSPy enables less prompting, higher scores, and a more systematic ap
 
 _The above text is generated using DSPy module and OLlama LLM running locally on a laptop to summarize a long excerpt from the DSPy documentation. Check the module source [here](./03_dspy_nlp_tasks.py)_
 
-### Some Python Code Examples
+### Python Notebooks and Code Examples
 
 The Python code examples illustrate programming the LLM with in-line DSPy signatures and Class Signatures modules, not prompting required, except for `desc` in the documentation string in short and precise wording the task at hand.
 
@@ -34,6 +36,13 @@ It also demonstrates to conduct common NLP tasks using DSPy modules, rather than
 All examples use OLlama Mistral, running locally on the laptop, and experimental DSPy [dspy.OLlama](https://dspy-docs.vercel.app/docs/building-blocks/language_models#local-lms) client integration APIs. Have a peek 👀 on GitHub!
 
  **Note** that some of these NLP tasks have been converted from [LLM Prompts notebook](https://github.com/dmatrix/genai-cookbook/blob/main/llm-prompts/2_how_to_conduct_common_nlp_llm_tasks.ipynb) using [CO-STAR framework](https://towardsdatascience.com/how-i-won-singapores-gpt-4-prompt-engineering-competition-34c195a93d41) prompt techniques, illustring how you can effect the same results declaratively, meaning expression _what_ not _how_ to do the task.
+
+#### Python Notebooks
+| Notebook Description| Open with Colab |
+|--------------------|-----------------|
+| Common NLP Tasks with DSPy Modules | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/dspy/04_common_nlp_llm_tasks_dspy.ipynb) |
+
+#### Python Apps
 
 | Python file  Description| View it on Github |
 |-------------------------|-------------------|
