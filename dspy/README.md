@@ -1,4 +1,4 @@
-## DSPy - Programing language for LLMs
+## DSPy - Programming model for LLMs
 
 <img src="images/dspy_img.png">
 
