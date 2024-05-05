@@ -113,8 +113,9 @@ if __name__ == "__main__":
         # Use class signatures for summarization
         print("NLP Task 2: Text Summarization")
         summarize = dspy.Predict(SummarizeText)
-        print("Summary:")
-        print(summarize(text=SUMMARY))
+        print("Summarization of text response:")
+        response = summarize(text=SUMMARY)
+        print(response.summary)
         print("-------------------")
     
     if 3 in args.task:
