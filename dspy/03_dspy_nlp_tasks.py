@@ -2,7 +2,8 @@ import dspy
 import argparse
 from dspy_utils import TextCompletion, SummarizeText, \
     SummarizeTextAndExtractKeyTheme, TranslateText, \
-    TextTransformationAndCorrection, TextCorrection, GenerateJSON
+    TextTransformationAndCorrection, TextCorrection, \
+    TranslateTextToLanguage, GenerateJSON
 
 BOLD_BEGIN = "\033[1m"
 BOLD_END = "\033[0m"
@@ -75,6 +76,22 @@ INCORRECT_TEXT = """
     Yesterday, we was at the park, and them kids was playing. She don't like the way how they acted, but I don't got no problem with it. We seen a movie last night, and it was good, but my sister, she don't seen it yet. Them books on the shelf, they ain't interesting to me.
 """
 
+LANGUAGE_TEXTS = ["""Bienvenidos a Nueva York para la Reunión del Consejo General de las Naciones Unidas. Hoy
+es un día especial para celebrar todos nuestros logros desde la formación de este instituto global.
+Pero más importante aún, queremos abordar cómo podemos mitigar el conflicto global con conversaciones
+y promover la disuasión, la distensión y el diálogo.""",
+            """Willkommen in New York zur Sitzung des Allgemeinen Rates der Vereinten Nationen. Heute
+ist ein besonderer Tag für uns, um all unsere Errungenschaften seit der Gründung dieses globalen Instituts zu feiern.
+Aber wichtiger ist, dass wir ansprechen möchten, wie wir globale Konflikte durch Gespräche mildern können
+und Abschreckung, Entspannung und Diskussion fördern.""",
+                  """Bienvenue à New York pour la réunion du Conseil Général des Nations Unies. Aujourd'hui,
+c'est un jour spécial pour nous pour célébrer toutes nos réalisations depuis la formation de cette institution mondiale.
+Mais plus important encore, nous voulons aborder comment nous pouvons atténuer les conflits mondiaux grâce à la conversation
+et promouvoir la dissuasion, la détente et la discussion.""",
+                  """欢迎来到纽约参加联合国大会议。今天对我们来说是一个特别的日子，我们将庆祝自该全球机构成立以来取得的所有成就。但更重要的是，我们想要讨论如何通过对话来缓解全球冲突，并促进遏制、缓和和讨论。
+"""]
+
+
 if __name__ == "__main__":
 
     # Create argument parser
@@ -83,10 +100,10 @@ if __name__ == "__main__":
     # Add task argument
     parser.add_argument(
      "--task",
-        choices=[1, 2, 3, 4, 5, 6, 7],
+        choices=[1, 2, 3, 4, 5, 6, 7, 8],
         type=int,
         nargs="+",
-        default=[1, 2, 3, 4, 5, 6, 7],
+        default=[1, 2, 3, 4, 5, 6, 7, 8],
         help="Specify tasks to execute (default: all tasks).",
     )
     # Parse command line arguments
@@ -138,7 +155,8 @@ if __name__ == "__main__":
         # Use class signatures for text translation
         print("NLP Task 4: Text Translation and Transliteration")
         translate = dspy.Predict(TranslateText)
-        response = translate(text=LANGUAGE_TEXT, language='fr')
+        response = translate(text=LANGUAGE_TEXT)
+        print(f"{BOLD_BEGIN}Language Text:{BOLD_END} {response.language}")
         print(f"{BOLD_BEGIN}Translated Text:{BOLD_END}")
         print(response.translated_text)
         print("-------------------")
@@ -151,8 +169,21 @@ if __name__ == "__main__":
         response = transform(text=PIRATE_SPEAK)
         print(f"{BOLD_BEGIN}Corrected Text:{BOLD_END}")
         print(response.corrected_text)
-
+    
     if 6 in args.task:
+        # NLP Task 6 Text Translation from Specific Language to English
+        # Use class signatures for text translation
+        print("NLP Task 6: Text Translation from Specific Language to English")
+        translate = dspy.Predict(TranslateTextToLanguage)
+        for text in LANGUAGE_TEXTS:
+            response = translate(text=text)
+            print(f"{BOLD_BEGIN}Language Text:{BOLD_END} {response.language}")
+            print(f"{BOLD_BEGIN}Translated Text:{BOLD_END}")
+            print(response.translated_text)
+            print("-------------------")
+
+
+    if 7 in args.task:
 
         # NLP Task 6: Text Correction for Grammatical Errors
         # Use class signatures for text correction
@@ -165,7 +196,7 @@ if __name__ == "__main__":
         print(response.corrected_text)
         print("-------------------")
 
-    if 7 in args.task:
+    if 8 in args.task:
         # NLP Task 7: Generate JSON Output
         # Use class signatures for JSON output generation
         print("NLP Task 7: Generate JSON Output")

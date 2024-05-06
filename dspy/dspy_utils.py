@@ -7,8 +7,8 @@ class QuestionAnswer(dspy.Signature):
     answer   = dspy.OutputField()
 
 class ClassifyEmotion(dspy.Signature):
-    """Classify emotion among sadness, joy, love, anger, fear, surprise."""
-
+    """Classify emotion among postive, negative or neutral based on the input sentence. Use only one of the three classes.
+    And provide the sentiment as the output."""
     sentence  = dspy.InputField()
     sentiment = dspy.OutputField()
 
@@ -35,10 +35,19 @@ class SummarizeTextAndExtractKeyTheme(dspy.Signature):
     takeaways  = dspy.OutputField()
 
 class TranslateText(dspy.Signature):
-    """Translate a given text in English language, translate to another language."""
+    """Given text indentify the language, translate into 
+        Spanish, French, German, Portugese, Japense, Korean, and Mandarin."""
 
     text      = dspy.InputField()
-    language  = dspy.InputField()
+    language  = dspy.OutputField()
+    translated_text = dspy.OutputField()
+
+class TranslateTextToLanguage(dspy.Signature):
+    """Given text, indentify the language and translate into 
+    English language."""
+
+    text      = dspy.InputField()
+    language  = dspy.OutputField()
     translated_text = dspy.OutputField()
 
 
@@ -77,3 +86,16 @@ class GenerateJSON(dspy.Signature):
     """
 
     json_text = dspy.OutputField(desc='key-value pairs')
+
+class TextCategorizationAndSentimentAnalsysis(dspy.Signature):
+    """Categorize the given text into one of the following categories:
+    Technical support, Billing, Account Management, New Customer or General inquiry.
+    If you can't classify the text, default to 'General inquiry.'
+    If customer text contatins a foul language, then respond with 
+    'No need for foul language. Please be respectful."
+    Also provide the sentiment of the text as the output as positive, negative or neutral.
+    """
+
+    text      = dspy.InputField()
+    category  = dspy.OutputField()
+    sentiment = dspy.OutputField()
