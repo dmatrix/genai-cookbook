@@ -3,7 +3,8 @@ import argparse
 from dspy_utils import TextCompletion, SummarizeText, \
     SummarizeTextAndExtractKeyTheme, TranslateText, \
     TextTransformationAndCorrection, TextCorrection, \
-    TranslateTextToLanguage, GenerateJSON
+    TranslateTextToLanguage, GenerateJSON, \
+    SimpleAndComplexReasoning, WordMathProblem
 
 BOLD_BEGIN = "\033[1m"
 BOLD_END = "\033[0m"
@@ -91,6 +92,10 @@ et promouvoir la dissuasion, la détente et la discussion.""",
                   """欢迎来到纽约参加联合国大会议。今天对我们来说是一个特别的日子，我们将庆祝自该全球机构成立以来取得的所有成就。但更重要的是，我们想要讨论如何通过对话来缓解全球冲突，并促进遏制、缓和和讨论。
 """]
 
+MATH_PROBLEM = """
+    If my hourly rate is $117.79 per hour and I work 30 hours a week, 
+    what is my yearly income?"
+"""
 
 if __name__ == "__main__":
 
@@ -100,10 +105,10 @@ if __name__ == "__main__":
     # Add task argument
     parser.add_argument(
      "--task",
-        choices=[1, 2, 3, 4, 5, 6, 7, 8],
+        choices=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         type=int,
         nargs="+",
-        default=[1, 2, 3, 4, 5, 6, 7, 8],
+        default=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         help="Specify tasks to execute (default: all tasks).",
     )
     # Parse command line arguments
@@ -182,10 +187,8 @@ if __name__ == "__main__":
             print(response.translated_text)
             print("-------------------")
 
-
     if 7 in args.task:
-
-        # NLP Task 6: Text Correction for Grammatical Errors
+        # NLP Task 7: Text Correction for Grammatical Errors
         # Use class signatures for text correction
         print("NLP Task 6: Text Correction for Grammatical Errors")
         correct = dspy.Predict(TextCorrection)
@@ -197,12 +200,37 @@ if __name__ == "__main__":
         print("-------------------")
 
     if 8 in args.task:
-        # NLP Task 7: Generate JSON Output
+        # NLP Task 8: Generate JSON Output
         # Use class signatures for JSON output generation
-        print("NLP Task 7: Generate JSON Output")
+        print("NLP Task 8: Generate JSON Output")
         generate_json = dspy.Predict(GenerateJSON)
         response = generate_json()
         print(f"{BOLD_BEGIN}Generated JSON Output:{BOLD_END}")
         print(response.json_text)
+        print("-------------------")
+
+    if 9 in args.task:
+        # NLP Task 9: Simple and Complex Reasoning
+        # Use class signatures for simple and complex reasoning
+        print("NLP Task 9: Simple and Complex Reasoning")
+        reasoning = dspy.Predict(SimpleAndComplexReasoning)
+        response = reasoning(numbers="'1', '2', '3', '4', '5', '7', '8', '11', '13', '17', '19', '23', '24', '29', '31', '37', '41', '43', '47', '53', '59', '61', '67', '71', '73', '79', '83', '89', '97'")
+        print(f"{BOLD_BEGIN}Prime numbers:{BOLD_END} {response.prime_numbers}")
+        print(f"{BOLD_BEGIN}Sum of Prime numbers:{BOLD_END} {response.sum_of_prime_numbers}")
+        print(f"{BOLD_BEGIN}Sum is :{BOLD_END} {response.sum_is_even_or_odd }")
+        print(f"{BOLD_BEGIN}Reasoning:{BOLD_END}")
+        print(response.reasoning)
+        print("-------------------")
+
+    if 10 in args.task:
+        # NLP Task 10: Word Math Problem
+        # Use class signatures for word math problem
+        print("NLP Task 10: Word Math Problem")
+        word_math = dspy.Predict(WordMathProblem)
+        response = word_math(problem=MATH_PROBLEM)
+        print(f"{BOLD_BEGIN}Word Math Problem:{BOLD_END}")
+        print(MATH_PROBLEM)
+        print(f"{BOLD_BEGIN}Explanation:{BOLD_END}")
+        print(response.explanation)
         print("-------------------")
 
