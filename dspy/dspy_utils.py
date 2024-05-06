@@ -99,3 +99,22 @@ class TextCategorizationAndSentimentAnalsysis(dspy.Signature):
     text      = dspy.InputField()
     category  = dspy.OutputField()
     sentiment = dspy.OutputField()
+
+class SimpleAndComplexReasoning(dspy.Signature):
+    """Given a list of numbers identify all prime numbers, 
+    output the list of all primbers, add the list and identify
+    if the sum is even or odd. Explain the reasoning behind the
+    answer. 
+    """
+    numbers = dspy.InputField(desc="List of numbers separated by comma")
+    prime_numbers = dspy.OutputField()
+    sum_of_prime_numbers = dspy.OutputField()
+    sum_is_even_or_odd = dspy.OutputField()
+    reasoning = dspy.OutputField()
+
+class WordMathProblem(dspy.Signature):
+    """Given a word math problem, solve the problem and provide step by step
+       explanation as the output. Do make an answer or round the answer. 
+    """
+    problem = dspy.InputField()
+    explanation = dspy.OutputField()

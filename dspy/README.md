@@ -40,7 +40,7 @@ All examples use OLlama Mistral, running locally on the laptop, and experimental
 #### Python Notebooks
 | Notebook Description| Open with Colab |
 |--------------------|-----------------|
-| Common NLP Tasks with DSPy Modules | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/dspy/04_common_nlp_llm_tasks_dspy.ipynb) |
+| Common NLP Tasks with DSPy Signature Modules | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/dspy/04_common_nlp_llm_tasks_dspy.ipynb) |
 
 #### Python Apps
 
