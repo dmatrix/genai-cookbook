@@ -218,7 +218,7 @@ if __name__ == "__main__":
         print(f"{BOLD_BEGIN}Prime numbers:{BOLD_END} {response.prime_numbers}")
         print(f"{BOLD_BEGIN}Sum of Prime numbers:{BOLD_END} {response.sum_of_prime_numbers}")
         print(f"{BOLD_BEGIN}Sum is :{BOLD_END} {response.sum_is_even_or_odd }")
-        print(f"{BOLD_BEGIN}Reasoning:{BOLD_END}")
+        print(f"{BOLD_BEGIN}Explanation:{BOLD_END}")
         print(response.reasoning)
         print("-------------------")
 
