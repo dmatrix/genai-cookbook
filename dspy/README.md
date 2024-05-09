@@ -1,4 +1,4 @@
-## DSPy - Programming model for LLMs
+## DSPy - Programming with Foundation Models
 
 <img src="images/dspy_img.png">
 
@@ -29,9 +29,12 @@ _The above text is generated using DSPy module and OLlama LLM running locally on
 
 ### Python Notebooks and Code Examples
 
-The Python code examples illustrate programming the LLM with in-line DSPy signatures and Class Signatures modules, not prompting required, except for `desc` in the documentation string in short and precise wording the task at hand.
+The Python code examples illustrate programming the LLM with in-line DSPy signatures and Class Signatures modules, no prompting required, except for task declared in the class
+`doc` string, in short and succint wording the task at hand.
 
-It also demonstrates to conduct common NLP tasks using DSPy modules, rather than prompting the LLM.
+It also demonstrates to conduct common NLP tasks using DSPy Signature and Preduct modules, rather than explicity 
+prompting the LLM; the prompt are internally constructed
+via the Signature.
 
 All examples use OLlama Mistral, running locally on the laptop, and experimental DSPy [dspy.OLlama](https://dspy-docs.vercel.app/docs/building-blocks/language_models#local-lms) client integration APIs. Have a peek 👀 on GitHub!
 
@@ -41,6 +44,8 @@ All examples use OLlama Mistral, running locally on the laptop, and experimental
 | Notebook Description| Open with Colab |
 |--------------------|-----------------|
 | Common NLP Tasks with DSPy Signature Modules | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/dspy/04_common_nlp_llm_tasks_dspy.ipynb) |
+| Chain of Thought (CoT) Tasks with DSPy Signature Modules | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/dspy/06_how_to_use_chain_of_thought.ipynb.ipynb) |
+
 
 #### Python Apps
 
@@ -49,6 +54,7 @@ All examples use OLlama Mistral, running locally on the laptop, and experimental
 | Basic inline DSPy signatures for LLM tasks| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/01_basic_inline_dspy_signature_example.py) |
 | Basic Class Signature modules for LLM Tasks |[Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/02_basic_class_dspy_signature_example.py)|
 |Common NLP Tasks with DSPy Modules| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/03_dspy_nlp_tasks.py)|
+|Chain Of Thought Tasks with DSPy Modules| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/05_dspy_chain_of_thought_tasks.py)|
 
 ### DSPy Documentation
  1. [Programing--not Prompting--LLMs](https://dspy-docs.vercel.app/)
