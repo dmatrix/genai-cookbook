@@ -4,10 +4,9 @@ from dspy_utils import TextCompletion, SummarizeText, \
     SummarizeTextAndExtractKeyTheme, TranslateText, \
     TextTransformationAndCorrection, TextCorrection, \
     TranslateTextToLanguage, GenerateJSON, \
-    SimpleAndComplexReasoning, WordMathProblem
+    SimpleAndComplexReasoning, WordMathProblem, BOLD_BEGIN, BOLD_END
 
-BOLD_BEGIN = "\033[1m"
-BOLD_END = "\033[0m"
+# Define prompts for text completion
 
 PROMPTS = [
         "On cold winter nights, the wolves in Siberia ...",
@@ -15,6 +14,7 @@ PROMPTS = [
         "The ancient city of Atlantis was known for its ...",
 ]
 
+# Define text for summarization and key theme extraction
 SUMMARY = """
     DSPy is a framework for algorithmically optimizing LM prompts and weights, 
     especially when LMs are used one or more times within a pipeline. To use 
@@ -44,6 +44,7 @@ SUMMARY = """
     less prompting, higher scores, and a more systematic approach to solving hard 
     tasks with LMs.
 """
+# Define text for summarization and key theme extraction
 SUMMARY_THEME = """
     Isaac Newton sat under a tree when an apple fell, an event that, 
     according to popular legend, led to his contemplation of the forces
@@ -58,6 +59,7 @@ SUMMARY_THEME = """
     time, shaping the course of scientific inquiry for centuries to come.
 """
 
+# Define text for translation
 LANGUAGE_TEXT = """
     Welcome to New York for the United Nations General Council Meeting. 
     Today is a special day for us to celeberate all our achievments since 
@@ -66,6 +68,7 @@ LANGUAGE_TEXT = """
     conversation and promote deterence, detente, and discussion.
     """
 
+# Define Piratetext for translation
 PIRATE_SPEAK = """
         Arrr matey! I be knowin' nuthin' 'bout them fancy words and grammatical rules. 
         Me and me heartie, we be chattin', and he don't be agreein' with me. 
@@ -73,10 +76,12 @@ PIRATE_SPEAK = """
         don't be listenin' well, always runnin' around and not comin' when ye call.
 """
 
+# Define incorrect text for correction
 INCORRECT_TEXT = """
     Yesterday, we was at the park, and them kids was playing. She don't like the way how they acted, but I don't got no problem with it. We seen a movie last night, and it was good, but my sister, she don't seen it yet. Them books on the shelf, they ain't interesting to me.
 """
 
+# Define language texts for translation
 LANGUAGE_TEXTS = ["""Bienvenidos a Nueva York para la Reunión del Consejo General de las Naciones Unidas. Hoy
 es un día especial para celebrar todos nuestros logros desde la formación de este instituto global.
 Pero más importante aún, queremos abordar cómo podemos mitigar el conflicto global con conversaciones
@@ -92,11 +97,13 @@ et promouvoir la dissuasion, la détente et la discussion.""",
                   """欢迎来到纽约参加联合国大会议。今天对我们来说是一个特别的日子，我们将庆祝自该全球机构成立以来取得的所有成就。但更重要的是，我们想要讨论如何通过对话来缓解全球冲突，并促进遏制、缓和和讨论。
 """]
 
+# Define math problem
 MATH_PROBLEM = """
     If my hourly rate is $117.79 per hour and I work 30 hours a week, 
     what is my yearly income?"
 """
 
+# Main function to execute NLP tasks
 if __name__ == "__main__":
 
     # Create argument parser
@@ -123,8 +130,8 @@ if __name__ == "__main__":
         # NLP Task 1: Text Generation and Completion
         # Use class signatures for text completion
         print("NLP Task 1: Text Generation and Completion")
+        complete = dspy.Predict(TextCompletion)
         for prompt in PROMPTS:
-            complete = dspy.Predict(TextCompletion)
             response = complete(in_text=prompt)
             print(f"{BOLD_BEGIN}Prompt: {prompt}{BOLD_END}")
             print(f"{BOLD_BEGIN}Completion: {response.out_text}{BOLD_END}")
@@ -222,7 +229,7 @@ if __name__ == "__main__":
         print(response.reasoning)
         print("-------------------")
 
-         # Print the prompt history
+        # Print the prompt history
         print("Prompt history:")
         print(ollama_mistral.history[0]["prompt"])
         print("-------------------")

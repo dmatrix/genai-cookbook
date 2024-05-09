@@ -1,6 +1,9 @@
 import dspy
 from typing import List
 
+BOLD_BEGIN = "\033[1m"
+BOLD_END = "\033[0m"
+
 class QuestionAnswer(dspy.Signature):
     """Answer questions based on the input question."""
 
@@ -118,3 +121,26 @@ class WordMathProblem(dspy.Signature):
     """
     problem = dspy.InputField()
     explanation = dspy.OutputField()
+
+class ChainOfThought(dspy.Signature):
+    """
+    Given an input text, solve the problem.
+    Think through this step by step. Solve each step,
+    output the result, and explain how you arrived at your answer
+    """
+    
+    problem_text = dspy.InputField()
+    result = dspy.OutputField(desc="no need for reasoning")
+    reasoning = dspy.OutputField(desc="Give a step by step reasoning")
+
+class ChainOfThoughtTasks(dspy.Signature):
+    """
+    Given an iin put context, answer all questions and
+    provide a step-by-step reasoning for the answer.
+    """
+    context = dspy.InputField()
+    questions = dspy.InputField(desc="answer all the questions")
+    answers = dspy.OutputField(desc="no need for reasoning")
+    reasoning = dspy.OutputField(desc="Give a step by step reasoning")
+
+    
