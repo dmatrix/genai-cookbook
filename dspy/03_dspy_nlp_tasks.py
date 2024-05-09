@@ -214,12 +214,17 @@ if __name__ == "__main__":
         # Use class signatures for simple and complex reasoning
         print("NLP Task 9: Simple and Complex Reasoning")
         reasoning = dspy.Predict(SimpleAndComplexReasoning)
-        response = reasoning(numbers="'1', '2', '3', '4', '5', '7', '8', '11', '13', '17', '19', '23', '24', '29', '31', '37', '41', '43', '47', '53', '59', '61', '67', '71', '73', '79', '83', '89', '97'")
+        response = reasoning(numbers=[4, 8, 9, 11, 13, 17, 19, 23, 24, 29, 31, 37, 41, 42, 43, 47, 53, 59, 61, 67, 71, 74])
         print(f"{BOLD_BEGIN}Prime numbers:{BOLD_END} {response.prime_numbers}")
         print(f"{BOLD_BEGIN}Sum of Prime numbers:{BOLD_END} {response.sum_of_prime_numbers}")
         print(f"{BOLD_BEGIN}Sum is :{BOLD_END} {response.sum_is_even_or_odd }")
         print(f"{BOLD_BEGIN}Explanation:{BOLD_END}")
         print(response.reasoning)
+        print("-------------------")
+
+         # Print the prompt history
+        print("Prompt history:")
+        print(ollama_mistral.history[0]["prompt"])
         print("-------------------")
 
     if 10 in args.task:
@@ -233,4 +238,18 @@ if __name__ == "__main__":
         print(f"{BOLD_BEGIN}Explanation:{BOLD_END}")
         print(response.explanation)
         print("-------------------")
+
+        # Inspect the output
+        # print("Prompt history:")
+        # ollama_mistral.inspect_prompt_history(n=3)
+
+        # print("-------------------")
+
+        # Print the prompt history
+        print("Prompt history:")
+        print(ollama_mistral.history[0]["prompt"])
+        print("-------------------")
+
+
+
 

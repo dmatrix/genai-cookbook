@@ -1,4 +1,5 @@
 import dspy
+from typing import List
 
 class QuestionAnswer(dspy.Signature):
     """Answer questions based on the input question."""
@@ -105,7 +106,7 @@ class SimpleAndComplexReasoning(dspy.Signature):
     output the list of all prime numbers, add the list and identify
     if the sum is even or odd. 
     """
-    numbers = dspy.InputField(desc="List of numbers separated by comma")
+    numbers = dspy.InputField(format=list)
     prime_numbers = dspy.OutputField(desc="no need for reasonaing")
     sum_of_prime_numbers = dspy.OutputField(desc="no need for reasonaing")
     sum_is_even_or_odd = dspy.OutputField(desc="no need for reasonaing")
