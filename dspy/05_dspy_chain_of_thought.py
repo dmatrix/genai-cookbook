@@ -1,7 +1,7 @@
 import dspy
+import warnings
 import argparse
-from dspy_utils import ChainOfThought, ChainOfThoughtTasks, \
-    BOLD_BEGIN, BOLD_END
+from dspy_utils import COT, BOLD_BEGIN, BOLD_END
 
 
 COT_TASKS_1 = """
@@ -38,6 +38,7 @@ girl cleared her stock
 
 # Main function to execute CoT tasks
 if __name__ == "__main__":
+    warnings.filterwarnings("ignore")
 
     # Create argument parser
     parser = argparse.ArgumentParser(description="Parse command line arguments.")
@@ -45,10 +46,10 @@ if __name__ == "__main__":
     # Add task argument
     parser.add_argument(
      "--task",
-        choices=[1, 2, 3, 4],
+        choices=[1, 2, 3],
         type=int,
         nargs="+",
-        default=[1, 2, 3,4],
+        default=[1, 2, 3],
         help="Specify tasks to execute (default: all tasks).",
     )
     # Parse command line arguments
@@ -62,9 +63,9 @@ if __name__ == "__main__":
     # Execute tasks
     if 1 in args.task:
         # CoT Task 1: Solve the given text problem
-        # Use class signatures ChainOfThought
+        # Use class Module COT
         print("Chain of Thought Task 1.")
-        cot = dspy.Predict(ChainOfThought)
+        cot = COT()
         response = cot(problem_text=COT_TASKS_1)
         print(f"{BOLD_BEGIN}Problem:{BOLD_END} {COT_TASKS_1}")
         print(f"{BOLD_BEGIN}Result:{BOLD_END} {response.result}")
@@ -73,9 +74,9 @@ if __name__ == "__main__":
 
     if 2 in args.task:
         # CoT Task 2: Solve the given text problem
-        # Use class signatures ChainOfThought
+        # Use class Module COT
         print("Chain of Thought Task 2.")
-        cot = dspy.Predict(ChainOfThought)
+        cot = COT()
         response = cot(problem_text=COT_TASKS_2)
         print(f"{BOLD_BEGIN}Problem:{BOLD_END} {COT_TASKS_2}")
         print(f"{BOLD_BEGIN}Result:{BOLD_END} {response.result}")
@@ -84,9 +85,9 @@ if __name__ == "__main__":
 
     if 3 in args.task:
         # CoT Task 3: Solve the given text problem
-        # Use class signatures ChainOfThought
+        # Use class Module COT
         print("Chain of Thought Task 3.")
-        cot = dspy.Predict(ChainOfThought)
+        cot = COT()
         response = cot(problem_text=COT_TASKS_3)
         print(f"{BOLD_BEGIN}Problem:{BOLD_END} {COT_TASKS_3}")
         print(f"{BOLD_BEGIN}Result:{BOLD_END} {response.result}")

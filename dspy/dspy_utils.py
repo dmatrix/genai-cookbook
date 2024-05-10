@@ -122,7 +122,7 @@ class WordMathProblem(dspy.Signature):
     problem = dspy.InputField()
     explanation = dspy.OutputField()
 
-class ChainOfThought(dspy.Signature):
+class ChainOfThoughtSignature(dspy.Signature):
     """
     Given an input text, solve the problem.
     Think through this step by step. Solve each step,
@@ -133,14 +133,13 @@ class ChainOfThought(dspy.Signature):
     result = dspy.OutputField(desc="no need for reasoning")
     reasoning = dspy.OutputField(desc="Give a step by step reasoning")
 
-class ChainOfThoughtTasks(dspy.Signature):
-    """
-    Given an iin put context, answer all questions and
-    provide a step-by-step reasoning for the answer.
-    """
-    context = dspy.InputField()
-    questions = dspy.InputField(desc="answer all the questions")
-    answers = dspy.OutputField(desc="no need for reasoning")
-    reasoning = dspy.OutputField(desc="Give a step by step reasoning")
+class COT(dspy.Module):
+    """Chain of Thought Module"""
+    def __init__(self):
+        super().__init__()
+        self.cot = dspy.ChainOfThought(ChainOfThoughtSignature)
+
+    def forward(self, problem_text: str):
+        return self.cot(problem_text=problem_text)
 
     
