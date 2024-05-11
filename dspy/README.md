@@ -3,7 +3,7 @@
 <img src="images/dspy_img.png">
 
 ### Quick overview: what and why use DSPy
-DSPy is a framework for optimizing Language Model (LM) prompts and weights in complex systems, especially when using LMs multiple times within a pipeline. 
+DSPy, pronounced Dee-s-pie, is a framework for optimizing Language Model (LM) prompts and weights in complex systems, especially when using LMs multiple times within a pipeline. 
 
 The process of using LMs without DSPy involves breaking down problems into steps, prompting the LM effectively for each step, adjusting steps to work together, generating synthetic examples for tuning, and finetuning smaller LMs to reduce costs. This process is currently challenging and messy, requiring frequent changes to prompts or finetuning steps whenever the pipeline, LM, or data are altered. 
 
@@ -55,6 +55,8 @@ All examples use OLlama Mistral, running locally on the laptop, and experimental
 | Basic Class Signature modules for LLM Tasks |[Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/02_basic_class_dspy_signature_example.py)|
 |Common NLP Tasks with DSPy Modules| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/03_dspy_nlp_tasks.py)|
 |Chain Of Thought Tasks with DSPy Modules| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/05_dspy_chain_of_thought_tasks.py)|
+|Program Of Thought: Python code generation tasks with DSPy Modules| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/07_dspy_program_of_thought.py)|
+
 
 ### DSPy Documentation
  1. [Programing--not Prompting--LLMs](https://dspy-docs.vercel.app/)
