@@ -141,5 +141,22 @@ class COT(dspy.Module):
 
     def forward(self, problem_text: str):
         return self.cot(problem_text=problem_text)
+    
+class ProgramOfThoughtSignature(dspy.Signature):
+    """
+    Given a question, solve the problem.
+    """
+    
+    question = dspy.InputField()
+    answer = dspy.OutputField(desc="Give a step by step reasoning and generate Python code")
+
+class POT(dspy.Module):
+    """Program of Thought Module"""
+    def __init__(self):
+        super().__init__()
+        self.pot = dspy.ProgramOfThought(ProgramOfThoughtSignature)
+
+    def forward(self, question: str):
+        return self.pot(question=question)
 
     
