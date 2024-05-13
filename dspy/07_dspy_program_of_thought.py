@@ -1,3 +1,5 @@
+import os
+import sys
 import dspy
 import warnings
 import argparse
@@ -12,8 +14,40 @@ POT_TASKS_2 = """
             is 7ft?.
     """
 POT_TASKS_3 = """
-            How to write a Python function to check a prime nunber.
+            How to write a Python function to check a prime nunber?
     """
+POT_TASKS_4 = """
+            How to write a Python function to generate fibonacci series?   
+"""
+POT_TASKS_5 = """
+            How to write Python code to find three smallest prime numbers greater than 30,000?
+"""
+
+POT_TASK_6 = """
+ How to write a Python code, using fractions python module, that generates fractions between 1 and 10?
+"""
+
+POT_TASKS = [POT_TASKS_1, POT_TASKS_2, POT_TASKS_3, POT_TASKS_4, POT_TASKS_5, POT_TASK_6]
+
+# Utility function to execute PoT tasks
+
+def run_pot_task(task, question=None, args=None, history=None):
+    print(f"Program of Thought Task {task}.")
+    print(f"{BOLD_BEGIN}Question:{BOLD_END}{question}")
+    
+    pot = POT()
+    response = pot(question=question)
+    
+    if hasattr(response, "answer"):
+        print(f"{BOLD_BEGIN}Answer  :{BOLD_END}{response.answer}")
+    
+    print("-----------------------------\n")
+    
+    if history:
+        print(f"{BOLD_BEGIN}Prompt History:{BOLD_END}") 
+        print(ollama_mistral.inspect_history(n=history))
+        print("===========================\n")
+
 
 # Main function to execute CoT tasks
 if __name__ == "__main__":
@@ -25,12 +59,18 @@ if __name__ == "__main__":
     # Add task argument
     parser.add_argument(
      "--task",
-        choices=[1, 2, 3],
+        choices=[1, 2, 3, 4, 5, 6],
         type=int,
         nargs="+",
-        default=[1, 2, 3],
+        default=[1, 2, 3, 4, 5, 6],
         help="Specify tasks to execute (default: all tasks).",
     )
+    parser.add_argument("--history", 
+                        choices=[1, 2, 3], 
+                        type=int, 
+                        default=None,
+                        help="Specify a history value (1, 2, or 3)")
+
     # Parse command line arguments
     args = parser.parse_args()
 
@@ -40,35 +80,8 @@ if __name__ == "__main__":
     dspy.settings.configure(lm=ollama_mistral)
 
     # Execute POT tasks
-    if 1 in args.task:
-        # POT Task 1: Solve the given text problem
-        # Use class Module POT
-        print("Program of Thought Task 1.")
-        pot = POT()
-        response = pot(question=POT_TASKS_1)
-        print(f"{BOLD_BEGIN}Question:{BOLD_END} {POT_TASKS_1}")
-        if hasattr(response, "answer"):
-            print(f"{BOLD_BEGIN}Answer  :{BOLD_END} {response.answer}")
-        print("-----------------------------\n")
-
-    if 2 in args.task:
-        # POT Task 2: Solve the given text problem
-        # Use class Module POT
-        print("Program of Thought Task 2.")
-        pot = POT()
-        response = pot(question=POT_TASKS_2)
-        print(f"{BOLD_BEGIN}Question:{BOLD_END} {POT_TASKS_2}")
-        if hasattr(response, "answer"):
-            print(f"{BOLD_BEGIN}Answer  :{BOLD_END} {response.answer}")
-        print("-----------------------------\n")
-
-    if 3 in args.task:      
-        # POT Task 3: Solve the given text problem
-        # Use class Module POT
-        print("Program of Thought Task 3.")
-        pot = POT()
-        response = pot(question=POT_TASKS_3)
-        print(f"{BOLD_BEGIN}Question:{BOLD_END} {POT_TASKS_3}")
-        if hasattr(response, "answer"):
-            print(f"{BOLD_BEGIN}Answer  :{BOLD_END} {response.answer}")
-        print("-----------------------------\n")
+    if args.task:
+       for task in args.task:
+          run_pot_task(task, question=POT_TASKS[task-1], args=args, history=args.history)
+    else: 
+        raise ValueError("Invalid task number. Please specify a valid task number.")

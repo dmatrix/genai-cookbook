@@ -36,6 +36,26 @@ And finally, looking at all the numbers, which girl benefited most. That is, whi
 girl cleared her stock
 """
 
+COT_TASKS = [COT_TASKS_1, COT_TASKS_2, COT_TASKS_3]
+
+# Utility function to execute CoT tasks
+def run_cot_task(task, question=None, args=None, history=None):
+    print(f"Chain of Thought Task {task}.")
+    print(f"{BOLD_BEGIN}Question:{BOLD_END}{question}")
+    
+    cot = COT()
+    response = cot(problem_text=question)
+    print(f"{BOLD_BEGIN}Result:{BOLD_END} {response.result}")
+    if hasattr(response, "reasoning"):
+        print(f"{BOLD_BEGIN}Reasoning  :{BOLD_END}{response.reasoning}")
+    
+    print("-----------------------------\n")
+    
+    if history:
+        print(f"{BOLD_BEGIN}Prompt History:{BOLD_END}") 
+        print(ollama_mistral.inspect_history(n=history))
+        print("===========================\n")
+
 # Main function to execute CoT tasks
 if __name__ == "__main__":
     warnings.filterwarnings("ignore")
@@ -52,6 +72,11 @@ if __name__ == "__main__":
         default=[1, 2, 3],
         help="Specify tasks to execute (default: all tasks).",
     )
+    parser.add_argument("--history", 
+                        choices=[1, 2, 3], 
+                        type=int, 
+                        default=None,
+                        help="Specify a history value (1, 2, or 3)")
     # Parse command line arguments
     args = parser.parse_args()
 
@@ -60,37 +85,9 @@ if __name__ == "__main__":
                                       max_tokens=2500)
     dspy.settings.configure(lm=ollama_mistral)
 
-    # Execute tasks
-    if 1 in args.task:
-        # CoT Task 1: Solve the given text problem
-        # Use class Module COT
-        print("Chain of Thought Task 1.")
-        cot = COT()
-        response = cot(problem_text=COT_TASKS_1)
-        print(f"{BOLD_BEGIN}Problem:{BOLD_END} {COT_TASKS_1}")
-        print(f"{BOLD_BEGIN}Result:{BOLD_END} {response.result}")
-        print(f"{BOLD_BEGIN}Resaoning:{BOLD_END}: {response.reasoning}")
-        print("-----------------------------\n")
-
-    if 2 in args.task:
-        # CoT Task 2: Solve the given text problem
-        # Use class Module COT
-        print("Chain of Thought Task 2.")
-        cot = COT()
-        response = cot(problem_text=COT_TASKS_2)
-        print(f"{BOLD_BEGIN}Problem:{BOLD_END} {COT_TASKS_2}")
-        print(f"{BOLD_BEGIN}Result:{BOLD_END} {response.result}")
-        print(f"{BOLD_BEGIN}Resaoning:{BOLD_END}: {response.reasoning}")
-        print("-----------------------------\n")
-
-    if 3 in args.task:
-        # CoT Task 3: Solve the given text problem
-        # Use class Module COT
-        print("Chain of Thought Task 3.")
-        cot = COT()
-        response = cot(problem_text=COT_TASKS_3)
-        print(f"{BOLD_BEGIN}Problem:{BOLD_END} {COT_TASKS_3}")
-        print(f"{BOLD_BEGIN}Result:{BOLD_END} {response.result}")
-        print(f"{BOLD_BEGIN}Resaoning:{BOLD_END}: {response.reasoning}")
-        print("-----------------------------\n")
-
+    # Execute Chain of Thought tasks
+    if args.task:
+       for task in args.task:
+          run_cot_task(task, question=COT_TASKS[task-1], args=args, history=args.history)
+    else: 
+        raise ValueError("Invalid task number. Please specify a valid task number.")
