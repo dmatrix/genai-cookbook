@@ -137,7 +137,7 @@ class COT(dspy.Module):
     """Chain of Thought Module"""
     def __init__(self):
         super().__init__()
-        self.cot = dspy.ChainOfThought(ChainOfThoughtSignature)
+        self.cot = dspy.ChainOfThought(ChainOfThoughtSignature, max_iters=5)
 
     def forward(self, problem_text: str):
         return self.cot(problem_text=problem_text)
@@ -154,7 +154,7 @@ class POT(dspy.Module):
     """Program of Thought Module"""
     def __init__(self):
         super().__init__()
-        self.pot = dspy.ProgramOfThought(ProgramOfThoughtSignature)
+        self.pot = dspy.ProgramOfThought(ProgramOfThoughtSignature, max_iters=5)
 
     def forward(self, question: str):
         return self.pot(question=question)
