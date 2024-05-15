@@ -158,5 +158,25 @@ class POT(dspy.Module):
 
     def forward(self, question: str):
         return self.pot(question=question)
+    
+class RAGSignature(dspy.Signature):
+    """
+    Given a context, question, answer the question.
+    """
+    context = dspy.InputField()
+    question = dspy.InputField()
+    answer = dspy.OutputField()
+    
+class RAG(dspy.Module) :
+    def __init__ ( self , num_passages =3) :
+        # Retrieve will use the user’s default retrieval settings unless overriden .
+        self.retrieve = dspy.Retrieve(k=num_passages)
+
+        # ChainOfThought with signature that generates answers given retrieval context & question .
+        self.generate_answer = dspy.ChainOfThought (RAGSignature)
+
+    def forward (self, question) :
+        context = self.retrieve (question).passages
+        return self.generate_answer(context=context, question=question)
 
     

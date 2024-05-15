@@ -57,6 +57,7 @@ All examples use OLlama Mistral, running locally on the laptop, and experimental
 |Common NLP Tasks with DSPy Modules| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/03_dspy_nlp_tasks.py)|
 |Chain Of Thought Tasks with DSPy Modules| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/05_dspy_chain_of_thought_tasks.py)|
 |Program Of Thought: Python code generation tasks with DSPy Modules| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/07_dspy_program_of_thought.py)|
+|Naive RAG with DSPy Module| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/09_dspy_naive_rag.py)|
 
 
 ### DSPy Documentation
