@@ -46,6 +46,7 @@ All examples use OLlama Mistral, running locally on the laptop, and experimental
 | Common NLP Tasks with DSPy Signature Modules | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/dspy/04_dspy_common_nlp_llm_tasks.ipynb) |
 | Chain of Thought (CoT) Tasks with DSPy Modules | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/dspy/06_dspy_chain_of_thought.ipynb) |
 | Program of Thought (PoT) Tasks with DSPy Modules | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/dspy/08_dspy_program_of_thought.ipynb) |
+| Naive RAG with DSPy Modules | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/dspy/10_dspy_naive_rag.ipynb) |
 
 
 #### Python Apps
@@ -73,7 +74,8 @@ All examples use OLlama Mistral, running locally on the laptop, and experimental
 Model Call into Self-improving Pipelines](https://arxiv.org/pdf/2310.03714)
 2. [Intro to DSPy: Goodbye Prompting, Hello Programming!](https://towardsdatascience.com/intro-to-dspy-goodbye-prompting-hello-programming-4ca1c6ce3eb9)
 3. [DSPy Explained!](https://youtu.be/41EfOY0Ldkc?si=WN4_t5YgmGVFMhiM)
-4. [A gentle introduction to DSPy](https://learnbybuilding.ai/tutorials/a-gentle-introduction-to-dspy)
+4. [Getting Started with RAG in DSPy!](https://youtu.be/CEuUG4Umfxs?si=buqM88SjxeRf1wJA)
+5. [A gentle introduction to DSPy](https://learnbybuilding.ai/tutorials/a-gentle-introduction-to-dspy)
 
 
 ### WIP 🚧

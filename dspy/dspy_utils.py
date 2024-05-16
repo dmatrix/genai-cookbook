@@ -169,10 +169,12 @@ class RAGSignature(dspy.Signature):
     
 class RAG(dspy.Module) :
     def __init__ ( self , num_passages =3) :
+
+        # Built our imperative modular pile of retriver and chain of thought
         # Retrieve will use the user’s default retrieval settings unless overriden .
         self.retrieve = dspy.Retrieve(k=num_passages)
 
-        # ChainOfThought with signature that generates answers given retrieval context & question .
+        # ChainOfThought with signature that generates answers given retrieval context & question.
         self.generate_answer = dspy.ChainOfThought (RAGSignature)
 
     def forward (self, question) :
