@@ -47,6 +47,7 @@ All examples use OLlama Mistral, running locally on the laptop, and experimental
 | Chain of Thought (CoT) Tasks with DSPy Modules | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/dspy/06_dspy_chain_of_thought.ipynb) |
 | Program of Thought (PoT) Tasks with DSPy Modules | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/dspy/08_dspy_program_of_thought.ipynb) |
 | Naive RAG with DSPy Modules | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/dspy/10_dspy_naive_rag.ipynb) |
+| ReAct Tasks with DSPy Modules | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/dspy/12_dspy_react_task.ipynb) |
 
 
 #### Python Apps
@@ -59,7 +60,7 @@ All examples use OLlama Mistral, running locally on the laptop, and experimental
 |Chain Of Thought Tasks with DSPy Modules| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/05_dspy_chain_of_thought_tasks.py)|
 |Program Of Thought: Python code generation tasks with DSPy Modules| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/07_dspy_program_of_thought.py)|
 |Naive RAG with DSPy Module| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/09_dspy_naive_rag.py)|
-
+|ReAct tasks with DSPy Module| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/11_dspy_react_task_task.py)|
 
 ### DSPy Documentation
  1. [Programing--not Prompting--LLMs](https://dspy-docs.vercel.app/)
