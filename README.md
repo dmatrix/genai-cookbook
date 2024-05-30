@@ -37,7 +37,7 @@ The examples in this cook are inspired (some modified, expanded or copied) from 
 * [An Exploratory Tour of Retrieval Augmented Generation (RAG) Paradigm](https://medium.com/@2twitme/an-exploratory-tour-of-retrieval-augmented-generation-rag-paradigm-3940c1947d27)
 
 ## Environment files
-Since I use use either OpenAI, Anthropic, or Anyscale Endpoints, I provide three
+Since I use either OpenAI, Anthropic, or Anyscale Endpoints, I provide three
 environment template files: *env_anyscale_template*, *env_anthropic_template*, and *env_openai_template*. Add your keys and model name to either of the files and copy the file to **.env** to the top-level directory. To migrate any OpenAI code to Anyscale Endpoints, use this [simple guide](https://docs.endpoints.anyscale.com/guides/migrate-from-openai/). For the most part, the migration is seamless.
 
 Also, you'll require some Python libraries. Use `pip install -r requirements.txt` to install them.
