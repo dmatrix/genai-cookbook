@@ -11,17 +11,16 @@ class QuestionAnswer(dspy.Signature):
     answer   = dspy.OutputField()
 
 class ClassifyEmotion(dspy.Signature):
-    """Classify emotion among postive, negative or neutral based on the input sentence. Use only one of the three classes.
-    And provide the sentiment as the output."""
+    """Classify emotion based on the input sentence
+        and provide the sentiment as the output."""
     sentence  = dspy.InputField()
-    sentiment = dspy.OutputField()
+    sentiment = dspy.OutputField(desc="generate reponse as positive, negative or neutral")
 
 class SummarizeText(dspy.Signature):
     """Summarize a given text into a succinct summary, in no more
     than a combination of 10 or 15 simple, compound, complex, and 
     compound-complex complete sentences. Don't truncate the text.
     """
-
     text    = dspy.InputField()
     summary = dspy.OutputField()
 
@@ -32,7 +31,6 @@ class SummarizeTextAndExtractKeyTheme(dspy.Signature):
     from the text, label it as 'Key Subjects:', and 
     enumerate 'Takeaways:'.
     """
-
     text       = dspy.InputField()
     summary    = dspy.OutputField()
     key_themes = dspy.OutputField()
@@ -40,7 +38,8 @@ class SummarizeTextAndExtractKeyTheme(dspy.Signature):
 
 class TranslateText(dspy.Signature):
     """Given text indentify the language, translate into 
-        Spanish, French, German, Portugese, Japense, Korean, and Mandarin."""
+        Spanish, French, German, Portugese, Japense, Korean, 
+        and Mandarin."""
 
     text      = dspy.InputField()
     language  = dspy.OutputField()
@@ -169,6 +168,7 @@ class RAGSignature(dspy.Signature):
     
 class RAG(dspy.Module) :
     def __init__ ( self , num_passages=3) :
+        super().__init__()
         # Retrieve will use the user’s default retrieval settings unless overriden .
         self.retrieve = dspy.Retrieve(k=num_passages)
         # ChainOfThought with signature that generates answers given retrieval context & question .
@@ -178,12 +178,12 @@ class RAG(dspy.Module) :
         context = self.retrieve (question).passages
         return self.generate_answer(context=context, question=question)
 
-class ThoughtReflection ( dspy . Module ) :
+class ThoughtReflection (dspy.Module ) :
     def __init__ ( self, num_attempts=5) :
-        self.predict = dspy.ChainOfThought ("question -> answer", n=num_attempts)
-        self.compare = dspy.MultiChainComparison("question -> answer", M=num_attempts)
+        self.predict = dspy.ChainOfThought (QuestionAnswer, n=num_attempts)
+        self.compare = dspy.MultiChainComparison(QuestionAnswer, M=num_attempts)
     
-    def forward (self,  question ) :
-        completions = self.predict (question=question).completions
+    def forward (self,  question) :
+        completions = self.predict(question=question).completions
         return self.compare(question=question, completions=completions)
     
