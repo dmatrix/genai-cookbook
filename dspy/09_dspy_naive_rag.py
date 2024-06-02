@@ -13,7 +13,7 @@ QUESTIONS = [
     "Which country has won the most FIFA Football World Cups?",
     "Who is the author of the book '1984'?",
     "What is the most popular programming language?",
-    "What is dark matter in physics?",
+    "When was the last Solar Eclipse in the United States, and what states were covered in total darkness?"
 ]
     
 if __name__ == "__main__":
