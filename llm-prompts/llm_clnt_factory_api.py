@@ -1,5 +1,7 @@
 from openai import OpenAI
 from anthropic import Anthropic
+import google.generativeai as genai
+
 import ollama
 
 class ClientFactory:
@@ -12,7 +14,10 @@ class ClientFactory:
     def create_client(self, client_name, **kwargs):
         client_class = self.clients.get(client_name)
         if client_class:
-            return client_class(**kwargs)
+            if client_name == 'google':
+                return client_class(kwargs['model_name'])                
+            else:
+                return client_class(**kwargs)
         else:
             raise ValueError(f"Client '{client_name}' not registered.")
 
@@ -37,6 +42,14 @@ def _get_chat_response(clnt: object, model: str, system_content: str, user_conte
     elif isinstance(clnt, ollama.Client):
         chat_response = clnt.chat(model=model,
                 messages=[{"role": "user", 
+                           "content": user_content}])
+        response = chat_response['message']['content']
+        return response
+    elif isinstance(clnt, genai.GenerativeModel):
+        chat_response = clnt.chat(model=model,
+                messages=[{"role": "system", 
+                           "content": system_content},
+                           {"role": "user", 
                            "content": user_content}])
         response = chat_response['message']['content']
         return response
@@ -78,5 +91,19 @@ if __name__ == "__main__":
     client_kwargs = {}
     client = client_factory.create_client(client_type, **client_kwargs) 
     print(client)
+    print("--------------------------")
+
+    # Test Google Generative AI client
+    client_factory.register_client('google', genai.GenerativeModel)
+    client_type = 'google'
+    client_kwargs = {"model_name": "gemini-1.5-flash",
+                     "generation_config": {"temperature": 0.8,
+                                          "api_key": "sk-1234567890abcdef1234567890abcdef",},
+                     "system_instruction": "Please generate a polite to the user prompt. Do not make any answer",
+    }
+
+    client = client_factory.create_client(client_type, **client_kwargs)
+    print(client)
+    print("--------------------------")
     
 
