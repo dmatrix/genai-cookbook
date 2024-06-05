@@ -46,18 +46,15 @@ def _get_chat_response(clnt: object, model: str, system_content: str, user_conte
         response = chat_response['message']['content']
         return response
     elif isinstance(clnt, genai.GenerativeModel):
-        chat_response = clnt.chat(model=model,
-                messages=[{"role": "system", 
-                           "content": system_content},
-                           {"role": "user", 
-                           "content": user_content}])
-        response = chat_response['message']['content']
-        return response
+        chat_response = clnt.generate_content(user_content)
+        return chat_response.text
     else:
         raise ValueError(f"Client '{clnt}' not registered or not supported.")
     
 def get_commpletion(clnt: object, model: str, system_content: str, user_content:str) -> str:
     return _get_chat_response(clnt, model, system_content, user_content)
+
+    
 
 # Test ClientFactory
 if __name__ == "__main__":
