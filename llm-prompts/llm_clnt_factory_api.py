@@ -15,7 +15,8 @@ class ClientFactory:
         client_class = self.clients.get(client_name)
         if client_class:
             if client_name == 'google':
-                return client_class(kwargs['model_name'])                
+                return client_class(kwargs['model_name'])
+              
             else:
                 return client_class(**kwargs)
         else:
