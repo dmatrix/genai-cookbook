@@ -129,6 +129,7 @@ Let's first use a few-shot examples to indicate how an LLM should progress with 
 | Use Code Llama for code generation | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/8_how_to_use_code_llama_prompt.ipynb) |
 | Use Anthropic Claude 3 for basic prompts|[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/9_how_to_use_basic_anthropic.ipynb) | 
 | Use Anthropic Claude 3 for NLP tasks |[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/10_how_to_conduct_common_nlp_llm_task_anthropic.ipynb) | 
-| Use Anthropic Claude 3 for NLP tasks |[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/11_how_to_conduct_common_nlp_gemini_llm_tasks.ipynb) | 
+| Use Gemini for NLP tasks |[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/11_how_to_conduct_common_nlp_gemini_llm_tasks.ipynb) | 
+| Use Gemini for Imageto text tasks |[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dmatrix/genai-cookbook/blob/main/llm-prompts/12_how_to_use_gemini_vision_model.ipynb) | 
 
 Let's dive & swim 🐬 in 
