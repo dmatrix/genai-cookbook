@@ -80,6 +80,26 @@ class TextCorrection(dspy.Signature):
     text = dspy.InputField()
     corrected_text = dspy.OutputField()
 
+class ZeroShotEntityNameRecognition(dspy.Signature):
+    """Given a text, identify the named entities in the text. 
+       Output the named entities as persons,organizations, 
+       and locations.
+    """
+
+    text = dspy.InputField()
+    entities = dspy.OutputField()
+
+
+class DialogueGeneration(dspy.Signature):
+    """Generate a dialogue between a customer and Agent based
+      on the problem input text of a technical problem. Provide the dialogue as the output.
+    """
+
+    problem_text = dspy.InputField()
+    dialogue = dspy.OutputField(prefix="Dialogue between customer and support agent:")
+
+
+    
 class GenerateJSON(dspy.Signature):
     """Generate five distinct products on training shoes. 
        Generate products and format them all in a single JSON object.
