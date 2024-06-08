@@ -39,8 +39,8 @@ Can you help?"""
     result = dialog(problem_text=problem_text)
     print(f"{BOLD_BEGIN} User Input {BOLD_END}: {problem_text}")
     print(f"{BOLD_BEGIN} Dialogue {BOLD_END}: {result.dialogue}")
-
-    # Inspect the prompt history 
     print("--------------------------")
+    # Inspect the prompt history 
     print(f"{BOLD_BEGIN} Prompt History {BOLD_END}:")
     print(ollama_mistral.inspect_history(n=1))
+    print("--------------------------")
