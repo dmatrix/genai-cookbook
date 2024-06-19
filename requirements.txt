@@ -13,3 +13,6 @@ cohere
 pineclone-client
 transformers
 datasets
+loadenv
+jupyter
+jupyterlab
