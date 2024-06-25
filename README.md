@@ -5,15 +5,15 @@
 
 <img src=images/gen_ai_cookbook_img_1.png>
 
-Welcome to a mixture of Gen AI cookbook **how-to** recipes for Gen AI applications. These simple guides span across get-started examples on LLM prompting strategies, DSPy, building simple chatbots, retrieval generation augmentation (RAGs), LLM-based applications on OpenAI, Anthropic, Gemini, or Anyscale Endpoints, etc. 
+Welcome to a mixture of Gen AI cookbook **how-to** recipes for Gen AI applications. These simple guides span across get-started examples on LLM prompting strategies, DSPy, building simple chatbots, retrieval generation augmentation (RAGs), LLM-based applications on OpenAI, Anthropic, Gemini, or Anyscale Endpoints, OLlama, etc. 
 
-Aimed at develpers who are beginning their journey on LLMs, you'll find examples code and/or guides for common tasks using the OpenAI API, Anthropic, Google Gemini, Pinecone, Anyscale Endpoints and [Ray framework](https://www.ray.io/). 
+Aimed at developers who are beginning their journey on LLMs, you'll find examples code and/or guides for common tasks using the OpenAI API, Anthropic, Google Gemini, Pinecone, Anyscale Endpoints and [Ray framework](https://www.ray.io/). 
 
 To try these examples, you'll need an [OpenAI](https://platform.openai.com/docs/introduction) account and an associated API key, [Anthropic](https://docs.anthropic.com/claude/docs/intro-to-claude), [Pinecone](https://www.pinecone.io/pricing/), or an [Anyscale Endpoint](https://www.anyscale.com/get-started) account and an associated key. Even better, install [OLlama](https://ollama.com/) on your laptop. 
 
 All examples are in Python, yet the concepts can be adapted to any programming language, so long as you can make REST API calls in the target language or use target language's SDK.
 
-The examples in this cook are inspired (some modified, expanded or copied) from these resources, including:
+The examples in this cook book are inspired (some modified, expanded or copied) from these resources, including:
 
  * [OpenAI Cookbook](https://github.com/openai/openai-cookbook)
  * [OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
@@ -26,26 +26,24 @@ The examples in this cook are inspired (some modified, expanded or copied) from 
  * [LangChain for LLM Application Development](https://learn.deeplearning.ai/langchain/lesson/1/introduction)
  * [Building Systems with the ChatGPT API](https://learn.deeplearning.ai/chatgpt-building-system/lesson/1/introduction)
  * [DSPy: Programming framework for Language Models](https://dspy-docs.vercel.app/docs/intro)
- * Various blog posts on medium.
+ * Various medium blog posts cited as resources of chapter blogs published on medium.
 
  ## Directory Structure or Chapters for the nook
 
 | Directory Names| Description | 
 |---------------|-------------|
-| genai_intro | General Introduction to GenAI, Foundation Models, LLMS |
-| agents| What are agents, agent archicture, how to write agents|
-| assistants| How to work with OpenAI Assistants as agents |
-| chatbots| How to write simple chatbots with LLMs |
-| dspy| Quick overview: what and why and how to use DSPy|
-|embeddings-and-vectordbs| Introduction to vector embeddings and how they play a role in semantic searches for LLM Gen apps|
-|evaluation| Evaluation LLM is not easy. How to use exprimentaiton with MLflow tracking and tracing to evaluate LLMs|
-|fine-tuning | Why and when to fine-tune and how. |
+| genai_intro | General introduction to GenAI, Foundation Models, LLMS |
+| agents| What are agents, agent archicture, why use them and how to write agents|
+| assistants| Assistants extend LLM functionality to work and interact external tools, enabling access to external knowlege. How to work with OpenAI Assistants as agents |
+| chatbots| How to write simple chatbots with LLMs, using prompting techniques |
+| dspy| Quick overview of a declaractive framework to program LLMs: what and why and how to use DSPy|
+|embeddings-and-vectordbs| Introduction to vector embeddings and how they play a role in semantic searches for LLM Gen apps. Vector embeddings are central to retrieval augmentation generation. |
+|evaluation| Evaluating LLM is not easy; it can seem like a dark art. How to use exprimentation with MLflow tracking and tracing to evaluate LLMs|
+|fine-tuning | Why and when to fine-tune and how for your domain specific task. |
 |function-calling|How to use both OpenAI and OSS LLM funciton calling to extend LLM application functionality|
-| genai_intro | General Introduction to GenAI, 
-Foundation Models, LLMS |
-| gpts| A walk through OpenAI's GPT models and how and when to use them|
-| llm-prompts|An introduction to myriad LLM engineering techniques using clsoed and open source LLM models|
-|rags|Retrieval Augmentation Retrieval is the TayLor Swift of LLM applications; everyone wants; everyone builds them. A techincal of types of RAGS, how to to implement them|
+| gpts| A walk through OpenAI's GPT models and how and when to use them and what for. How they compare with closed models.|
+|llm-prompts| An introduction to myriad LLM engineering techniques using closed and open source LLM models|
+|rags|Retrieval Augmentation Generation (RAG) is the TayLor Swift of LLM applications; everyone wants them; everyone builds them. An introduction of types of RAGS, when to use them over fine-tunign, and how to to implement them|
 
  ## Current Blogs on this cookbook chapters
 
