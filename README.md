@@ -32,8 +32,7 @@ The examples in this cook are inspired (some modified, expanded or copied) from 
 
 | Directory Names| Description | 
 |---------------|-------------|
-| genai_intro | General Introduction to GenAI, 
-Foundation Models, LLMS |
+| genai_intro | General Introduction to GenAI, Foundation Models, LLMS |
 | agents| What are agents, agent archicture, how to write agents|
 | assistants| How to work with OpenAI Assistants as agents |
 | chatbots| How to write simple chatbots with LLMs |
