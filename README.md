@@ -1,17 +1,23 @@
 # GenAI Cookbook
 
-Generative Artificial Intelligence (GenAI) is introducing novelty, creativity, and productivity in various domains of human activities. It's novel because it responds to human-like natural language instructions; creative because it can generate new human-like content such as text, audio, images, and video, from existing trained data, unimaginalbe before; productive because it's faster than humans at completing tasks or activities.
+Generative Artificial Intelligence (GenAI) is transforming various domains by introducing unprecedented levels of novelty, creativity, and productivity. With its ability to respond to human-like natural language instructions, GenAI adds a new interactive dimension to AI applications. It generates new content—text, audio, images, and video—from existing data, achieving feats previously unimaginable. Also, GenAI excels in productivity, outperforming humans in some tasks in speed and efficiency.
 
 <a href="https://github.com/dmatrix/genai-cookbook"><img src="https://img.shields.io/github/stars/dmatrix/genai-cookbook" alt="github-stars"></a>
 <a href="https://twitter.com/2twitme"><img src="https://img.shields.io/twitter/follow/2twitme?label=Follow" alt="twitter"></a>
 
 <img src=images/gen_ai_cookbook_img_1.png>
 
-So welcome to a mixture of Gen AI cookbook **how-to** recipes for Gen AI applications. Mixture because GenAI is a larger umbrella conceptual term encompassing myriad natural language processing (NLP) applications built using language models. 
+Welcome to the GenAI cookbook, a blend of how-to recipes for using LLMs. This guide covers a wide range of natural language processing (NLP) applications using language models:
 
-These simple guides for these applications span across get-started examples on using LLM prompting strategies; exloring DSPy framework as an alternative to prompt engineering as declartive and programmatic ways to program LLMs; building simple chatbots; implementing retrieval generation augmentation (RAGs), incorporating personal or orgainzational data;  fine-tuning LLMs for domain specific tasks; extending LLM functionality with agents and function; and employing language models from OpenAI, Anthropic, Gemini, Anyscale Endpoints, OLlama, and Databricks platform, etc. 
+**LLM Prompting Strategies**: Get-started examples to prompting techniques 
+**DSPy Framework**: Explore alternatives to prompt engineering with declarative and programmatic approaches to programming LLMs
+**Simple Chatbots**: Learn the basics of building interactive AI
+**Retrieval Generation Augmentation (RAGs)**: Incorporate personal or organizational data for more accurate responses
+**Fine-Tuning LLMs**: Customize models for domain-specific tasks for form, format, and tonality
+**Extending LLM Functionality**:  Use agents and functions to enhance capabilities by interacting with external tools and data sources
+**Employing Leading Language Models**: Practical guides for using models and inference platforms from OpenAI, Anthropic, Gemini, Meta, Anyscale Endpoints, OLlama, and Databricks.
 
-Aimed at beginer and intermediate developers who are embarking on their journey on GenAI, examples code and how-to guides exemplify how to use the OpenAI API, Anthropic, Open Source Models, Google Gemini, Pinecone, Anyscale Endpoints, Databricks, and [Ray framework](https://www.ray.io/). 
+Aimed at beginner developers, this book provides example code and how-to guides, showcasing how to use APIs and frameworks from leading platforms. Start your journey and discover the potential of GenAI.
 
 To try these examples, you'll need an [OpenAI](https://platform.openai.com/docs/introduction) account and an associated API key, [Anthropic](https://docs.anthropic.com/claude/docs/intro-to-claude), [Pinecone](https://www.pinecone.io/pricing/), [Datrabricks Data Intelligent Platform](https://www.databricks.com/product/data-intelligence-platform) or an [Anyscale Endpoint](https://www.anyscale.com/get-started) account and an associated key. Even better, install [OLlama](https://ollama.com/) on your laptop. 
 
@@ -36,16 +42,15 @@ Some examples in this cook book are inspired(some modified, expanded or copied) 
 
 | Directory Names| Description | 
 |---------------|-------------|
-| genai_intro | General introduction to GenAI, Foundation Models, LLMS |
-| agents| What are agents, agent archicture, why use them and how to write agents|
-| assistants| Assistants extend LLM functionality to work and interact with external tools, enabling access to external services such as Web and datastores. How to work with OpenAI Assistants as agents |
+| genai_intro | General introduction to GenAI, Foundation Models, GPTs |
+| agents| What are agents, evolving agent archicture, why use them and how to write agents|
+| assistants| OpenAI Assistants extend LLM functionality to work and interact with external tools, enabling access to external services such as Web services and datastores. How to work with OpenAI Assistants to implement agents |
 | chatbots| Common application in customer service, how to write simple and conversational chatbots with LLMs, using prompting techniques|
 | dspy| Quick overview of a declaractive framework to program LLMs: what and why and how to use DSPy|
-|embeddings-and-vectordbs| Introduction to vector embeddings and how they play a role in semantic searches for LLM Gen apps. Vector embeddings are central to retrieval augmentation generation. Explore and use common vector stores as retreivers for indexed documents |
-|evaluation| Evaluating LLM is not easy and messy; it can seem like a dark art. But some tool, like MLflow, provide exprimentation, logging, tracking and tracing to evaluate LLMs|
-|fine-tuning | Common use of LLM to handle domain specific tasks is via fine-tuning. Why and when to fine-tune and how for your domain specific task, with your training data |
-|function-calling| How to use both OpenAI and OSS LLM funciton calling to extend LLM application functionality |
-| gpts| A walk through OpenAI's GPT models and how and when to use them and what for. How they compare with closed models.|
+|embeddings-and-vectordbs| Introduction to vector embeddings and their a role in semantic searches for LLM Gen apps. Vector embeddings are central to retrieval augmentation generation. Explore common vector stores as retreivers for indexed documents |
+|evaluation| Evaluating LLM is not easy and messy;it may seem like a dark art. But some tools, like MLflow, provide experimentation, logging, tracking and tracing to evaluate LLMs|
+|fine-tuning | Common use of LLM to handle domain specific tasks is via fine-tuning. Why and when to fine-tune for your domain specific task to customized responses, tone, and format|
+|function-calling| How to use both OpenAI and open-source LLM funciton calling to extend LLM functionality |
 |llm-prompts| An introduction to myriad prompt engineering techniques using closed and open source LLM models|
 |rags|Retrieval Augmentation Generation (RAG) is the TayLor Swift of LLM applications; everyone wants them; everyone writes about them; everyone builds them. An introduction to different types of RAGS, when to use them over fine-tunign, and how to to implement them for your data, increasing accuracy and decreasing halucinations in your responses|
 
