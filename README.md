@@ -1,19 +1,23 @@
 # GenAI Cookbook
 
+Generative Artificial Intelligence (GenAI) is introducing novelty, creativity, and productivity in various domains of human activities. It's novel because it responds to human-like natural language instructions; creative because it can generate new human-like content such as text, audio, images, and video, from existing trained data, unimaginalbe before; productive because it's faster than humans at completing tasks or activities.
+
 <a href="https://github.com/dmatrix/genai-cookbook"><img src="https://img.shields.io/github/stars/dmatrix/genai-cookbook" alt="github-stars"></a>
 <a href="https://twitter.com/2twitme"><img src="https://img.shields.io/twitter/follow/2twitme?label=Follow" alt="twitter"></a>
 
 <img src=images/gen_ai_cookbook_img_1.png>
 
-Welcome to a mixture of Gen AI cookbook **how-to** recipes for Gen AI applications. These simple guides span across get-started examples on using LLM prompting strategies, exloring DSPy framework, building simple chatbots, implementing retrieval generation augmentation (RAGs), fine-tuning LLMs, extending LLM functionality with agents and function, employing language models from OpenAI, Anthropic, Gemini, Anyscale Endpoints, OLlama, and Databricks platform, etc. 
+So welcome to a mixture of Gen AI cookbook **how-to** recipes for Gen AI applications. Mixture because GenAI is a larger umbrella conceptual term encompassing myriad natural language processing (NLP) applications built using language models. 
 
-Aimed at beginer or intermediate developers who are embarking on their journey on LLMs, you'll find examples code and/or guides for common natural language processing (NLP) tasks using the OpenAI API, Anthropic, Google Gemini, Pinecone, Anyscale Endpoints, Databricks, and [Ray framework](https://www.ray.io/). 
+These simple guides for these applications span across get-started examples on using LLM prompting strategies; exloring DSPy framework as an alternative to prompt engineering as declartive and programmatic ways to program LLMs; building simple chatbots; implementing retrieval generation augmentation (RAGs), incorporating personal or orgainzational data;  fine-tuning LLMs for domain specific tasks; extending LLM functionality with agents and function; and employing language models from OpenAI, Anthropic, Gemini, Anyscale Endpoints, OLlama, and Databricks platform, etc. 
 
-To try these examples, you'll need an [OpenAI](https://platform.openai.com/docs/introduction) account and an associated API key, [Anthropic](https://docs.anthropic.com/claude/docs/intro-to-claude), [Pinecone](https://www.pinecone.io/pricing/), or an [Anyscale Endpoint](https://www.anyscale.com/get-started) account and an associated key. Even better, install [OLlama](https://ollama.com/) on your laptop. 
+Aimed at beginer and intermediate developers who are embarking on their journey on GenAI, examples code and how-to guides exemplify how to use the OpenAI API, Anthropic, Open Source Models, Google Gemini, Pinecone, Anyscale Endpoints, Databricks, and [Ray framework](https://www.ray.io/). 
+
+To try these examples, you'll need an [OpenAI](https://platform.openai.com/docs/introduction) account and an associated API key, [Anthropic](https://docs.anthropic.com/claude/docs/intro-to-claude), [Pinecone](https://www.pinecone.io/pricing/), [Datrabricks Data Intelligent Platform](https://www.databricks.com/product/data-intelligence-platform) or an [Anyscale Endpoint](https://www.anyscale.com/get-started) account and an associated key. Even better, install [OLlama](https://ollama.com/) on your laptop. 
 
 All examples and notebooks are in Python, yet the concepts can be adapted to any programming language, so long as you can make REST API calls in the target language or use target language's SDK.
 
-Some examples in this cook book are inspired (some modified, expanded or copied) from these resources, including:
+Some examples in this cook book are inspired(some modified, expanded or copied) from these resources, including:
 
  * [OpenAI Cookbook](https://github.com/openai/openai-cookbook)
  * [OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
@@ -55,7 +59,7 @@ Some examples in this cook book are inspired (some modified, expanded or copied)
 * [An Exploratory Tour of DSPy: A Framework for Programing Language Models, not Prompting](https://medium.com/@2twitme/an-exploratory-tour-of-dspy-a-framework-for-programing-language-models-not-prompting-711bc4a56376)
 
 ## Environment files
-Since I use either OpenAI, Anthropic, or Anyscale Endpoints, I provide three environment template files: *env_anyscale_template*, *env_anthropic_template*, and *env_openai_template*. Add your keys and model name to either of the files and copy the file to **.env** to the top-level directory. To migrate any OpenAI code to Anyscale Endpoints, use this [simple guide](https://docs.endpoints.anyscale.com/guides/migrate-from-openai/). For the most part, the migration is seamless.
+Since I use either OpenAI, Anthropic, Google Gemmini, or Anyscale Endpoints, I provide respective environment template files: *env_anyscale_template*, *env_anthropic_template*, and *env_openai_template*. Add your keys and model name to either of the files and copy the file to **.env** to the top-level directory. To migrate any OpenAI code to Anyscale Endpoints, use this [simple guide](https://docs.endpoints.anyscale.com/guides/migrate-from-openai/). For the most part, the migration is seamless.
 
 Also, you'll require some Python libraries. Use `pip install -r requirements.txt` to install them.
 
@@ -68,5 +72,4 @@ Check existing [issues](https://github.com/dmatrix/genai-cookbook/issues) and [p
 
 
 Have GenAI fun! 🥳️
-
 Jules
