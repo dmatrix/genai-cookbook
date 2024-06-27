@@ -1,6 +1,6 @@
 # GenAI Cookbook
 
-Generative Artificial Intelligence (GenAI) is transforming various domains by introducing unprecedented levels of novelty, creativity, and productivity. With its ability to respond to human-like natural language instructions, GenAI adds a new interactive dimension to AI applications. It generates new content—text, audio, images, and video—from existing data, achieving feats previously unimaginable. Also, GenAI excels in productivity, outperforming humans in some tasks in speed and efficiency.
+Generative Artificial Intelligence (GenAI) is transforming various domains by introducing unprecedented levels of novelty, creativity, and productivity, "creating the largest shift in technology in our lifetimes." With its ability to respond to human-like natural language instructions, GenAI adds a new interactive dimension to AI applications. It generates new content—text, audio, images, and video—from existing data, achieving feats previously unimaginable. Also, GenAI excels in productivity, outperforming humans in some tasks in speed and efficiency.
 
 <a href="https://github.com/dmatrix/genai-cookbook"><img src="https://img.shields.io/github/stars/dmatrix/genai-cookbook" alt="github-stars"></a>
 <a href="https://twitter.com/2twitme"><img src="https://img.shields.io/twitter/follow/2twitme?label=Follow" alt="twitter"></a>
