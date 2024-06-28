@@ -12,9 +12,13 @@ Welcome to the GenAI cookbook, a blend of how-to recipes for using LLMs. This gu
 **LLM Prompting Strategies**: Get-started examples to prompting techniques 
 **DSPy Framework**: Explore alternatives to prompt engineering with declarative and programmatic approaches to programming LLMs
 **Simple Chatbots**: Learn the basics of building interactive AI
+
 **Retrieval Generation Augmentation (RAGs)**: Incorporate personal or organizational data for more accurate responses
+
 **Fine-Tuning LLMs**: Customize models for domain-specific tasks for form, format, and tonality
+
 **Extending LLM Functionality**:  Use agents and functions to enhance capabilities by interacting with external tools and data sources
+
 **Employing Leading Language Models**: Practical guides for using models and inference platforms from OpenAI, Anthropic, Gemini, Meta, Anyscale Endpoints, OLlama, and Databricks.
 
 Aimed at beginner developers, this book provides example code and how-to guides, showcasing how to use APIs and frameworks from leading platforms. Start your journey and discover the potential of GenAI.
