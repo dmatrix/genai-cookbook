@@ -81,4 +81,5 @@ Check existing [issues](https://github.com/dmatrix/genai-cookbook/issues) and [p
 
 
 Have GenAI fun! 🥳️
+
 Jules
