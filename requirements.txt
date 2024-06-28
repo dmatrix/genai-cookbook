@@ -10,7 +10,7 @@ tiktoken
 termcolor 
 requests
 cohere
-pineclone-client
+pinecone-client
 transformers
 datasets
 loadenv
