@@ -16,3 +16,4 @@ datasets
 loadenv
 jupyter
 jupyterlab
+mlfow
