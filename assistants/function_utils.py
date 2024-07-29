@@ -17,8 +17,8 @@ NUM_OF_CORES = None
 warnings.filterwarnings('ignore')
 _ = load_dotenv(find_dotenv()) # read local .env file
 
-openai.api_base = os.getenv("ANYSCALE_API_BASE", os.getenv("OPENAI_API_BASE"))
-openai.api_key = os.getenv("ANYSCALE_API_KEY", os.getenv("OPENAI_API_KEY"))
+# TODO: The 'openai.api_base' option isn't read in the client API. You will need to pass it when you instantiate the client, e.g. 'OpenAI(base_url=os.getenv("ANYSCALE_API_BASE", os.getenv("OPENAI_API_BASE")))'
+# openai.api_base = os.getenv("ANYSCALE_API_BASE", os.getenv("OPENAI_API_BASE"))
 weather_api_key = os.getenv("WEATHER_API_KEY")
 MODEL = os.getenv("MODEL")
 print(f"Using MODEL={MODEL}; base={openai.api_base}")
@@ -89,12 +89,12 @@ def create_dalle_image(params,
                                       size="1024x1024",
                                       quality=quality,
                                       n=1)
-    
+
     return response.data[0].url
 
 def get_weather_data(params:Dict[Any, Any]=None,
                     api_base:str="http://api.weatherstack.com/current") -> Dict[str, str]:
-    
+
     """
     Retrieves weather data from the OpenWeatherMap API.
     """
@@ -108,8 +108,8 @@ if __name__ == "__main__":
     warnings.filterwarnings('ignore')
     _ = load_dotenv(find_dotenv()) # read local .env file
 
-    openai.api_base = os.getenv("ANYSCALE_API_BASE", os.getenv("OPENAI_API_BASE"))
-    openai.api_key = os.getenv("ANYSCALE_API_KEY", os.getenv("OPENAI_API_KEY"))
+    # TODO: The 'openai.api_base' option isn't read in the client API. You will need to pass it when you instantiate the client, e.g. 'OpenAI(base_url=os.getenv("ANYSCALE_API_BASE", os.getenv("OPENAI_API_BASE")))'
+    # openai.api_base = os.getenv("ANYSCALE_API_BASE", os.getenv("OPENAI_API_BASE"))
     weather_api_key = os.getenv("WEATHER_API_KEY")
     MODEL = os.getenv("MODEL")
     print(f"Using MODEL={MODEL}; base={openai.api_base}")
@@ -143,4 +143,4 @@ if __name__ == "__main__":
     print(f"Weather data for City: {params['query']}")
     print(f"Temperature            : {weather_data['current']['temperature']}")
     print(f"Weather description    : {weather_data['current']['weather_descriptions']}")
-    
+

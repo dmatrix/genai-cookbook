@@ -58,7 +58,7 @@ def chat_completion_request(clnt:object, messages:object,
         print("Unable to generate ChatCompletion response")
         print(f"Exception: {e}")
         return e
-        
+
 conn = connect_db("customers.db")
 database_schema_string = get_database_schema(conn)
 
@@ -153,8 +153,8 @@ if __name__ == "__main__":
 
     _ = load_dotenv(find_dotenv()) # read local .env file
     warnings.filterwarnings('ignore')
-    openai.api_base = os.getenv("ANYSCALE_API_BASE", os.getenv("OPENAI_API_BASE"))
-    openai.api_key = os.getenv("ANYSCALE_API_KEY", os.getenv("OPENAI_API_KEY"))
+    # TODO: The 'openai.api_base' option isn't read in the client API. You will need to pass it when you instantiate the client, e.g. 'OpenAI(base_url=os.getenv("ANYSCALE_API_BASE", os.getenv("OPENAI_API_BASE")))'
+    # openai.api_base = os.getenv("ANYSCALE_API_BASE", os.getenv("OPENAI_API_BASE"))
     MODEL = os.getenv("MODEL")
     print(f"Using MODEL={MODEL}; base={openai.api_base}")
 
