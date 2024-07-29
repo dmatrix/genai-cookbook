@@ -17,7 +17,7 @@ def google_search(params:Dict[Any,Any]) -> List[Dict[str, str]]:
     query = quote_plus(params["query"])
     api_key = params["api_key"]
     num_in_page = params["num_results"]
-    
+
     url = f"https://api.apilayer.com/google_search?q={query}"
 
     payload = {}
@@ -41,8 +41,8 @@ if __name__ == "__main__":
     warnings.filterwarnings('ignore')
     _ = load_dotenv(find_dotenv()) # read local .env file
 
-    openai.api_base = os.getenv("ANYSCALE_API_BASE", os.getenv("OPENAI_API_BASE"))
-    openai.api_key = os.getenv("ANYSCALE_API_KEY", os.getenv("OPENAI_API_KEY"))
+    # TODO: The 'openai.api_base' option isn't read in the client API. You will need to pass it when you instantiate the client, e.g. 'OpenAI(base_url=os.getenv("ANYSCALE_API_BASE", os.getenv("OPENAI_API_BASE")))'
+    # openai.api_base = os.getenv("ANYSCALE_API_BASE", os.getenv("OPENAI_API_BASE"))
     google_api_key = os.getenv("GOOGLE_API_KEY")
     MODEL = os.getenv("MODEL")
     print(f"Using MODEL={MODEL}; base={openai.api_base}")
