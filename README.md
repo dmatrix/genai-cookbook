@@ -1,24 +1,20 @@
 # GenAI Cookbook
 
-Generative Artificial Intelligence (GenAI) is transforming various domains by introducing unprecedented levels of novelty, creativity, and productivity, "creating the largest shift in technology in our lifetimes." With its ability to respond to human-like natural language instructions, GenAI adds a new interactive dimension to AI applications. It generates new content—text, audio, images, and video—from existing data, achieving feats previously unimaginable. Also, GenAI excels in productivity, outperforming humans in some tasks in speed and efficiency.
+Generative Artificial Intelligence (GenAI) is rapidly transforming various domains by introducing unprecedented levels of novelty, creativity, and productivity, "creating the largest technological shift in our lifetimes." With its ability to respond to human-like natural language instructions, GenAI adds a new interactive dimension to AI applications. It generates new content—text, audio, images, and video—from existing data, achieving feats previously unimaginable. Also, GenAI excels in productivity, outperforming humans in some tasks in speed and efficiency.
 
 <a href="https://github.com/dmatrix/genai-cookbook"><img src="https://img.shields.io/github/stars/dmatrix/genai-cookbook" alt="github-stars"></a>
 <a href="https://twitter.com/2twitme"><img src="https://img.shields.io/twitter/follow/2twitme?label=Follow" alt="twitter"></a>
 
 <img src=images/gen_ai_cookbook_img_1.png>
 
-Welcome to the GenAI cookbook, a blend of how-to recipes for using LLMs. This guide covers a wide range of natural language processing (NLP) applications using language models:
+Welcome to the GenAI cookbook, a blend of how-to recipes and guides for using LLMs. This collection covers a wide range of natural language processing (NLP) applications using language models:
 
 **LLM Prompting Strategies**: Get-started examples to prompting techniques 
 **DSPy Framework**: Explore alternatives to prompt engineering with declarative and programmatic approaches to programming LLMs
 **Simple Chatbots**: Learn the basics of building interactive AI
-
 **Retrieval Generation Augmentation (RAGs)**: Incorporate personal or organizational data for more accurate responses
-
 **Fine-Tuning LLMs**: Customize models for domain-specific tasks for form, format, and tonality
-
 **Extending LLM Functionality**:  Use agents and functions to enhance capabilities by interacting with external tools and data sources
-
 **Employing Leading Language Models**: Practical guides for using models and inference platforms from OpenAI, Anthropic, Gemini, Meta, Anyscale Endpoints, OLlama, and Databricks.
 
 Aimed at beginner developers, this book provides example code and how-to guides, showcasing how to use APIs and frameworks from leading platforms. Start your journey and discover the potential of GenAI.
@@ -27,7 +23,7 @@ To try these examples, you'll need an [OpenAI](https://platform.openai.com/docs/
 
 All examples and notebooks are in Python, yet the concepts can be adapted to any programming language, so long as you can make REST API calls in the target language or use target language's SDK.
 
-Some examples in this cook book are inspired(some modified, expanded or copied) from these resources, including:
+Some examples in this cookbook are inspired (some modified, expanded or copied) from these resources, including:
 
  * [OpenAI Cookbook](https://github.com/openai/openai-cookbook)
  * [OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
@@ -68,7 +64,9 @@ Some examples in this cook book are inspired(some modified, expanded or copied) 
 * [An Exploratory Tour of DSPy: A Framework for Programing Language Models, not Prompting](https://medium.com/@2twitme/an-exploratory-tour-of-dspy-a-framework-for-programing-language-models-not-prompting-711bc4a56376)
 
 ## Environment files
-Since I use either OpenAI, Anthropic, Google Gemmini, or Anyscale Endpoints, I provide respective environment template files: *env_anyscale_template*, *env_anthropic_template*, and *env_openai_template*. Add your keys and model name to either of the files and copy the file to **.env** to the top-level directory. To migrate any OpenAI code to Anyscale Endpoints, use this [simple guide](https://docs.endpoints.anyscale.com/guides/migrate-from-openai/). For the most part, the migration is seamless.
+Since I use either OpenAI, Anthropic, Google Gemmini, or Anyscale Endpoints, I provide respective environment template files: *env_anyscale_template*, *env_anthropic_template*, *env_google_template*, and *env_openai_template*. 
+
+Add your keys and model name to either of the files and copy the file to **.env** to the top-level directory. To migrate any OpenAI code to Anyscale Endpoints, use this [simple guide](https://docs.endpoints.anyscale.com/guides/migrate-from-openai/). For the most part, the migration is seamless.
 
 Also, you'll require some Python libraries. Use `pip install -r requirements.txt` to install them.
 
