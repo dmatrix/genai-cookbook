@@ -1,6 +1,6 @@
 import dspy
 import warnings
-from dspy_utils import RAG, BOLD_BEGIN, BOLD_END, \
+from dspy_utils import BOLD_BEGIN, BOLD_END, \
         ZeroShotEntityNameRecognition, DialogueGeneration
 
 
@@ -14,9 +14,13 @@ if __name__ == "__main__":
     print(BOLD_BEGIN + "Zero Short Learning with DSPy" + BOLD_END)
 
      # Setup OLlama environment on the local machine
-    ollama_mistral = dspy.OllamaLocal(model='mistral',
+    ollama_llama3 = dspy.OllamaLocal(model='llama3',
                                       max_tokens=2500)
-    dspy.settings.configure(lm=ollama_mistral)
+    dspy.settings.configure(lm=ollama_llama3)
+
+    # Print using the model Llama3
+    print(f"{BOLD_BEGIN}Using the {ollama_llama3.model_name} model{BOLD_END}")
+    print("--------------------------")
 
     # Create our Zero Short Signature instance
     zero = dspy.Predict(ZeroShotEntityNameRecognition, max_iters=5)
@@ -42,5 +46,5 @@ Can you help?"""
     print("--------------------------")
     # Inspect the prompt history 
     print(f"{BOLD_BEGIN} Prompt History {BOLD_END}:")
-    print(ollama_mistral.inspect_history(n=1))
+    print(ollama_llama3.inspect_history(n=1))
     print("--------------------------")

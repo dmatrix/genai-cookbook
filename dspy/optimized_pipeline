@@ -1,0 +1,326 @@
+{
+  "generate_query[0]": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "question": "Which magazine has published articles by Scott Shaw, Tae Kwon Do Times or Southwest Art?",
+        "answer": "Tae Kwon Do Times",
+        "dspy_uuid": "b35e6cea-6311-4d4d-b09c-f29b3c253153",
+        "dspy_split": "train"
+      },
+      {
+        "question": "This American guitarist best known for her work with the Iron Maidens is an ancestor of a composer who was known as what?",
+        "answer": "The Waltz King",
+        "dspy_uuid": "8c520c7b-b433-4064-b175-aa073f44fa9d",
+        "dspy_split": "train"
+      },
+      {
+        "question": "On the coast of what ocean is the birthplace of Diogal Sakho?",
+        "answer": "Atlantic",
+        "dspy_uuid": "09646f29-54a8-4d55-b3b2-a86f8ab6d6af",
+        "dspy_split": "train"
+      },
+      {
+        "question": "The Victorians - Their Story In Pictures is a documentary series written by an author born in what year?",
+        "answer": "1950",
+        "dspy_uuid": "552bdf24-89e0-46d4-8783-e3c218eaebae",
+        "dspy_split": "train"
+      },
+      {
+        "question": "The Organisation that allows a community to influence their operation or use and to enjoy the benefits arisingwas founded in what year?",
+        "answer": "2010",
+        "dspy_uuid": "63866ca6-ae0c-437c-99e7-15b5a62354a6",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Which company distributed this 1977 American animated film produced by Walt Disney Productions for which Sherman Brothers wrote songs?",
+        "answer": "Buena Vista Distribution",
+        "dspy_uuid": "b437702b-a906-49c7-acdf-f1303c461c52",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Samantha Cristoforetti and Mark Shuttleworth are both best known for being first in their field to go where? ",
+        "answer": "space",
+        "dspy_uuid": "475c3cd5-daa2-4d2c-8169-a646905734b4",
+        "dspy_split": "train"
+      },
+      {
+        "question": "At My Window was released by which American singer-songwriter?",
+        "answer": "John Townes Van Zandt",
+        "dspy_uuid": "a97c5bdd-7184-4546-abb0-d1b4ce5078bb",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Which of these publications was most recently published, Who Put the Bomp or Self?",
+        "answer": "Self",
+        "dspy_uuid": "99b936d7-d5cc-4ed7-a542-627f4b63670c",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Who is older, Aleksandr Danilovich Aleksandrov or Anatoly Fomenko?",
+        "answer": "Aleksandr Danilovich Aleksandrov",
+        "dspy_uuid": "c34a98c9-1e3f-4e10-a8ec-de223fd93b4f",
+        "dspy_split": "train"
+      },
+      {
+        "question": "What is the code name for the German offensive that started this Second World War engagement on the Eastern Front (a few hundred kilometers from Moscow) between Soviet and German forces, which included 102nd Infantry Division?",
+        "answer": "Operation Citadel",
+        "dspy_uuid": "7cb8ccb2-93b3-4fb7-9a13-0d622ff0701a",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Which Pakistani cricket umpire who won 3 consecutive ICC umpire of the year awards in 2009, 2010, and 2011 will be in the ICC World Twenty20?",
+        "answer": "Aleem Sarwar Dar",
+        "dspy_uuid": "1366f650-c3b9-4bf1-a0c4-4996cdbcb962",
+        "dspy_split": "train"
+      },
+      {
+        "question": "\"Everything Has Changed\" is a song from an album released under which record label ?",
+        "answer": "Big Machine Records",
+        "dspy_uuid": "171f4308-9c3a-4751-9547-31601ef74eb3",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Which American actress who made their film debut in the 1995 teen drama \"Kids\" was the co-founder of Voto Latino?",
+        "answer": "Rosario Dawson",
+        "dspy_uuid": "30c1cd60-6c94-401f-8270-0d8f3f39a8f0",
+        "dspy_split": "train"
+      },
+      {
+        "question": "which  American actor was Candace Kita  guest starred with ",
+        "answer": "Bill Murray",
+        "dspy_uuid": "a1fbebd8-6d13-4a71-bbab-633d80d16b67",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Who acted in the shot film The Shore and is also the youngest actress ever to play Ophelia in a Royal Shakespeare Company production of \"Hamlet.\" ?",
+        "answer": "Kerry Condon",
+        "dspy_uuid": "0eba5123-c0a3-4c8b-83a6-0a02497267b8",
+        "dspy_split": "train"
+      }
+    ],
+    "signature_instructions": "Write a simple search query that will help answer a complex question.",
+    "signature_prefix": "Query:",
+    "extended_signature_instructions": "Write a simple search query that will help answer a complex question.",
+    "extended_signature_prefix": "Query:"
+  },
+  "generate_query[1]": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "question": "Which of these publications was most recently published, Who Put the Bomp or Self?",
+        "answer": "Self",
+        "dspy_uuid": "99b936d7-d5cc-4ed7-a542-627f4b63670c",
+        "dspy_split": "train"
+      },
+      {
+        "question": "which  American actor was Candace Kita  guest starred with ",
+        "answer": "Bill Murray",
+        "dspy_uuid": "a1fbebd8-6d13-4a71-bbab-633d80d16b67",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Who acted in the shot film The Shore and is also the youngest actress ever to play Ophelia in a Royal Shakespeare Company production of \"Hamlet.\" ?",
+        "answer": "Kerry Condon",
+        "dspy_uuid": "0eba5123-c0a3-4c8b-83a6-0a02497267b8",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Which Pakistani cricket umpire who won 3 consecutive ICC umpire of the year awards in 2009, 2010, and 2011 will be in the ICC World Twenty20?",
+        "answer": "Aleem Sarwar Dar",
+        "dspy_uuid": "1366f650-c3b9-4bf1-a0c4-4996cdbcb962",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Who is older, Aleksandr Danilovich Aleksandrov or Anatoly Fomenko?",
+        "answer": "Aleksandr Danilovich Aleksandrov",
+        "dspy_uuid": "c34a98c9-1e3f-4e10-a8ec-de223fd93b4f",
+        "dspy_split": "train"
+      },
+      {
+        "question": "On the coast of what ocean is the birthplace of Diogal Sakho?",
+        "answer": "Atlantic",
+        "dspy_uuid": "09646f29-54a8-4d55-b3b2-a86f8ab6d6af",
+        "dspy_split": "train"
+      },
+      {
+        "question": "The Organisation that allows a community to influence their operation or use and to enjoy the benefits arisingwas founded in what year?",
+        "answer": "2010",
+        "dspy_uuid": "63866ca6-ae0c-437c-99e7-15b5a62354a6",
+        "dspy_split": "train"
+      },
+      {
+        "question": "This American guitarist best known for her work with the Iron Maidens is an ancestor of a composer who was known as what?",
+        "answer": "The Waltz King",
+        "dspy_uuid": "8c520c7b-b433-4064-b175-aa073f44fa9d",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Which American actress who made their film debut in the 1995 teen drama \"Kids\" was the co-founder of Voto Latino?",
+        "answer": "Rosario Dawson",
+        "dspy_uuid": "30c1cd60-6c94-401f-8270-0d8f3f39a8f0",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Samantha Cristoforetti and Mark Shuttleworth are both best known for being first in their field to go where? ",
+        "answer": "space",
+        "dspy_uuid": "475c3cd5-daa2-4d2c-8169-a646905734b4",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Which company distributed this 1977 American animated film produced by Walt Disney Productions for which Sherman Brothers wrote songs?",
+        "answer": "Buena Vista Distribution",
+        "dspy_uuid": "b437702b-a906-49c7-acdf-f1303c461c52",
+        "dspy_split": "train"
+      },
+      {
+        "question": "What is the code name for the German offensive that started this Second World War engagement on the Eastern Front (a few hundred kilometers from Moscow) between Soviet and German forces, which included 102nd Infantry Division?",
+        "answer": "Operation Citadel",
+        "dspy_uuid": "7cb8ccb2-93b3-4fb7-9a13-0d622ff0701a",
+        "dspy_split": "train"
+      },
+      {
+        "question": "The Victorians - Their Story In Pictures is a documentary series written by an author born in what year?",
+        "answer": "1950",
+        "dspy_uuid": "552bdf24-89e0-46d4-8783-e3c218eaebae",
+        "dspy_split": "train"
+      },
+      {
+        "question": "\"Everything Has Changed\" is a song from an album released under which record label ?",
+        "answer": "Big Machine Records",
+        "dspy_uuid": "171f4308-9c3a-4751-9547-31601ef74eb3",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Which magazine has published articles by Scott Shaw, Tae Kwon Do Times or Southwest Art?",
+        "answer": "Tae Kwon Do Times",
+        "dspy_uuid": "b35e6cea-6311-4d4d-b09c-f29b3c253153",
+        "dspy_split": "train"
+      },
+      {
+        "question": "At My Window was released by which American singer-songwriter?",
+        "answer": "John Townes Van Zandt",
+        "dspy_uuid": "a97c5bdd-7184-4546-abb0-d1b4ce5078bb",
+        "dspy_split": "train"
+      }
+    ],
+    "signature_instructions": "Write a simple search query that will help answer a complex question.",
+    "signature_prefix": "Query:",
+    "extended_signature_instructions": "Write a simple search query that will help answer a complex question.",
+    "extended_signature_prefix": "Query:"
+  },
+  "retrieve": {
+    "k": 3
+  },
+  "generate_answer": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "question": "\"Everything Has Changed\" is a song from an album released under which record label ?",
+        "answer": "Big Machine Records",
+        "dspy_uuid": "171f4308-9c3a-4751-9547-31601ef74eb3",
+        "dspy_split": "train"
+      },
+      {
+        "question": "On the coast of what ocean is the birthplace of Diogal Sakho?",
+        "answer": "Atlantic",
+        "dspy_uuid": "09646f29-54a8-4d55-b3b2-a86f8ab6d6af",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Samantha Cristoforetti and Mark Shuttleworth are both best known for being first in their field to go where? ",
+        "answer": "space",
+        "dspy_uuid": "475c3cd5-daa2-4d2c-8169-a646905734b4",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Which company distributed this 1977 American animated film produced by Walt Disney Productions for which Sherman Brothers wrote songs?",
+        "answer": "Buena Vista Distribution",
+        "dspy_uuid": "b437702b-a906-49c7-acdf-f1303c461c52",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Which Pakistani cricket umpire who won 3 consecutive ICC umpire of the year awards in 2009, 2010, and 2011 will be in the ICC World Twenty20?",
+        "answer": "Aleem Sarwar Dar",
+        "dspy_uuid": "1366f650-c3b9-4bf1-a0c4-4996cdbcb962",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Which American actress who made their film debut in the 1995 teen drama \"Kids\" was the co-founder of Voto Latino?",
+        "answer": "Rosario Dawson",
+        "dspy_uuid": "30c1cd60-6c94-401f-8270-0d8f3f39a8f0",
+        "dspy_split": "train"
+      },
+      {
+        "question": "This American guitarist best known for her work with the Iron Maidens is an ancestor of a composer who was known as what?",
+        "answer": "The Waltz King",
+        "dspy_uuid": "8c520c7b-b433-4064-b175-aa073f44fa9d",
+        "dspy_split": "train"
+      },
+      {
+        "question": "At My Window was released by which American singer-songwriter?",
+        "answer": "John Townes Van Zandt",
+        "dspy_uuid": "a97c5bdd-7184-4546-abb0-d1b4ce5078bb",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Who is older, Aleksandr Danilovich Aleksandrov or Anatoly Fomenko?",
+        "answer": "Aleksandr Danilovich Aleksandrov",
+        "dspy_uuid": "c34a98c9-1e3f-4e10-a8ec-de223fd93b4f",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Which of these publications was most recently published, Who Put the Bomp or Self?",
+        "answer": "Self",
+        "dspy_uuid": "99b936d7-d5cc-4ed7-a542-627f4b63670c",
+        "dspy_split": "train"
+      },
+      {
+        "question": "The Victorians - Their Story In Pictures is a documentary series written by an author born in what year?",
+        "answer": "1950",
+        "dspy_uuid": "552bdf24-89e0-46d4-8783-e3c218eaebae",
+        "dspy_split": "train"
+      },
+      {
+        "question": "The Organisation that allows a community to influence their operation or use and to enjoy the benefits arisingwas founded in what year?",
+        "answer": "2010",
+        "dspy_uuid": "63866ca6-ae0c-437c-99e7-15b5a62354a6",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Which magazine has published articles by Scott Shaw, Tae Kwon Do Times or Southwest Art?",
+        "answer": "Tae Kwon Do Times",
+        "dspy_uuid": "b35e6cea-6311-4d4d-b09c-f29b3c253153",
+        "dspy_split": "train"
+      },
+      {
+        "question": "Who acted in the shot film The Shore and is also the youngest actress ever to play Ophelia in a Royal Shakespeare Company production of \"Hamlet.\" ?",
+        "answer": "Kerry Condon",
+        "dspy_uuid": "0eba5123-c0a3-4c8b-83a6-0a02497267b8",
+        "dspy_split": "train"
+      },
+      {
+        "question": "which  American actor was Candace Kita  guest starred with ",
+        "answer": "Bill Murray",
+        "dspy_uuid": "a1fbebd8-6d13-4a71-bbab-633d80d16b67",
+        "dspy_split": "train"
+      },
+      {
+        "question": "What is the code name for the German offensive that started this Second World War engagement on the Eastern Front (a few hundred kilometers from Moscow) between Soviet and German forces, which included 102nd Infantry Division?",
+        "answer": "Operation Citadel",
+        "dspy_uuid": "7cb8ccb2-93b3-4fb7-9a13-0d622ff0701a",
+        "dspy_split": "train"
+      }
+    ],
+    "signature_instructions": "Answer questions with short factoid answers.",
+    "signature_prefix": "Answer:",
+    "extended_signature_instructions": "Answer questions with short factoid answers.",
+    "extended_signature_prefix": "Answer:"
+  }
+}
