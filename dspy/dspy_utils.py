@@ -1,5 +1,8 @@
+import argparse
+
 import dspy
 from typing import List
+from dspy.datasets import HotPotQA
 
 BOLD_BEGIN = "\033[1m"
 BOLD_END = "\033[0m"
@@ -206,4 +209,111 @@ class ThoughtReflection (dspy.Module ) :
     def forward (self,  question) :
         completions = self.predict(question=question).completions
         return self.compare(question=question, completions=completions)
+
+## New Signatures for optimized pipeline
+
+class GenerateAnswer(dspy.Signature):
+    """Answer questions with short factoid answers."""
+
+    context = dspy.InputField(desc="may contain relevant facts")
+    question = dspy.InputField()
+    answer = dspy.OutputField(desc="often between 1 and 5 words")
+
+class GenerateSearchQuery(dspy.Signature):
+    """Write a simple search query that will help answer a complex question."""
+
+    context = dspy.InputField(desc="may contain relevant facts")
+    question = dspy.InputField()
+    query = dspy.OutputField()
+
+# Build the optimized pipeline
+# Comprises a collection of serial modules that are executed in sequence
+# generate_query (GenerateSearchQuery) -> retrieve (Retrieve) -> generate_answer(GenerateAnswer)
+from dsp.utils import deduplicate
+
+class SimplifiedPipeline(dspy.Module):
+    def __init__(self, passages_per_hop=3, max_hops=2, debug=False):
+        super().__init__()
+
+        # generate a query for each hop
+        self.generate_query = [dspy.ChainOfThought(GenerateSearchQuery) for _ in range(max_hops)]
+        # reterive k passages for each hop
+        self.retrieve = dspy.Retrieve(k=passages_per_hop)
+        # generate an answer
+        self.generate_answer = dspy.ChainOfThought(GenerateAnswer)
+        self.max_hops = max_hops
+        self.debug = debug
     
+    def forward(self, question):
+        """Answer a question by generating a query, retrieving passages, and generating an answer."""
+        context = []
+        # Control flow loop for the pipeline
+        for hop in range(self.max_hops):
+            query = self.generate_query[hop](context=context, question=question).query
+            if self.debug:
+                print(f"Query for hop {hop + 1}: {query}")
+                print(f"context: {context}...")
+            passages = self.retrieve(query).passages
+            context = deduplicate(context + passages)
+            if self.debug:
+                print(f"Retrieved Contexts: {[c + '<eoc>' for c in context]}")
+                print(f"Total context length: {len(context)}")
+                
+
+        pred = self.generate_answer(context=context, question=question)
+        return dspy.Prediction(context=context, answer=pred.answer)
+    
+# Define metric to check if we retrieved the correct documents
+def gold_passages_retrieved(example, pred, trace=None):
+    gold_titles = set(map(dspy.evaluate.normalize_text, example["gold_titles"]))
+    found_titles = set(
+        map(dspy.evaluate.normalize_text, [c.split(" | ")[0] for c in pred.context])
+    )
+    return gold_titles.issubset(found_titles)
+
+# Define metric to check if we retrieved the correct documents
+# Let's first define our validation logic for compilation:
+# 1. The predicted answer matches the gold answer.
+# 2. The retrieved context contains the gold answer.
+# 3. None of the generated queries is rambling (i.e., none exceeds 100 characters in length).
+# 4. None of the generated queries is roughly repeated (i.e., none is within 0.8 or higher F1 score of earlier queries).
+def validate_context_and_answer_and_hops(example, pred, trace=None):
+    if not dspy.evaluate.answer_exact_match(example, pred): return False
+    if not dspy.evaluate.answer_passage_match(example, pred): return False
+
+    # check if the question appears in the output, suggesting that the pipeline is further refining the question
+    hops = [example.question] + [outputs.query for *_, outputs in trace if 'query' in outputs]
+
+    if max([len(h) for h in hops]) > 100: return False
+    if any(dspy.evaluate.answer_exact_match_str(hops[idx], hops[:idx], frac=0.8) for idx in range(2, len(hops))): return False
+
+    return True
+
+# Download the HotPotQA dataset
+def downlad_dataset(trainset_size=25, devset_size=50, debug=False):
+    # Load the dataset.
+    dataset = HotPotQA(train_seed=1, train_size=trainset_size, eval_seed=2023, dev_size=devset_size, test_size=0)
+
+    # Tell DSPy that the 'question' field is the input. Any other fields are labels and/or metadata.
+    trainset = [x.with_inputs('question') for x in dataset.train]
+    devset = [x.with_inputs('question') for x in dataset.dev]
+    if debug:
+        print(f"trainset[:3]:{trainset[:3]}")
+        print(f"devset[:3]:{devset[:3]}")
+
+    return trainset, devset
+
+def parse_args():
+    # Create the parser
+    parser = argparse.ArgumentParser(description='Parse command line arguments.')
+
+    # Add the arguments with default values
+    parser.add_argument('--debug', type=bool, default=False, help='Debug mode (default: False)')
+    parser.add_argument('--devset', type=int, default=50, help='Development set size (default: 50)')
+    parser.add_argument('--trainset', type=int, default=20, help='Training set size (default: 25)')
+    parser.add_argument('--num_threads', type=int, default=2, help='Number of threads for evaluation (default: 2)')
+
+
+    # Parse the arguments
+    args = parser.parse_args()
+    return args

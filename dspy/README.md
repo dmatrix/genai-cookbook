@@ -63,6 +63,9 @@ All examples use OLlama Mistral, running locally on the laptop, and experimental
 |Naive RAG with DSPy Module| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/09_dspy_naive_rag.py)|
 |ReAct tasks with DSPy Module| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/11_dspy_react_task_task.py)|
 |Zero Short Learning with DSPy Module| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/13_dspy_zero_short_learning.py)|
+|Using DSPy unoptimized and uncompiled pipeline| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/14_dspy_unoptimized_pipeline.py)|
+|Using DSPy optimized and compiled pipeline| [Python App](https://github.com/dmatrix/genai-cookbook/blob/main/dspy/15_dspy_optimized_pipeline.py)|
+
 
 ### DSPy Documentation
  1. [Programing--not Prompting--LLMs](https://dspy-docs.vercel.app/)
