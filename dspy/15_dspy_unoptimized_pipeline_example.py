@@ -1,5 +1,5 @@
 #
-# Borrowed and mildly modified from: https://dspy-docs.vercel.app/docs/tutorials/simplified-baleen
+# Borrowed and modified from: https://dspy-docs.vercel.app/docs/tutorials/simplified-baleen
 # This example demonstrates how to use an unoptimized pipeline in DSPy.
 # The example uses the Llama3 model, served by OLlama, to perform the tasks.
 
@@ -43,10 +43,9 @@ if __name__ == "__main__":
     print("--------------------------")
 
     # Create our Zero Short unoptimized pipeline Signature instance
-    zero = dspy.Predict(SimplifiedPipeline, max_iters=3)
-
     # Execute our simplified and unoptimized pipeline
     # Ask any question you like to this simple RAG program.
+    
     for question in QUESTIONS:
         # Get the prediction. This contains `pred.context` and `pred.answer`.
         uncompiled_pipeline = SimplifiedPipeline()  # uncompiled (i.e., zero-shot) program

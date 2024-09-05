@@ -45,11 +45,11 @@ if __name__ == "__main__":
         print(f"size of trainset:{len(trainset)}; devset:{len(devset)}")
 
 
-    # Create and optimzer and compile the pipeline and optimize it
-    optimzer = BootstrapFewShot(metric=validate_context_and_answer_and_hops)
+    # Create and optimizer and compile the pipeline and optimize it
+    optimizer = BootstrapFewShot(metric=validate_context_and_answer_and_hops)
 
     print(f"{BOLD_BEGIN}Compiling the pipeline ....{BOLD_END}")
-    compiled_pipeline = optimzer.compile(SimplifiedPipeline(), teacher=SimplifiedPipeline(passages_per_hop=2), trainset=trainset)    
+    compiled_pipeline = optimizer.compile(SimplifiedPipeline(), teacher=SimplifiedPipeline(passages_per_hop=2), trainset=trainset)    
 
     print(f"{BOLD_BEGIN}Evaluating the compiled and optimized pipeline ....{BOLD_END}")
     # Set up the `evaluate_on_hotpotqa` function. 
