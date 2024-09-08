@@ -62,6 +62,7 @@ Some examples in this cookbook are inspired (some modified, expanded or copied) 
 * [An Intuitive 101 Guide to Vector Embeddings](https://medium.com/@2twitme/an-intuitive-101-guide-to-vector-embeddings-ffde295c3558)
 * [An Exploratory Tour of Retrieval Augmented Generation (RAG) Paradigm](https://medium.com/@2twitme/an-exploratory-tour-of-retrieval-augmented-generation-rag-paradigm-3940c1947d27)
 * [An Exploratory Tour of DSPy: A Framework for Programing Language Models, not Prompting](https://medium.com/@2twitme/an-exploratory-tour-of-dspy-a-framework-for-programing-language-models-not-prompting-711bc4a56376)
+* [Understanding Optimizers in DSPy](https://medium.com/@2twitme/understanding-optimizers-in-dspy-1ea9451c128b)
 
 ## Environment files
 Since I use either OpenAI, Anthropic, Google Gemmini, or Anyscale Endpoints, I provide respective environment template files: *env_anyscale_template*, *env_anthropic_template*, *env_google_template*, and *env_openai_template*. 
