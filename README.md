@@ -38,7 +38,7 @@ Some examples in this cookbook are inspired (some modified, expanded or copied) 
  * [DSPy: Programming framework for Language Models](https://dspy-docs.vercel.app/docs/intro)
  * Various medium blog posts cited as resources on chapter blogs published on medium.
 
- ## Directory Structure or Chapters for the nook
+ ## Directory Structure or Chapters for the book
 
 | Directory Names| Description | 
 |---------------|-------------|
