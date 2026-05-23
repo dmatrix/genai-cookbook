@@ -47,7 +47,7 @@ Some examples in this cookbook are inspired (some modified, expanded or copied) 
 | assistants| OpenAI Assistants extend LLM functionality to work and interact with external tools, enabling access to external services such as Web services and datastores. How to work with OpenAI Assistants to implement agents |
 | chatbots| Common application in customer service, how to write simple and conversational chatbots with LLMs, using prompting techniques|
 | dspy| Quick overview of a declaractive framework to program LLMs: what and why and how to use DSPy|
-|embeddings-and-vectordbs| Introduction to vector embeddings and their a role in semantic searches for LLM Gen apps. Vector embeddings are central to retrieval augmentation generation. Explore common vector stores as retreivers for indexed documents |
+|embeddings-and-vectordbs| Introduction to vector embeddings and their a role in semantic searches for LLM Gen apps. Vector embeddings are central to retrieval augmentation generation. Explore common vector stores as retrievers for indexed documents |
 |evaluation| Evaluating LLM is not easy and messy;it may seem like a dark art. But some tools, like MLflow, provide experimentation, logging, tracking and tracing to evaluate LLMs|
 |fine-tuning | Common use of LLM to handle domain specific tasks is via fine-tuning. Why and when to fine-tune for your domain specific task to customized responses, tone, and format|
 |function-calling| How to use both OpenAI and open-source LLM funciton calling to extend LLM functionality |
